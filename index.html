@@ -5,34 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Raham Media crafts cinematic brand stories, launch campaigns, social content, and digital experiences for ambitious teams."
+      content="Rahma Media crafts cinematic brand stories, launch campaigns, social content, and digital experiences for ambitious teams."
     />
-    <title>Raham Media | Creative Studio</title>
+    <title>Rahma Media | Creative Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              ink: "#101012",
-              paper: "#f8f5ef",
-              ember: "#ff4d2d",
-              citrus: "#c9ff4a",
-              tide: "#4ed7c3",
+              ink: "#102C57",
+              paper: "#F8F0E5",
+              ember: "#DAC0A3",
+              citrus: "#EADBC8",
+              tide: "#DAC0A3",
             },
             fontFamily: {
-              display: ["Instrument Sans", "Inter", "system-ui", "sans-serif"],
+              display: ["Gelasio", "Georgia", "Times New Roman", "serif"],
               body: ["Inter", "system-ui", "sans-serif"],
             },
             boxShadow: {
-              glow: "0 0 60px rgba(255, 77, 45, .22)",
+              glow: "0 24px 80px rgba(16, 44, 87, .18)",
             },
           },
         },
       };
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="stylesheet" href="./styles.css" />
+    <style>
+      @keyframes ticker {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+      }
+      .ticker-track {
+        animation: ticker 26s linear infinite;
+      }
+      .ticker-track:hover {
+        animation-play-state: paused;
+      }
+    </style>
   </head>
   <body class="bg-paper font-body text-ink antialiased">
     <a
@@ -43,18 +58,15 @@
     </a>
 
     <header class="fixed inset-x-0 top-0 z-50 transition duration-300" data-header>
-      <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Main navigation">
-        <a href="#" class="group flex items-center gap-3" aria-label="Raham Media home">
-          <span class="grid h-10 w-10 place-items-center rounded-full bg-paper text-sm font-black text-ink shadow-glow">
-            RM
-          </span>
-          <span class="text-sm font-black uppercase tracking-[0.18em] text-paper transition group-hover:text-citrus">
-            Raham Media
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8" aria-label="Main navigation">
+        <a href="#" class="group flex items-center" aria-label="Rahma Media home">
+          <span class="logo-wordmark text-paper transition group-hover:text-ember">
+            Rahma Media
           </span>
         </a>
 
-        <div class="hidden items-center gap-8 rounded-full bg-paper/12 px-5 py-3 text-sm font-semibold text-paper backdrop-blur-xl lg:flex">
-          <a class="nav-link" href="#work">Work</a>
+        <div class="hidden items-center gap-8 rounded-full bg-paper/10 px-6 py-3 text-sm font-medium text-paper backdrop-blur-xl lg:flex">
+          <a class="nav-link" href="#about">About</a>
           <a class="nav-link" href="#services">Services</a>
           <a class="nav-link" href="#process">Process</a>
           <a class="nav-link" href="#contact">Contact</a>
@@ -62,13 +74,13 @@
 
         <a
           href="#contact"
-          class="hidden rounded-full bg-citrus px-5 py-3 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:bg-paper lg:inline-flex"
+          class="hidden rounded-full border border-paper/40 px-5 py-2.5 text-sm font-semibold text-paper transition hover:bg-paper hover:text-ink lg:inline-flex"
         >
           Start a project
         </a>
 
         <button
-          class="grid h-11 w-11 place-items-center rounded-full bg-paper text-ink lg:hidden"
+          class="grid h-10 w-10 place-items-center rounded-full bg-paper text-ink lg:hidden"
           type="button"
           aria-label="Open menu"
           aria-expanded="false"
@@ -78,9 +90,9 @@
         </button>
       </nav>
 
-      <div class="hidden border-t border-paper/10 bg-ink/96 px-5 py-5 text-paper backdrop-blur-xl lg:hidden" data-mobile-menu>
-        <div class="mx-auto grid max-w-7xl gap-4 text-lg font-bold">
-          <a href="#work">Work</a>
+      <div class="hidden border-t border-paper/10 bg-ink/96 px-5 py-6 text-paper backdrop-blur-xl lg:hidden" data-mobile-menu>
+        <div class="mx-auto grid max-w-7xl gap-5 text-xl font-medium">
+          <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#process">Process</a>
           <a href="#contact">Contact</a>
@@ -89,144 +101,151 @@
     </header>
 
     <main id="main">
+
+      <!-- Hero -->
       <section class="relative min-h-screen overflow-hidden bg-ink text-paper">
         <img
           src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2400&q=85"
           alt="Creative team reviewing campaign work in a modern studio"
-          class="absolute inset-0 h-full w-full object-cover opacity-62"
+          class="absolute inset-0 h-full w-full object-cover opacity-40"
         />
-        <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,16,18,.90),rgba(16,16,18,.54)_45%,rgba(16,16,18,.18))]"></div>
-        <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(100deg,rgba(16,44,87,.96)_0%,rgba(16,44,87,.72)_50%,rgba(16,44,87,.28)_100%)]"></div>
+        <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-ink to-transparent"></div>
 
-        <div class="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-5 pb-24 pt-36 lg:px-8 lg:pb-28">
-          <div class="max-w-5xl" data-reveal>
-            <p class="mb-6 inline-flex items-center gap-3 text-sm font-black uppercase tracking-[0.22em] text-citrus">
-              <span class="h-2 w-2 rounded-full bg-ember"></span>
-              Strategy, film, social, web
+        <div class="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-5 pb-28 pt-40 lg:px-8 lg:pb-36 lg:pt-48">
+          <div class="max-w-4xl" data-reveal>
+            <p class="mb-7 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-paper/55">
+              <span class="h-1.5 w-1.5 rounded-full bg-ember"></span>
+              Brand studio
             </p>
-            <h1 class="max-w-5xl text-balance text-6xl font-black leading-[0.88] md:text-8xl lg:text-[8.8rem]">
-              Raham Media builds brands people can feel.
+            <h1 class="font-display text-6xl leading-[0.88] text-paper md:text-8xl lg:text-[8rem]">
+              Rahma Media builds brands people can feel.
             </h1>
-            <div class="mt-8 grid gap-7 md:grid-cols-[1fr_auto] md:items-end">
-              <p class="max-w-2xl text-lg leading-8 text-paper/82 md:text-xl">
-                A sharp creative studio for founders, artists, and businesses that need premium visuals, high-converting campaigns, and a digital presence with pulse.
+            <div class="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+              <p class="max-w-xl text-lg leading-[1.75] text-paper/70 md:text-xl">
+                We build brands that speak with clarity, intention, and impact — from identity systems to integrated campaigns that drive real results.
               </p>
-              <div class="flex flex-wrap gap-3">
-                <a href="#work" class="rounded-full bg-ember px-6 py-4 text-sm font-black text-paper transition hover:-translate-y-1 hover:bg-citrus hover:text-ink">
-                  View work
+              <div class="flex shrink-0 flex-wrap gap-3">
+                <a href="#about" class="rounded-full bg-ember px-7 py-3.5 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-paper">
+                  About us
                 </a>
-                <a href="#contact" class="rounded-full border border-paper/35 px-6 py-4 text-sm font-black text-paper transition hover:-translate-y-1 hover:border-paper hover:bg-paper hover:text-ink">
+                <a href="#contact" class="rounded-full border border-paper/30 px-7 py-3.5 text-sm font-semibold text-paper transition hover:-translate-y-0.5 hover:border-paper hover:bg-paper hover:text-ink">
                   Book a call
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="mt-16 grid border-y border-paper/15 py-6 text-paper/80 sm:grid-cols-3" data-reveal>
-            <div class="py-3">
-              <p class="text-4xl font-black text-paper"><span data-count="128">0</span>+</p>
-              <p class="mt-1 text-sm uppercase tracking-[0.18em]">Campaign assets</p>
-            </div>
-            <div class="border-paper/15 py-3 sm:border-l sm:pl-8">
-              <p class="text-4xl font-black text-paper"><span data-count="42">0</span>%</p>
-              <p class="mt-1 text-sm uppercase tracking-[0.18em]">Avg. lift in reach</p>
-            </div>
-            <div class="border-paper/15 py-3 sm:border-l sm:pl-8">
-              <p class="text-4xl font-black text-paper"><span data-count="14">0</span>d</p>
-              <p class="mt-1 text-sm uppercase tracking-[0.18em]">Launch sprint</p>
+          <!-- Ticker -->
+          <div class="mt-20 overflow-hidden border-y border-paper/12 py-5" aria-hidden="true">
+            <div class="ticker-track flex items-center whitespace-nowrap">
+              <span class="inline-flex items-center gap-10 pr-10 text-xs font-semibold uppercase tracking-[0.28em] text-paper/45">
+                <span class="text-paper/90">Social Media</span>
+                <span class="text-paper/20">—</span>
+                <span>Visual Identity</span>
+                <span class="text-paper/20">—</span>
+                <span class="text-paper/90">Brand Strategy</span>
+                <span class="text-paper/20">—</span>
+                <span>Digital Marketing</span>
+                <span class="text-paper/20">—</span>
+                <span class="text-paper/90">Content Creation</span>
+                <span class="text-paper/20">—</span>
+                <span>Social Media</span>
+                <span class="text-paper/20">—</span>
+                <span class="text-paper/90">Visual Identity</span>
+                <span class="text-paper/20">—</span>
+                <span>Brand Strategy</span>
+                <span class="text-paper/20">—</span>
+                <span class="text-paper/90">Digital Marketing</span>
+                <span class="text-paper/20">—</span>
+                <span>Content Creation</span>
+                <span class="text-paper/20">—</span>
+              </span>
+              <span class="inline-flex items-center gap-10 pr-10 text-xs font-semibold uppercase tracking-[0.28em] text-paper/45" aria-hidden="true">
+                <span class="text-paper/90">Social Media</span>
+                <span class="text-paper/20">—</span>
+                <span>Visual Identity</span>
+                <span class="text-paper/20">—</span>
+                <span class="text-paper/90">Brand Strategy</span>
+                <span class="text-paper/20">—</span>
+                <span>Digital Marketing</span>
+                <span class="text-paper/20">—</span>
+                <span class="text-paper/90">Content Creation</span>
+                <span class="text-paper/20">—</span>
+                <span>Social Media</span>
+                <span class="text-paper/20">—</span>
+                <span class="text-paper/90">Visual Identity</span>
+                <span class="text-paper/20">—</span>
+                <span>Brand Strategy</span>
+                <span class="text-paper/20">—</span>
+                <span class="text-paper/90">Digital Marketing</span>
+                <span class="text-paper/20">—</span>
+                <span>Content Creation</span>
+                <span class="text-paper/20">—</span>
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="work" class="bg-ink px-5 py-24 text-paper lg:px-8">
-        <div class="mx-auto max-w-7xl">
-          <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end" data-reveal>
-            <div>
-              <p class="text-sm font-black uppercase tracking-[0.22em] text-tide">Selected work</p>
-              <h2 class="mt-4 text-5xl font-black leading-none md:text-7xl">Designed to stop the scroll.</h2>
-            </div>
-            <div class="lg:justify-self-end">
-              <div class="flex flex-wrap gap-2 rounded-full bg-paper/8 p-2" role="tablist" aria-label="Filter portfolio projects">
-                <button class="filter-pill is-active" type="button" data-filter="all">All</button>
-                <button class="filter-pill" type="button" data-filter="film">Film</button>
-                <button class="filter-pill" type="button" data-filter="social">Social</button>
-                <button class="filter-pill" type="button" data-filter="web">Web</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3" data-project-grid>
-            <article class="project-card lg:col-span-2" data-category="film">
-              <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=85" alt="Cinema camera recording on a production set" />
-              <div>
-                <p>Launch Film</p>
-                <h3>Founder story cut for a premium product release.</h3>
-              </div>
-            </article>
-            <article class="project-card" data-category="social">
-              <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=85" alt="Content creator planning social media posts" />
-              <div>
-                <p>Social System</p>
-                <h3>Daily short-form engine with repeatable content pillars.</h3>
-              </div>
-            </article>
-            <article class="project-card" data-category="web">
-              <img src="https://images.unsplash.com/photo-1558655146-364adaf25a79?auto=format&fit=crop&w=1200&q=85" alt="Designer reviewing a website interface" />
-              <div>
-                <p>Web Experience</p>
-                <h3>Editorial landing page for a high-ticket offer.</h3>
-              </div>
-            </article>
-            <article class="project-card lg:col-span-2" data-category="social">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=85" alt="Marketing team building a creative campaign plan" />
-              <div>
-                <p>Campaign Sprint</p>
-                <h3>Thirty-day rollout across reels, ads, and launch email.</h3>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" class="bg-paper px-5 py-24 lg:px-8">
-        <div class="mx-auto max-w-7xl">
-          <div class="max-w-3xl" data-reveal>
-            <p class="text-sm font-black uppercase tracking-[0.22em] text-ember">Services</p>
-            <h2 class="mt-4 text-5xl font-black leading-none md:text-7xl">One studio for the whole story.</h2>
-          </div>
-
-          <div class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <article class="service-card" data-reveal>
-              <span>01</span>
-              <h3>Brand Strategy</h3>
-              <p>Positioning, messaging, visual direction, and launch plans that make every asset easier to produce.</p>
-            </article>
-            <article class="service-card" data-reveal>
-              <span>02</span>
-              <h3>Video Production</h3>
-              <p>Cinematic brand films, founder stories, product demos, event recaps, and short-form content packages.</p>
-            </article>
-            <article class="service-card" data-reveal>
-              <span>03</span>
-              <h3>Social Growth</h3>
-              <p>Content calendars, edit systems, paid creative, hooks, thumbnails, and analytics-backed iteration.</p>
-            </article>
-            <article class="service-card" data-reveal>
-              <span>04</span>
-              <h3>Web Design</h3>
-              <p>Beautiful responsive pages for launches, portfolios, service offers, and conversion-focused campaigns.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="process" class="overflow-hidden bg-[#171719] px-5 py-24 text-paper lg:px-8">
-        <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+      <!-- About -->
+      <section id="about" class="bg-paper px-5 py-32 text-ink lg:px-8 lg:py-40">
+        <div class="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-24">
           <div data-reveal>
-            <p class="text-sm font-black uppercase tracking-[0.22em] text-citrus">Process</p>
-            <h2 class="mt-4 text-5xl font-black leading-none md:text-7xl">From signal to launch in weeks.</h2>
-            <p class="mt-7 max-w-xl text-lg leading-8 text-paper/72">
+            <p class="text-xs font-semibold uppercase tracking-[0.28em] text-tide">About</p>
+            <h2 class="mt-5 font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl">A marketing agency with good taste.</h2>
+          </div>
+          <div class="space-y-7 text-lg leading-[1.8] text-ink/68" data-reveal>
+            <p>
+              Rahma Media is the kind of studio that looks at a brand, squints thoughtfully, says something about culture, and then makes the internet look a little more expensive.
+            </p>
+            <p>
+              We make campaigns, content, websites, launch ideas, little brand moments, big brand moments, and the occasional slide deck that makes everyone in the room nod like they just discovered strategy.
+            </p>
+            <p>
+              The vibe is simple: sharp visuals, clean messaging, good rhythm, fast edits, better taste.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="services-page px-5 py-24 text-paper lg:px-8 lg:py-28">
+        <div class="mx-auto min-h-[720px] max-w-7xl">
+          <h2 class="services-title" data-reveal>Our Services</h2>
+
+          <div class="services-list" data-reveal>
+            <article class="service-row">
+              <h3>Free Consultation</h3>
+              <p>1 hr</p>
+              <a href="#contact">Book Now</a>
+            </article>
+            <article class="service-row">
+              <h3>Brand Direction</h3>
+              <p>1 hr<br /><span>US$100</span></p>
+              <a href="#contact">Book Now</a>
+            </article>
+            <article class="service-row">
+              <h3>Campaign Planning</h3>
+              <p>1 hr<br /><span>US$100</span></p>
+              <a href="#contact">Book Now</a>
+            </article>
+            <article class="service-row">
+              <h3>Content Management</h3>
+              <p>1 hr<br /><span>US$100</span></p>
+              <a href="#contact">Book Now</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section id="process" class="overflow-hidden bg-ink px-5 py-32 text-paper lg:px-8 lg:py-40">
+        <div class="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-20">
+          <div data-reveal>
+            <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ember">Process</p>
+            <h2 class="mt-5 font-display text-5xl leading-[1.0] text-paper md:text-6xl lg:text-7xl">From signal to launch in weeks.</h2>
+            <p class="mt-8 max-w-lg text-lg leading-[1.8] text-paper/60">
               The workflow is tight on purpose: clarify what needs to move, make the work, measure the response, then sharpen the next wave.
             </p>
           </div>
@@ -237,7 +256,7 @@
               alt="Creative team workshopping a launch plan at a table"
               class="aspect-[4/5] w-full object-cover md:aspect-[5/4]"
             />
-            <div class="absolute inset-x-4 bottom-4 grid gap-3 bg-ink/78 p-4 backdrop-blur-xl sm:grid-cols-3">
+            <div class="absolute inset-x-4 bottom-4 grid gap-4 bg-paper/92 p-6 text-ink backdrop-blur-xl sm:grid-cols-3">
               <div class="process-step">
                 <span>01</span>
                 <strong>Map</strong>
@@ -258,31 +277,33 @@
         </div>
       </section>
 
-      <section class="bg-ember px-5 py-20 text-ink lg:px-8">
-        <div class="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center" data-reveal>
-          <h2 class="text-5xl font-black leading-none md:text-7xl">Bring the idea. We’ll make it impossible to ignore.</h2>
-          <p class="text-xl font-bold leading-8">
+      <!-- CTA -->
+      <section class="bg-citrus px-5 py-28 text-ink lg:px-8 lg:py-36">
+        <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.2fr_0.8fr] md:items-center" data-reveal>
+          <h2 class="font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl">Bring the idea. We'll make it impossible to ignore.</h2>
+          <p class="text-lg leading-[1.8] text-ink/72">
             Built for teams that want taste, speed, and a launch partner who can move from strategy to finished creative without losing the thread.
           </p>
         </div>
       </section>
 
-      <section id="contact" class="bg-paper px-5 py-24 lg:px-8">
-        <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+      <!-- Contact -->
+      <section id="contact" class="bg-paper px-5 py-32 lg:px-8 lg:py-40">
+        <div class="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
           <div data-reveal>
-            <p class="text-sm font-black uppercase tracking-[0.22em] text-ember">Contact</p>
-            <h2 class="mt-4 text-5xl font-black leading-none md:text-7xl">Tell us what you’re building.</h2>
-            <p class="mt-7 text-lg leading-8 text-ink/70">
+            <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ember">Contact</p>
+            <h2 class="mt-5 font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl">Tell us what you're building.</h2>
+            <p class="mt-8 text-lg leading-[1.8] text-ink/65">
               Share the rough version. The launch date, the audience, the problem, the dream. We can shape the rest together.
             </p>
-            <div class="mt-9 space-y-3 text-lg font-bold">
-              <a class="block hover:text-ember" href="mailto:hello@rahammedia.com">hello@rahammedia.com</a>
-              <a class="block hover:text-ember" href="tel:+13125550148">+1 312 555 0148</a>
+            <div class="mt-10 space-y-3 text-base font-medium">
+              <a class="block text-ink/80 transition hover:text-ink" href="mailto:hello@rahmamedia.com">hello@rahmamedia.com</a>
+              <a class="block text-ink/80 transition hover:text-ink" href="tel:+13125550148">+1 312 555 0148</a>
             </div>
           </div>
 
           <form class="contact-form" data-contact-form data-reveal>
-            <div class="grid gap-4 sm:grid-cols-2">
+            <div class="grid gap-6 sm:grid-cols-2">
               <label>
                 <span>Name</span>
                 <input name="name" type="text" autocomplete="name" required />
@@ -305,22 +326,23 @@
               <span>What should this project accomplish?</span>
               <textarea name="message" rows="5" required></textarea>
             </label>
-            <div class="flex flex-wrap items-center gap-4">
+            <div class="flex flex-wrap items-center gap-5">
               <button type="submit">Send inquiry</button>
-              <p class="text-sm font-semibold text-ink/58" data-form-status aria-live="polite"></p>
+              <p class="text-sm text-ink/50" data-form-status aria-live="polite"></p>
             </div>
           </form>
         </div>
       </section>
     </main>
 
-    <footer class="bg-ink px-5 py-8 text-paper lg:px-8">
-      <div class="mx-auto flex max-w-7xl flex-col gap-4 text-sm font-semibold text-paper/68 md:flex-row md:items-center md:justify-between">
-        <p>© <span data-year></span> Raham Media. Crafted for launch momentum.</p>
-        <div class="flex gap-5">
-          <a class="hover:text-citrus" href="#work">Work</a>
-          <a class="hover:text-citrus" href="#services">Services</a>
-          <a class="hover:text-citrus" href="#contact">Contact</a>
+    <footer class="bg-ink px-5 py-10 text-paper lg:px-8 lg:py-12">
+      <div class="mx-auto flex max-w-7xl flex-col gap-5 text-sm text-paper/50 md:flex-row md:items-center md:justify-between">
+        <p class="font-display text-base font-normal tracking-tight text-paper/70">Rahma Media</p>
+        <p>© <span data-year></span> Rahma Media. Crafted for launch momentum.</p>
+        <div class="flex gap-6 font-medium text-paper/60">
+          <a class="transition hover:text-paper" href="#about">About</a>
+          <a class="transition hover:text-paper" href="#services">Services</a>
+          <a class="transition hover:text-paper" href="#contact">Contact</a>
         </div>
       </div>
     </footer>

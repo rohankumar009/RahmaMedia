@@ -1,0 +1,303 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(218, 192, 163, 0.22), transparent 28rem),
+    #f8f0e5;
+}
+
+::selection {
+  background: #dac0a3;
+  color: #102c57;
+}
+
+/* ---- Global heading typography ---- */
+h1,
+h2,
+h3 {
+  font-family: "Gelasio", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+h1 { letter-spacing: -0.03em; }
+h2 { letter-spacing: -0.025em; }
+h3 { letter-spacing: -0.015em; }
+
+.text-balance { text-wrap: balance; }
+
+/* ---- Logo ---- */
+.logo-wordmark {
+  font-family: "Gelasio", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  line-height: 0.95;
+}
+
+/* ---- Header ---- */
+[data-header].is-scrolled {
+  background: rgba(16, 44, 87, 0.9);
+  border-bottom: 1px solid rgba(248, 240, 229, 0.12);
+  backdrop-filter: blur(24px);
+}
+
+/* ---- Nav links ---- */
+.nav-link {
+  position: relative;
+  transition: color 180ms ease;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.35rem;
+  left: 0;
+  height: 1.5px;
+  background: #eadbc8;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 240ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #eadbc8;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---- Mobile menu icon ---- */
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  display: block;
+  width: 1.2rem;
+  height: 1.5px;
+  border-radius: 99px;
+  background: #102c57;
+  content: "";
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.menu-icon::before { transform: translateY(-6px); }
+.menu-icon::after  { transform: translateY(4.5px); }
+
+[data-menu-button][aria-expanded="true"] .menu-icon         { transform: rotate(45deg); }
+[data-menu-button][aria-expanded="true"] .menu-icon::before { opacity: 0; }
+[data-menu-button][aria-expanded="true"] .menu-icon::after  { transform: translateY(-1.5px) rotate(-90deg); }
+
+/* ---- Services page ---- */
+.services-page {
+  background: #dac0a3;
+}
+
+.services-title {
+  color: #102c57;
+  font-family: "Gelasio", Georgia, "Times New Roman", serif;
+  font-size: clamp(5rem, 13.5vw, 11.5rem);
+  font-weight: 400;
+  line-height: 0.84;
+  letter-spacing: -0.035em;
+}
+
+.services-list {
+  margin-top: clamp(8rem, 17vw, 16rem);
+  margin-left: auto;
+  max-width: 56rem;
+  border-top: 1px solid rgba(16, 44, 87, 0.22);
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(7rem, 0.45fr) 9.5rem;
+  gap: 2rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(16, 44, 87, 0.14);
+  padding: 1.8rem 0;
+  color: #102c57;
+}
+
+.service-row h3 {
+  font-family: "Gelasio", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 2.8vw, 2.35rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+
+.service-row p {
+  color: rgba(16, 44, 87, 0.66);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.service-row span {
+  display: block;
+  margin-top: 0.2rem;
+  color: rgba(16, 44, 87, 0.82);
+  font-weight: 600;
+}
+
+.service-row a {
+  display: inline-flex;
+  min-height: 2.8rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(16, 44, 87, 0.5);
+  color: #102c57;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.service-row a:hover,
+.service-row a:focus-visible {
+  background: #102c57;
+  color: #f8f0e5;
+  transform: translateY(-1px);
+}
+
+/* ---- Process steps ---- */
+.process-step {
+  border-left: 1.5px solid rgba(16, 44, 87, 0.35);
+  padding-left: 1rem;
+}
+
+.process-step span {
+  color: rgba(16, 44, 87, 0.5);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.process-step strong {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: "Gelasio", Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: #102c57;
+}
+
+.process-step p {
+  margin-top: 0.4rem;
+  color: rgba(16, 44, 87, 0.58);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+/* ---- Contact form ---- */
+.contact-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.contact-form span {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(16, 44, 87, 0.55);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1.5px solid rgba(16, 44, 87, 0.18);
+  background: transparent;
+  padding: 0.75rem 0;
+  color: #102c57;
+  font: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 180ms ease;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  border: 1.5px solid rgba(16, 44, 87, 0.18);
+  padding: 0.85rem 1rem;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #102c57;
+}
+
+.contact-form button {
+  align-self: start;
+  border-radius: 999px;
+  background: #102c57;
+  padding: 1rem 2.2rem;
+  color: #f8f0e5;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.contact-form button:hover,
+.contact-form button:focus-visible {
+  background: #dac0a3;
+  color: #102c57;
+  transform: translateY(-2px);
+}
+
+/* ---- Reveal animation ---- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .services-list {
+    margin-top: 5.5rem;
+  }
+
+  .service-row {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding: 1.5rem 0;
+  }
+
+  .service-row a {
+    width: 100%;
+  }
+}
