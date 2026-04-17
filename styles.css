@@ -27,9 +27,11 @@ h3 {
   text-wrap: balance;
 }
 
-h1 { letter-spacing: -0.03em; }
-h2 { letter-spacing: -0.025em; }
-h3 { letter-spacing: -0.015em; }
+h1,
+h2,
+h3 {
+  letter-spacing: 0;
+}
 
 .text-balance { text-wrap: balance; }
 
@@ -110,11 +112,13 @@ h3 { letter-spacing: -0.015em; }
   font-size: clamp(5rem, 13.5vw, 11.5rem);
   font-weight: 400;
   line-height: 0.84;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
+  text-align: center;
 }
 
 .services-list {
-  margin-top: clamp(8rem, 17vw, 16rem);
+  margin-top: clamp(5.5rem, 11vw, 10rem);
+  margin-right: auto;
   margin-left: auto;
   max-width: 56rem;
   border-top: 1px solid rgba(16, 44, 87, 0.22);
@@ -135,7 +139,7 @@ h3 { letter-spacing: -0.015em; }
   font-size: clamp(1.65rem, 2.8vw, 2.35rem);
   font-weight: 400;
   line-height: 1.05;
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
 }
 
 .service-row p {
@@ -195,7 +199,7 @@ h3 { letter-spacing: -0.015em; }
   font-size: 1.15rem;
   font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   color: #102c57;
 }
 
@@ -288,7 +292,7 @@ h3 { letter-spacing: -0.015em; }
 /* ---- Responsive ---- */
 @media (max-width: 640px) {
   .services-list {
-    margin-top: 5.5rem;
+    margin-top: 3.5rem;
   }
 
   .service-row {
