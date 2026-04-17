@@ -40,21 +40,97 @@ h3 {
   font-family: "Gelasio", Georgia, "Times New Roman", serif;
   font-weight: 700;
   letter-spacing: 0;
-  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  font-size: clamp(1.55rem, 2.8vw, 2.2rem);
   line-height: 0.95;
 }
 
 /* ---- Header ---- */
-[data-header].is-scrolled {
-  background: rgba(16, 44, 87, 0.9);
-  border-bottom: 1px solid rgba(248, 240, 229, 0.12);
-  backdrop-filter: blur(24px);
+[data-header] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  color: #f8f0e5;
+  transition: color 0.4s ease;
+}
+
+[data-header]::before {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 0;
+  height: 9rem;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(16, 44, 87, 0.58) 0%, rgba(16, 44, 87, 0.26) 48%, rgba(16, 44, 87, 0) 100%);
+  content: "";
+  transition: background 0.4s ease;
+}
+
+[data-header] nav,
+[data-mobile-menu] {
+  position: relative;
+  z-index: 1;
+}
+
+[data-header].nav-theme-light {
+  color: #102c57;
+}
+
+[data-header].nav-theme-light::before {
+  background: linear-gradient(180deg, rgba(248, 240, 229, 0.78) 0%, rgba(248, 240, 229, 0.34) 48%, rgba(248, 240, 229, 0) 100%);
+}
+
+[data-header].nav-theme-dark {
+  color: #f8f0e5;
+}
+
+[data-header].nav-theme-dark::before {
+  background: linear-gradient(180deg, rgba(16, 44, 87, 0.58) 0%, rgba(16, 44, 87, 0.26) 48%, rgba(16, 44, 87, 0) 100%);
+}
+
+[data-header] a,
+[data-header] button,
+.logo-wordmark,
+.nav-link,
+.nav-cta {
+  color: currentColor;
+  transition: color 0.4s ease, border-color 0.4s ease, background-color 0.4s ease, transform 180ms ease;
+}
+
+[data-header] .nav-link,
+[data-header] .nav-cta {
+  font-size: clamp(1rem, 1.05vw, 1.12rem);
+}
+
+.nav-cta {
+  border-color: color-mix(in srgb, currentColor 48%, transparent);
+}
+
+.nav-cta:hover,
+.nav-cta:focus-visible {
+  transform: translateY(-1px);
+}
+
+.nav-theme-light .nav-cta:hover,
+.nav-theme-light .nav-cta:focus-visible {
+  background: #102c57;
+  color: #f8f0e5;
+}
+
+.nav-theme-dark .nav-cta:hover,
+.nav-theme-dark .nav-cta:focus-visible {
+  background: #f8f0e5;
+  color: #102c57;
 }
 
 /* ---- Nav links ---- */
 .nav-link {
   position: relative;
-  transition: color 180ms ease;
 }
 
 .nav-link::after {
@@ -63,7 +139,7 @@ h3 {
   bottom: -0.35rem;
   left: 0;
   height: 1.5px;
-  background: #eadbc8;
+  background: currentColor;
   content: "";
   transform: scaleX(0);
   transform-origin: right;
@@ -72,7 +148,7 @@ h3 {
 
 .nav-link:hover,
 .nav-link:focus-visible {
-  color: #eadbc8;
+  color: currentColor;
 }
 
 .nav-link:hover::after,
@@ -89,9 +165,9 @@ h3 {
   width: 1.2rem;
   height: 1.5px;
   border-radius: 99px;
-  background: #102c57;
+  background: currentColor;
   content: "";
-  transition: transform 200ms ease, opacity 200ms ease;
+  transition: transform 200ms ease, opacity 200ms ease, background-color 0.4s ease;
 }
 
 .menu-icon::before { transform: translateY(-6px); }
@@ -101,9 +177,15 @@ h3 {
 [data-menu-button][aria-expanded="true"] .menu-icon::before { opacity: 0; }
 [data-menu-button][aria-expanded="true"] .menu-icon::after  { transform: translateY(-1.5px) rotate(-90deg); }
 
+/* ---- About page ---- */
+.about-page {
+  color: #452829;
+}
+
 /* ---- Services page ---- */
 .services-page {
   background: #dac0a3;
+  color: #102c57;
 }
 
 .services-title {
@@ -121,7 +203,7 @@ h3 {
   margin-right: auto;
   margin-left: auto;
   max-width: 56rem;
-  border-top: 1px solid rgba(16, 44, 87, 0.22);
+  border-top: 1px solid rgba(16, 44, 87, 0.24);
 }
 
 .service-row {
@@ -129,7 +211,7 @@ h3 {
   grid-template-columns: minmax(0, 1.35fr) minmax(7rem, 0.45fr) 9.5rem;
   gap: 2rem;
   align-items: center;
-  border-bottom: 1px solid rgba(16, 44, 87, 0.14);
+  border-bottom: 1px solid rgba(16, 44, 87, 0.16);
   padding: 1.8rem 0;
   color: #102c57;
 }
@@ -143,7 +225,7 @@ h3 {
 }
 
 .service-row p {
-  color: rgba(16, 44, 87, 0.66);
+  color: rgba(16, 44, 87, 0.68);
   font-family: Inter, system-ui, sans-serif;
   font-size: 0.88rem;
   line-height: 1.6;
@@ -152,7 +234,7 @@ h3 {
 .service-row span {
   display: block;
   margin-top: 0.2rem;
-  color: rgba(16, 44, 87, 0.82);
+  color: rgba(16, 44, 87, 0.84);
   font-weight: 600;
 }
 

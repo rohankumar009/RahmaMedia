@@ -57,15 +57,15 @@
       Skip to content
     </a>
 
-    <header class="fixed inset-x-0 top-0 z-50 transition duration-300" data-header>
+    <header class="fixed inset-x-0 top-0 z-50" data-header>
       <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8" aria-label="Main navigation">
         <a href="#" class="group flex items-center" aria-label="Rahma Media home">
-          <span class="logo-wordmark text-paper transition group-hover:text-ember">
+          <span class="logo-wordmark transition">
             Rahma Media
           </span>
         </a>
 
-        <div class="hidden items-center gap-8 rounded-full bg-paper/10 px-6 py-3 text-sm font-medium text-paper backdrop-blur-xl lg:flex">
+        <div class="hidden items-center gap-8 px-6 py-3 text-sm font-medium lg:flex">
           <a class="nav-link" href="index.html">Home</a>
           <a class="nav-link" href="portfolio.html">Portfolio</a>
           <a class="nav-link" href="#about">About</a>
@@ -76,13 +76,13 @@
 
         <a
           href="#contact"
-          class="hidden rounded-full border border-paper/40 px-5 py-2.5 text-sm font-semibold text-paper transition hover:bg-paper hover:text-ink lg:inline-flex"
+          class="nav-cta hidden rounded-full border px-5 py-2.5 text-sm font-semibold transition lg:inline-flex"
         >
           Start a project
         </a>
 
         <button
-          class="grid h-10 w-10 place-items-center rounded-full bg-paper text-ink lg:hidden"
+          class="grid h-10 w-10 place-items-center rounded-full bg-transparent lg:hidden"
           type="button"
           aria-label="Open menu"
           aria-expanded="false"
@@ -107,13 +107,12 @@
     <main id="main">
 
       <!-- Hero -->
-      <section class="relative flex flex-col overflow-hidden bg-black text-paper">
+      <section class="relative flex flex-col overflow-hidden bg-paper text-paper" data-nav-theme="dark">
         <img
           src="./assets/hero.jpg"
           alt="Rahma Media creative studio"
-          class="absolute inset-0 h-full w-full object-cover opacity-55"
+          class="absolute inset-0 h-full w-full object-cover"
         />
-        <div class="absolute inset-0 bg-black/40"></div>
 
         <!-- Hero content — fills viewport height -->
         <div class="relative flex min-h-screen flex-col justify-center">
@@ -195,13 +194,13 @@
       </section>
 
       <!-- About -->
-      <section id="about" class="bg-paper px-5 py-32 text-ink lg:px-8 lg:py-40">
+      <section id="about" class="about-page bg-paper px-5 py-32 lg:px-8 lg:py-40" data-nav-theme="light">
         <div class="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-24">
           <div data-reveal>
             <p class="text-xs font-semibold uppercase tracking-[0.28em] text-tide">About</p>
             <h2 class="mt-5 font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl">A marketing agency with good taste.</h2>
           </div>
-          <div class="space-y-7 text-lg leading-[1.8] text-ink/68" data-reveal>
+          <div class="space-y-7 text-lg leading-[1.8]" data-reveal>
             <p>
               Rahma Media is the kind of studio that looks at a brand, squints thoughtfully, says something about culture, and then makes the internet look a little more expensive.
             </p>
@@ -216,7 +215,7 @@
       </section>
 
       <!-- Services -->
-      <section id="services" class="services-page px-5 py-24 text-paper lg:px-8 lg:py-28">
+      <section id="services" class="services-page px-5 py-24 lg:px-8 lg:py-28" data-nav-theme="light">
         <div class="mx-auto min-h-[720px] max-w-7xl">
           <h2 class="services-title" data-reveal>Our Services</h2>
 
@@ -246,7 +245,7 @@
       </section>
 
       <!-- Process -->
-      <section id="process" class="overflow-hidden bg-ink px-5 py-32 text-paper lg:px-8 lg:py-40">
+      <section id="process" class="overflow-hidden bg-ink px-5 py-32 text-paper lg:px-8 lg:py-40" data-nav-theme="dark">
         <div class="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-20">
           <div data-reveal>
             <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ember">Process</p>
@@ -284,7 +283,7 @@
       </section>
 
       <!-- CTA -->
-      <section class="bg-citrus px-5 py-28 text-ink lg:px-8 lg:py-36">
+      <section class="bg-citrus px-5 py-28 text-ink lg:px-8 lg:py-36" data-nav-theme="light">
         <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.2fr_0.8fr] md:items-center" data-reveal>
           <h2 class="font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl">Bring the idea. We'll make it impossible to ignore.</h2>
           <p class="text-lg leading-[1.8] text-ink/72">
@@ -294,7 +293,7 @@
       </section>
 
       <!-- Contact -->
-      <section id="contact" class="bg-paper px-5 py-32 lg:px-8 lg:py-40">
+      <section id="contact" class="bg-paper px-5 py-32 lg:px-8 lg:py-40" data-nav-theme="light">
         <div class="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
           <div data-reveal>
             <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ember">Contact</p>
@@ -303,8 +302,8 @@
               Share the rough version. The launch date, the audience, the problem, the dream. We can shape the rest together.
             </p>
             <div class="mt-10 space-y-3 text-base font-medium">
-              <a class="block text-ink/80 transition hover:text-ink" href="mailto:hello@rahmamedia.com">hello@rahmamedia.com</a>
-              <a class="block text-ink/80 transition hover:text-ink" href="tel:+13125550148">+1 312 555 0148</a>
+              <a class="block text-ink/80 transition hover:text-ink" href="mailto:rahma13swar@gmail.com">rahma13swar@gmail.com</a>
+              <a class="block text-ink/80 transition hover:text-ink" href="tel:+966501877873">Phone: +966 50 187 7873</a>
             </div>
           </div>
 
@@ -341,7 +340,7 @@
       </section>
     </main>
 
-    <footer class="bg-ink px-5 py-10 text-paper lg:px-8 lg:py-12">
+    <footer class="bg-ink px-5 py-10 text-paper lg:px-8 lg:py-12" data-nav-theme="dark">
       <div class="mx-auto flex max-w-7xl flex-col gap-5 text-sm text-paper/50 md:flex-row md:items-center md:justify-between">
         <p class="font-display text-base font-normal tracking-tight text-paper/70">Rahma Media</p>
         <p>© <span data-year></span> Rahma Media. Crafted for launch momentum.</p>

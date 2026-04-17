@@ -36,15 +36,15 @@
   </head>
   <body class="bg-paper font-body text-ink antialiased">
 
-    <header class="fixed inset-x-0 top-0 z-50 transition duration-300" data-header>
+    <header class="fixed inset-x-0 top-0 z-50" data-header>
       <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8" aria-label="Main navigation">
         <a href="index.html" class="group flex items-center" aria-label="Rahma Media home">
-          <span class="logo-wordmark text-paper transition group-hover:text-ember">
+          <span class="logo-wordmark transition">
             Rahma Media
           </span>
         </a>
 
-        <div class="hidden items-center gap-8 rounded-full bg-paper/10 px-6 py-3 text-sm font-medium text-paper backdrop-blur-xl lg:flex">
+        <div class="hidden items-center gap-8 px-6 py-3 text-sm font-medium lg:flex">
           <a class="nav-link" href="index.html">Home</a>
           <a class="nav-link" href="portfolio.html">Portfolio</a>
           <a class="nav-link" href="index.html#about">About</a>
@@ -55,13 +55,13 @@
 
         <a
           href="index.html#contact"
-          class="hidden rounded-full border border-paper/40 px-5 py-2.5 text-sm font-semibold text-paper transition hover:bg-paper hover:text-ink lg:inline-flex"
+          class="nav-cta hidden rounded-full border px-5 py-2.5 text-sm font-semibold transition lg:inline-flex"
         >
           Start a project
         </a>
 
         <button
-          class="grid h-10 w-10 place-items-center rounded-full bg-paper text-ink lg:hidden"
+          class="grid h-10 w-10 place-items-center rounded-full bg-transparent lg:hidden"
           type="button"
           aria-label="Open menu"
           aria-expanded="false"
@@ -85,7 +85,7 @@
 
     <main>
       <!-- Page header -->
-      <section class="bg-ink px-5 pb-20 pt-40 text-paper lg:px-8 lg:pb-28 lg:pt-52">
+      <section class="bg-ink px-5 pb-20 pt-40 text-paper lg:px-8 lg:pb-28 lg:pt-52" data-nav-theme="dark">
         <div class="mx-auto max-w-7xl" data-reveal>
           <p class="text-xs font-semibold uppercase tracking-[0.28em] text-paper/45">Selected work</p>
           <h1 class="mt-5 font-display text-6xl leading-[0.88] md:text-8xl lg:text-[7rem]">Portfolio</h1>
@@ -96,7 +96,7 @@
       </section>
 
       <!-- Grid -->
-      <section class="bg-paper px-5 py-20 lg:px-8 lg:py-28">
+      <section class="bg-paper px-5 py-20 lg:px-8 lg:py-28" data-nav-theme="light">
         <div class="mx-auto max-w-7xl">
           <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 
@@ -171,7 +171,7 @@
       </section>
 
       <!-- CTA -->
-      <section class="bg-ink px-5 py-28 text-paper lg:px-8 lg:py-36">
+      <section class="bg-ink px-5 py-28 text-paper lg:px-8 lg:py-36" data-nav-theme="dark">
         <div class="mx-auto max-w-7xl" data-reveal>
           <h2 class="font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl">Ready to be next?</h2>
           <p class="mt-6 max-w-lg text-lg leading-[1.8] text-paper/60">
@@ -184,7 +184,7 @@
       </section>
     </main>
 
-    <footer class="bg-ink px-5 py-10 text-paper lg:px-8 lg:py-12">
+    <footer class="bg-ink px-5 py-10 text-paper lg:px-8 lg:py-12" data-nav-theme="dark">
       <div class="mx-auto flex max-w-7xl flex-col gap-5 text-sm text-paper/50 md:flex-row md:items-center md:justify-between">
         <p class="font-display text-base font-normal tracking-tight text-paper/70">Rahma Media</p>
         <p>© <span data-year></span> Rahma Media. Crafted for launch momentum.</p>

@@ -6,15 +6,39 @@ const counters = [...document.querySelectorAll("[data-count]")];
 const contactForm = document.querySelector("[data-contact-form]");
 const formStatus = document.querySelector("[data-form-status]");
 const year = document.querySelector("[data-year]");
+const navThemeSections = [...document.querySelectorAll("[data-nav-theme]")];
 
 year.textContent = new Date().getFullYear();
 
-const setHeaderState = () => {
-  header.classList.toggle("is-scrolled", window.scrollY > 18);
+const getCurrentNavTheme = () => {
+  const probeY = 1;
+  const activeSection = navThemeSections.find((section) => {
+    const rect = section.getBoundingClientRect();
+    return rect.top <= probeY && rect.bottom > probeY;
+  });
+
+  return activeSection?.dataset.navTheme ?? navThemeSections[0]?.dataset.navTheme;
 };
 
-setHeaderState();
-window.addEventListener("scroll", setHeaderState, { passive: true });
+const setNavTheme = (theme = "light") => {
+  const nextTheme = theme === "dark" ? "dark" : "light";
+  header.classList.toggle("nav-theme-dark", nextTheme === "dark");
+  header.classList.toggle("nav-theme-light", nextTheme === "light");
+};
+
+const updateNavTheme = () => setNavTheme(getCurrentNavTheme());
+
+updateNavTheme();
+
+const navThemeObserver = new IntersectionObserver(
+  () => updateNavTheme(),
+  {
+    rootMargin: "-1px 0px -99% 0px",
+    threshold: 0,
+  }
+);
+
+navThemeSections.forEach((section) => navThemeObserver.observe(section));
 
 menuButton.addEventListener("click", () => {
   const isOpen = menuButton.getAttribute("aria-expanded") === "true";
@@ -73,18 +97,20 @@ const counterObserver = new IntersectionObserver(
 
 counters.forEach((counter) => counterObserver.observe(counter));
 
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  if (!contactForm.checkValidity()) {
-    formStatus.textContent = "Please fill in the required details.";
-    contactForm.reportValidity();
-    return;
-  }
+    if (!contactForm.checkValidity()) {
+      formStatus.textContent = "Please fill in the required details.";
+      contactForm.reportValidity();
+      return;
+    }
 
-  const data = Object.fromEntries(new FormData(contactForm).entries());
-  const firstName = String(data.name).trim().split(" ")[0] || "there";
+    const data = Object.fromEntries(new FormData(contactForm).entries());
+    const firstName = String(data.name).trim().split(" ")[0] || "there";
 
-  formStatus.textContent = `Thanks, ${firstName}. Your inquiry is ready to wire into a backend.`;
-  contactForm.reset();
-});
+    formStatus.textContent = `Thanks, ${firstName}. Your inquiry is ready to wire into a backend.`;
+    contactForm.reset();
+  });
+}
