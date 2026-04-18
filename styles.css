@@ -184,8 +184,22 @@ h3 {
 
 /* ---- Services page ---- */
 .services-page {
-  background: #dac0a3;
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, rgba(248, 240, 229, 0.78), rgba(218, 192, 163, 0.42)),
+    url("./assets/hayatipink.jpg") center / cover;
   color: #102c57;
+}
+
+.services-page::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(253, 206, 223, 0.4), transparent 34rem),
+    linear-gradient(90deg, rgba(248, 240, 229, 0.22), rgba(248, 240, 229, 0.66), rgba(248, 240, 229, 0.22));
+  content: "";
 }
 
 .services-title {
@@ -203,7 +217,11 @@ h3 {
   margin-right: auto;
   margin-left: auto;
   max-width: 56rem;
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(1.1rem, 3vw, 2rem);
   border-top: 1px solid rgba(16, 44, 87, 0.24);
+  background: rgba(248, 240, 229, 0.44);
+  box-shadow: 0 24px 80px rgba(16, 44, 87, 0.1);
+  backdrop-filter: blur(7px);
 }
 
 .service-row {
