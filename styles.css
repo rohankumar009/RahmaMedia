@@ -381,7 +381,7 @@ h3 {
   padding: clamp(7.5rem, 10vw, 9rem) 0 clamp(4rem, 8vw, 6rem);
   background:
     linear-gradient(180deg, rgba(248, 240, 229, 0.18), rgba(248, 240, 229, 0.76)),
-    url("./assets/ruhipink.jpg") center / cover;
+    url("./assets/noorimarble.jpg") center / cover;
 }
 
 .portfolio-showcase::before {
@@ -533,7 +533,7 @@ h3 {
   min-height: 100vh;
   background:
     linear-gradient(180deg, rgba(248, 240, 229, 0.28), rgba(248, 240, 229, 0.84)),
-    url("./assets/ruhipink.jpg") center / cover;
+    url("./assets/noorimarble.jpg") center / cover;
 }
 
 .project-detail-shell {
