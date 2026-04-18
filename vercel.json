@@ -1,9 +1,30 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
   "redirects": [
     {
       "source": "/index.html",
       "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/portfolio.html",
+      "destination": "/portfolio",
+      "statusCode": 301
+    },
+    {
+      "source": "/portfolio-brand-film.html",
+      "destination": "/portfolio-brand-film",
+      "statusCode": 301
+    },
+    {
+      "source": "/portfolio-social-system.html",
+      "destination": "/portfolio-social-system",
+      "statusCode": 301
+    },
+    {
+      "source": "/portfolio-web-experience.html",
+      "destination": "/portfolio-web-experience",
       "statusCode": 301
     }
   ]

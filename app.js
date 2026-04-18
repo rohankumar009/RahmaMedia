@@ -10,6 +10,58 @@ const navThemeSections = [...document.querySelectorAll("[data-nav-theme]")];
 
 if (year) year.textContent = new Date().getFullYear();
 
+const homePaths = new Set(["/", "/index", "/index.html"]);
+
+const setCleanHomeUrl = () => {
+  if (!homePaths.has(window.location.pathname)) return;
+
+  window.history.replaceState(null, "", "/");
+};
+
+const scrollToSection = (id, behavior = "smooth") => {
+  const target = document.getElementById(id);
+  if (!target) return false;
+
+  target.scrollIntoView({ behavior, block: "start" });
+  setCleanHomeUrl();
+
+  return true;
+};
+
+document.addEventListener("click", (event) => {
+  const link = event.target instanceof Element ? event.target.closest("a[href]") : null;
+  if (!(link instanceof HTMLAnchorElement)) return;
+
+  const href = link.getAttribute("href") ?? "";
+
+  // Logo / Home links on the home page: scroll to top, no reload
+  if (href === "/" && homePaths.has(window.location.pathname)) {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setCleanHomeUrl();
+    return;
+  }
+
+  if ((!href.startsWith("#") && !href.startsWith("/#")) || href === "#main") return;
+
+  const url = new URL(href, window.location.origin);
+  if (url.origin !== window.location.origin || !url.hash) return;
+
+  const sectionId = decodeURIComponent(url.hash.slice(1));
+  if (!sectionId || !document.getElementById(sectionId)) return;
+
+  event.preventDefault();
+  scrollToSection(sectionId);
+});
+
+if (window.location.hash) {
+  const sectionId = decodeURIComponent(window.location.hash.slice(1));
+
+  requestAnimationFrame(() => {
+    scrollToSection(sectionId, "auto");
+  });
+}
+
 const getCurrentNavTheme = () => {
   const probeY = 1;
   const activeSection = navThemeSections.find((section) => {
