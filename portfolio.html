@@ -34,10 +34,9 @@
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="bg-paper font-body text-ink antialiased">
-
+  <body class="portfolio-page font-body text-ink antialiased">
     <header class="fixed inset-x-0 top-0 z-50" data-header>
-      <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8" aria-label="Main navigation">
+      <nav class="main-nav content-container flex items-center justify-between py-5" aria-label="Portfolio navigation">
         <a href="index.html" class="group flex items-center" aria-label="Rahma Media home">
           <span class="logo-wordmark transition">
             Rahma Media
@@ -71,8 +70,8 @@
         </button>
       </nav>
 
-      <div class="hidden border-t border-paper/10 bg-ink/96 px-5 py-6 text-paper backdrop-blur-xl lg:hidden" data-mobile-menu>
-        <div class="mx-auto grid max-w-7xl gap-5 text-xl font-medium">
+      <div class="hidden border-t border-paper/10 bg-ink/96 py-6 text-paper backdrop-blur-xl lg:hidden" data-mobile-menu>
+        <div class="content-container grid gap-5 text-xl font-medium">
           <a href="index.html">Home</a>
           <a href="portfolio.html">Portfolio</a>
           <a href="index.html#about">About</a>
@@ -84,117 +83,49 @@
     </header>
 
     <main>
-      <!-- Page header -->
-      <section class="bg-ink px-5 pb-20 pt-40 text-paper lg:px-8 lg:pb-28 lg:pt-52" data-nav-theme="dark">
-        <div class="mx-auto max-w-7xl" data-reveal>
-          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-paper/45">Selected work</p>
-          <h1 class="mt-5 font-display text-6xl leading-[0.88] md:text-8xl lg:text-[7rem]">Portfolio</h1>
-          <p class="mt-7 max-w-lg text-lg leading-[1.8] text-paper/60">
-            Brand films, campaigns, and digital experiences made for teams that refuse to blend in.
-          </p>
-        </div>
-      </section>
+      <section class="portfolio-showcase" data-nav-theme="light">
+        <div class="content-container">
+          <div class="portfolio-title-wrap">
+            <h1 class="portfolio-title">Portfolio</h1>
+          </div>
 
-      <!-- Grid -->
-      <section class="bg-paper px-5 py-20 lg:px-8 lg:py-28" data-nav-theme="light">
-        <div class="mx-auto max-w-7xl">
-          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="portfolio-card-grid" data-reveal>
+            <a class="portfolio-card" href="portfolio-brand-film.html" aria-label="Open Brand Film portfolio project">
+              <img
+                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85"
+                alt="Cinema camera recording on a production set"
+              />
+              <span class="portfolio-card-copy">
+                <span>Brand Film</span>
+                <span>A cinematic founder story built for a premium product release.</span>
+              </span>
+            </a>
 
-            <article class="group col-span-full overflow-hidden lg:col-span-2" data-reveal>
-              <div class="overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=85"
-                  alt="Cinema camera recording on a production set"
-                  class="aspect-video w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div class="mt-5 flex items-start justify-between gap-4">
-                <div>
-                  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink/45">Brand Film</p>
-                  <h2 class="mt-1 font-display text-2xl leading-tight">Founder story cut for a premium product release.</h2>
-                </div>
-                <a href="index.html#contact" class="shrink-0 rounded-full border border-ink/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-ink/60 transition hover:border-ink hover:text-ink">
-                  Inquire
-                </a>
-              </div>
-            </article>
+            <a class="portfolio-card" href="portfolio-social-system.html" aria-label="Open Social System portfolio project">
+              <img
+                src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=85"
+                alt="Content creator planning social media posts"
+              />
+              <span class="portfolio-card-copy">
+                <span>Social System</span>
+                <span>A repeatable short-form content engine with clear visual rhythm.</span>
+              </span>
+            </a>
 
-            <article class="group overflow-hidden" data-reveal>
-              <div class="overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&q=85"
-                  alt="Content creator planning social media posts"
-                  class="aspect-square w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div class="mt-5">
-                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink/45">Social System</p>
-                <h2 class="mt-1 font-display text-2xl leading-tight">Daily short-form engine with repeatable content pillars.</h2>
-              </div>
-            </article>
-
-            <article class="group overflow-hidden" data-reveal>
-              <div class="overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1558655146-364adaf25a79?auto=format&fit=crop&w=800&q=85"
-                  alt="Designer reviewing a website interface"
-                  class="aspect-square w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div class="mt-5">
-                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink/45">Web Experience</p>
-                <h2 class="mt-1 font-display text-2xl leading-tight">Editorial landing page for a high-ticket offer.</h2>
-              </div>
-            </article>
-
-            <article class="group col-span-full overflow-hidden lg:col-span-2" data-reveal>
-              <div class="overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=85"
-                  alt="Marketing team building a creative campaign plan"
-                  class="aspect-video w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div class="mt-5 flex items-start justify-between gap-4">
-                <div>
-                  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink/45">Campaign Sprint</p>
-                  <h2 class="mt-1 font-display text-2xl leading-tight">Thirty-day rollout across reels, ads, and launch email.</h2>
-                </div>
-                <a href="index.html#contact" class="shrink-0 rounded-full border border-ink/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-ink/60 transition hover:border-ink hover:text-ink">
-                  Inquire
-                </a>
-              </div>
-            </article>
-
+            <a class="portfolio-card" href="portfolio-web-experience.html" aria-label="Open Web Experience portfolio project">
+              <img
+                src="https://images.unsplash.com/photo-1558655146-364adaf25a79?auto=format&fit=crop&w=1200&q=85"
+                alt="Designer reviewing a website interface"
+              />
+              <span class="portfolio-card-copy">
+                <span>Web Experience</span>
+                <span>An editorial landing page shaped around a high-ticket offer.</span>
+              </span>
+            </a>
           </div>
         </div>
       </section>
-
-      <!-- CTA -->
-      <section class="bg-ink px-5 py-28 text-paper lg:px-8 lg:py-36" data-nav-theme="dark">
-        <div class="mx-auto max-w-7xl" data-reveal>
-          <h2 class="font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl">Ready to be next?</h2>
-          <p class="mt-6 max-w-lg text-lg leading-[1.8] text-paper/60">
-            Bring the brief. We'll shape the story, build the assets, and get it in front of the right people.
-          </p>
-          <a href="index.html#contact" class="mt-10 inline-flex rounded-full bg-ember px-8 py-4 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-paper">
-            Start a project
-          </a>
-        </div>
-      </section>
     </main>
-
-    <footer class="bg-ink px-5 py-10 text-paper lg:px-8 lg:py-12" data-nav-theme="dark">
-      <div class="mx-auto flex max-w-7xl flex-col gap-5 text-sm text-paper/50 md:flex-row md:items-center md:justify-between">
-        <p class="font-display text-base font-normal tracking-tight text-paper/70">Rahma Media</p>
-        <p>© <span data-year></span> Rahma Media. Crafted for launch momentum.</p>
-        <div class="flex gap-6 font-medium text-paper/60">
-          <a class="transition hover:text-paper" href="index.html#about">About</a>
-          <a class="transition hover:text-paper" href="index.html#services">Services</a>
-          <a class="transition hover:text-paper" href="index.html#contact">Contact</a>
-        </div>
-      </div>
-    </footer>
 
     <script type="module" src="./app.js"></script>
   </body>

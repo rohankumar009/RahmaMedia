@@ -8,7 +8,7 @@ const formStatus = document.querySelector("[data-form-status]");
 const year = document.querySelector("[data-year]");
 const navThemeSections = [...document.querySelectorAll("[data-nav-theme]")];
 
-year.textContent = new Date().getFullYear();
+if (year) year.textContent = new Date().getFullYear();
 
 const getCurrentNavTheme = () => {
   const probeY = 1;
@@ -21,6 +21,8 @@ const getCurrentNavTheme = () => {
 };
 
 const setNavTheme = (theme = "light") => {
+  if (!header) return;
+
   const nextTheme = theme === "dark" ? "dark" : "light";
   header.classList.toggle("nav-theme-dark", nextTheme === "dark");
   header.classList.toggle("nav-theme-light", nextTheme === "light");
@@ -28,30 +30,52 @@ const setNavTheme = (theme = "light") => {
 
 const updateNavTheme = () => setNavTheme(getCurrentNavTheme());
 
-updateNavTheme();
+if (header) updateNavTheme();
 
-const navThemeObserver = new IntersectionObserver(
-  () => updateNavTheme(),
-  {
-    rootMargin: "-1px 0px -99% 0px",
-    threshold: 0,
+if (header && navThemeSections.length) {
+  const navThemeObserver = new IntersectionObserver(
+    () => updateNavTheme(),
+    {
+      rootMargin: "-1px 0px -99% 0px",
+      threshold: 0,
+    }
+  );
+
+  navThemeSections.forEach((section) => navThemeObserver.observe(section));
+}
+
+// Pill navbar: show glass pill once hero is 80% scrolled past
+const heroSection = document.querySelector("[data-hero]");
+
+const updateScrolledState = () => {
+  if (!header) return;
+
+  if (!heroSection) {
+    // No hero on this page (e.g. Portfolio) — show pill immediately
+    header.classList.add("is-scrolled");
+    return;
   }
-);
+  const trigger = heroSection.offsetTop + heroSection.offsetHeight * 0.8;
+  header.classList.toggle("is-scrolled", window.scrollY >= trigger);
+};
 
-navThemeSections.forEach((section) => navThemeObserver.observe(section));
+window.addEventListener("scroll", updateScrolledState, { passive: true });
+updateScrolledState();
 
-menuButton.addEventListener("click", () => {
-  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-  menuButton.setAttribute("aria-expanded", String(!isOpen));
-  mobileMenu.classList.toggle("hidden", isOpen);
-});
+if (menuButton && mobileMenu) {
+  menuButton.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-expanded", String(!isOpen));
+    mobileMenu.classList.toggle("hidden", isOpen);
+  });
 
-mobileMenu.addEventListener("click", (event) => {
-  if (!(event.target instanceof HTMLAnchorElement)) return;
+  mobileMenu.addEventListener("click", (event) => {
+    if (!(event.target instanceof HTMLAnchorElement)) return;
 
-  menuButton.setAttribute("aria-expanded", "false");
-  mobileMenu.classList.add("hidden");
-});
+    menuButton.setAttribute("aria-expanded", "false");
+    mobileMenu.classList.add("hidden");
+  });
+}
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -102,7 +126,7 @@ if (contactForm) {
     event.preventDefault();
 
     if (!contactForm.checkValidity()) {
-      formStatus.textContent = "Please fill in the required details.";
+      if (formStatus) formStatus.textContent = "Please fill in the required details.";
       contactForm.reportValidity();
       return;
     }
@@ -110,7 +134,7 @@ if (contactForm) {
     const data = Object.fromEntries(new FormData(contactForm).entries());
     const firstName = String(data.name).trim().split(" ")[0] || "there";
 
-    formStatus.textContent = `Thanks, ${firstName}. Your inquiry is ready to wire into a backend.`;
+    if (formStatus) formStatus.textContent = `Thanks, ${firstName}. Your inquiry is ready to wire into a backend.`;
     contactForm.reset();
   });
 }

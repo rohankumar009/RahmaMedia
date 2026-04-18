@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rahma Media social system portfolio project." />
+    <title>Social System | Rahma Media Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#102C57",
+              paper: "#F8F0E5",
+              ember: "#DAC0A3",
+            },
+            fontFamily: {
+              display: ["Gelasio", "Georgia", "Times New Roman", "serif"],
+              body: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="project-detail-page font-body text-ink antialiased">
+    <main class="project-detail-shell">
+      <a class="project-back-link" href="portfolio.html">Back to portfolio</a>
+      <section class="project-detail-panel">
+        <img
+          src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1400&q=85"
+          alt="Content creator planning social media posts"
+        />
+        <div>
+          <p class="project-kicker">Social System</p>
+          <h1>Daily short-form engine with repeatable content pillars.</h1>
+          <p>
+            A social framework built to make content planning, filming, editing, and publishing easier to repeat.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
