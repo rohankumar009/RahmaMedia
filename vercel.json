@@ -26,6 +26,11 @@
       "source": "/portfolio-web-experience.html",
       "destination": "/portfolio-web-experience",
       "statusCode": 301
+    },
+    {
+      "source": "/process.html",
+      "destination": "/process",
+      "statusCode": 301
     }
   ]
 }
