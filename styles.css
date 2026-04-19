@@ -106,7 +106,7 @@ h3 {
     justify-self: center;
   }
 
-  .main-nav > .nav-cta {
+  .main-nav > .nav-actions {
     justify-self: end;
   }
 }
@@ -405,6 +405,98 @@ h3 {
   text-decoration: underline;
   text-decoration-color: #DAC0A3;
   text-underline-offset: 4px;
+}
+
+/* ---- Language toggle ---- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.lang-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+  background: color-mix(in srgb, currentColor 7%, transparent);
+  padding: 3px;
+  flex-shrink: 0;
+  user-select: none;
+  cursor: default;
+}
+
+.lang-opt {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 0.32rem;
+  padding: 0.38rem 0.8rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  white-space: nowrap;
+  min-width: 2.8rem;
+  line-height: 1;
+  transition: opacity 200ms ease;
+}
+
+.lang-opt[aria-pressed="true"]  { opacity: 1; }
+.lang-opt[aria-pressed="false"] { opacity: 0.42; }
+
+.lang-flag {
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+.lang-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  /* covers the left option by default; JS drives data-active */
+  width: calc(50% - 3px);
+  height: calc(100% - 6px);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.16);
+  pointer-events: none;
+  transition: transform 240ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Thumb position driven by data-active on the container */
+.lang-toggle[data-active="ar"] .lang-thumb { transform: translateX(0); }
+.lang-toggle[data-active="en"] .lang-thumb { transform: translateX(100%); }
+
+/* Light-nav variant (pages outside hero) */
+.nav-theme-light .lang-thumb {
+  background: rgba(16, 44, 87, 0.1);
+  border-color: rgba(16, 44, 87, 0.18);
+  box-shadow: 0 1px 4px rgba(16, 44, 87, 0.1);
+}
+
+/* Mobile menu is always dark — keep white thumb regardless of nav theme */
+[data-mobile-menu] .lang-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.16);
+}
+
+/* Mobile menu toggle: slightly larger touch targets */
+[data-mobile-menu] .lang-opt {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
 }
 
 /* ---- Portfolio page ---- */

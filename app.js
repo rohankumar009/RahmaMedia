@@ -173,6 +173,44 @@ const counterObserver = new IntersectionObserver(
 
 counters.forEach((counter) => counterObserver.observe(counter));
 
+// ── Language Toggle ────────────────────────────────────────────────────────
+// Public API: call setLanguage('en') or setLanguage('ar') from anywhere.
+// Future: add site-wide content translation inside setLanguage() below.
+
+const LANG_KEY = 'rm-lang';
+
+function setLanguage(lang) {
+  const code = lang === 'ar' ? 'ar' : 'en';
+  localStorage.setItem(LANG_KEY, code);
+
+  document.querySelectorAll('[data-lang-toggle]').forEach(toggle => {
+    toggle.dataset.active = code;
+    toggle.querySelectorAll('.lang-opt').forEach(opt => {
+      opt.setAttribute('aria-pressed', String(opt.dataset.lang === code));
+    });
+  });
+
+  // ── Future: wire full site translation here ──────────────────────────────
+  // document.documentElement.lang = code;
+  // document.documentElement.dir = code === 'ar' ? 'rtl' : 'ltr';
+  // translatePageContent(code); // ← your i18n function goes here
+  // ─────────────────────────────────────────────────────────────────────────
+}
+
+function initLangToggle() {
+  const saved = localStorage.getItem(LANG_KEY) || 'en';
+
+  document.querySelectorAll('[data-lang-toggle]').forEach(toggle => {
+    toggle.querySelectorAll('.lang-opt').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+  });
+
+  setLanguage(saved);
+}
+
+requestAnimationFrame(initLangToggle);
+
 if (contactForm) {
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();

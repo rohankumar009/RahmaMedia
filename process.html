@@ -53,12 +53,26 @@
           <a class="nav-link" href="/#contact">Contact</a>
         </div>
 
-        <a
-          href="/#contact"
-          class="nav-cta hidden rounded-full border px-5 py-2.5 text-sm font-semibold transition lg:inline-flex"
-        >
-          Start a project
-        </a>
+        <!-- Desktop: language toggle + CTA -->
+        <div class="nav-actions hidden lg:flex">
+          <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language selection">
+            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic">
+              <span class="lang-flag" aria-hidden="true">🇸🇦</span>
+              <span class="lang-label">AR</span>
+            </button>
+            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English">
+              <span class="lang-flag" aria-hidden="true">🇺🇸</span>
+              <span class="lang-label">EN</span>
+            </button>
+            <span class="lang-thumb" aria-hidden="true"></span>
+          </div>
+          <a
+            href="/#contact"
+            class="nav-cta rounded-full border px-5 py-2.5 text-sm font-semibold transition inline-flex"
+          >
+            Start a project
+          </a>
+        </div>
 
         <button
           class="grid h-10 w-10 place-items-center rounded-full bg-transparent lg:hidden"
@@ -79,6 +93,19 @@
           <a href="/#services">Services</a>
           <a href="/process">Process</a>
           <a href="/#contact">Contact</a>
+          <div class="mt-1 border-t border-paper/10 pt-4">
+            <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language selection">
+              <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic">
+                <span class="lang-flag" aria-hidden="true">🇸🇦</span>
+                <span class="lang-label">AR</span>
+              </button>
+              <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English">
+                <span class="lang-flag" aria-hidden="true">🇺🇸</span>
+                <span class="lang-label">EN</span>
+              </button>
+              <span class="lang-thumb" aria-hidden="true"></span>
+            </div>
+          </div>
         </div>
       </div>
     </header>
