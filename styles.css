@@ -493,10 +493,23 @@ h3 {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.16);
 }
 
-/* Mobile menu toggle: slightly larger touch targets */
-[data-mobile-menu] .lang-opt {
-  padding: 0.35rem 0.75rem;
-  font-size: 0.75rem;
+/* Mobile header toggle — compact size (28–30px height) */
+.lang-toggle-sm {
+  padding: 2px;
+}
+
+.lang-toggle-sm .lang-opt {
+  padding: 0.18rem 0.5rem;
+  font-size: 0.62rem;
+  min-width: 2.3rem;
+  gap: 0.22rem;
+}
+
+.lang-toggle-sm .lang-thumb {
+  top: 2px;
+  left: 2px;
+  width: calc(50% - 2px);
+  height: calc(100% - 4px);
 }
 
 /* ---- Portfolio page ---- */
