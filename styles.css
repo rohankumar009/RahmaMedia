@@ -272,6 +272,38 @@ h3 {
   color: #452829;
 }
 
+/* ---- Brown text for CTA + Contact sections ---- */
+#contact {
+  color: #452829;
+}
+
+#contact .contact-form span {
+  color: rgba(69, 40, 41, 0.55);
+}
+
+#contact .contact-form input,
+#contact .contact-form select,
+#contact .contact-form textarea {
+  color: #452829;
+}
+
+#contact .contact-form input:focus,
+#contact .contact-form select:focus,
+#contact .contact-form textarea:focus {
+  border-color: #452829;
+}
+
+#contact .contact-form button {
+  background: #452829;
+  color: #f8f0e5;
+}
+
+#contact .contact-form button:hover,
+#contact .contact-form button:focus-visible {
+  background: #dac0a3;
+  color: #452829;
+}
+
 /* ---- Services page ---- */
 .services-page {
   position: relative;
