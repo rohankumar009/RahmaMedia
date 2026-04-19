@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rahma Media portfolio project." />
+    <title>Portfolio | Rahma Media</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#102C57",
+              paper: "#F8F0E5",
+              ember: "#DAC0A3",
+            },
+            fontFamily: {
+              display: ["Gelasio", "Georgia", "Times New Roman", "serif"],
+              body: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="project-detail-page font-body text-ink antialiased">
+    <main class="project-detail-shell">
+      <a class="project-back-link" href="/portfolio">Back to portfolio</a>
+      <section class="project-detail-panel">
+        <img id="project-img" src="" alt="" />
+        <div>
+          <p class="project-kicker" id="project-kicker"></p>
+          <h1 id="project-title"></h1>
+          <p id="project-desc"></p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const projects = {
+        cafe: {
+          img: "./assets/hayaticafe.jpg",
+          alt: "Hayati Café",
+          kicker: "Café",
+          title: "A welcoming café brand brought to life.",
+          desc: "Visual identity, content direction, and digital presence crafted for Hayati Café.",
+        },
+        clinic: {
+          img: "./assets/hayaticlinic.jpg",
+          alt: "Hayati Clinic",
+          kicker: "Clinic",
+          title: "A trusted clinic brand built for modern patients.",
+          desc: "Brand storytelling and digital content designed to build credibility and attract the right audience.",
+        },
+        salon: {
+          img: "./assets/hayatisalon.jpg",
+          alt: "Hayati Salon",
+          kicker: "Salon",
+          title: "A premium salon experience, captured and shared.",
+          desc: "Content strategy and visual production that communicates quality and drives bookings.",
+        },
+      };
+
+      const key = new URLSearchParams(window.location.search).get("project") || "cafe";
+      const data = projects[key] || projects.cafe;
+
+      document.getElementById("project-img").src = data.img;
+      document.getElementById("project-img").alt = data.alt;
+      document.getElementById("project-kicker").textContent = data.kicker;
+      document.getElementById("project-title").textContent = data.title;
+      document.getElementById("project-desc").textContent = data.desc;
+      document.title = data.kicker + " | Rahma Media Portfolio";
+    </script>
+  </body>
+</html>

@@ -316,7 +316,7 @@ h3 {
   background:
     linear-gradient(180deg, rgba(248, 240, 229, 0.78), rgba(218, 192, 163, 0.42)),
     url("./assets/hayatipink.jpg") center / cover;
-  color: #102c57;
+  color: #6b3a2a;
 }
 
 .services-page::before {
@@ -330,7 +330,7 @@ h3 {
 }
 
 .services-title {
-  color: #102c57;
+  color: #6b3a2a;
   font-family: "Gelasio", Georgia, "Times New Roman", serif;
   font-size: clamp(5rem, 13.5vw, 11.5rem);
   font-weight: 400;
@@ -345,9 +345,9 @@ h3 {
   margin-left: auto;
   max-width: 56rem;
   padding: clamp(1rem, 2vw, 1.5rem) clamp(1.1rem, 3vw, 2rem);
-  border-top: 1px solid rgba(16, 44, 87, 0.24);
+  border-top: 1px solid rgba(107, 58, 42, 0.24);
   background: rgba(248, 240, 229, 0.44);
-  box-shadow: 0 24px 80px rgba(16, 44, 87, 0.1);
+  box-shadow: 0 24px 80px rgba(107, 58, 42, 0.1);
   backdrop-filter: blur(7px);
 }
 
@@ -356,9 +356,9 @@ h3 {
   grid-template-columns: minmax(0, 1.35fr) minmax(7rem, 0.45fr) 9.5rem;
   gap: 2rem;
   align-items: center;
-  border-bottom: 1px solid rgba(16, 44, 87, 0.16);
+  border-bottom: 1px solid rgba(107, 58, 42, 0.16);
   padding: 1.8rem 0;
-  color: #102c57;
+  color: #6b3a2a;
 }
 
 .service-row h3 {
@@ -370,7 +370,7 @@ h3 {
 }
 
 .service-row p {
-  color: rgba(16, 44, 87, 0.68);
+  color: rgba(107, 58, 42, 0.68);
   font-family: Inter, system-ui, sans-serif;
   font-size: 0.88rem;
   line-height: 1.6;
@@ -379,7 +379,7 @@ h3 {
 .service-row span {
   display: block;
   margin-top: 0.2rem;
-  color: rgba(16, 44, 87, 0.84);
+  color: rgba(107, 58, 42, 0.84);
   font-weight: 600;
 }
 
@@ -388,8 +388,8 @@ h3 {
   min-height: 2.8rem;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(16, 44, 87, 0.5);
-  color: #102c57;
+  border: 1px solid rgba(107, 58, 42, 0.5);
+  color: #6b3a2a;
   font-family: Inter, system-ui, sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
@@ -400,7 +400,7 @@ h3 {
 
 .service-row a:hover,
 .service-row a:focus-visible {
-  background: #102c57;
+  background: #6b3a2a;
   color: #f8f0e5;
   transform: translateY(-1px);
 }
@@ -513,10 +513,21 @@ h3 {
   transform: translateY(-0.35rem);
 }
 
-.portfolio-card img {
+.portfolio-card-img-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+.portfolio-card-img-wrap img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  transition: transform 600ms ease;
+}
+
+.portfolio-card:hover .portfolio-card-img-wrap img,
+.portfolio-card:focus-visible .portfolio-card-img-wrap img {
+  transform: scale(1.07);
 }
 
 .portfolio-card-copy {
