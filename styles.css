@@ -443,7 +443,7 @@ h3 {
 .portfolio-title {
   position: relative;
   display: inline-block;
-  color: #102c57;
+  color: ##6b3a2a;
   font-family: "Gelasio", Georgia, "Times New Roman", serif;
   font-size: clamp(4.4rem, 12vw, 9.5rem);
   font-weight: 400;
@@ -545,8 +545,13 @@ h3 {
 }
 
 .portfolio-card-copy span:last-child {
-  color: rgba(16, 44, 87, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #102c57;
   font-size: 0.95rem;
+  font-weight: 700;
   line-height: 1.65;
 }
 
