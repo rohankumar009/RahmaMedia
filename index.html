@@ -7,6 +7,16 @@
       name="description"
       content="Rahma Media crafts cinematic brand stories, launch campaigns, social content, and digital experiences for ambitious teams."
     />
+    <script>
+      (() => {
+        let lang = "en";
+        try {
+          lang = localStorage.getItem("rm-lang") === "ar" ? "ar" : "en";
+        } catch {}
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      })();
+    </script>
     <title>Rahma Media | Creative Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>

@@ -7,6 +7,16 @@
       name="description"
       content="How Rahma Media works — a tight three-phase process from strategy to launch."
     />
+    <script>
+      (() => {
+        let lang = "en";
+        try {
+          lang = localStorage.getItem("rm-lang") === "ar" ? "ar" : "en";
+        } catch {}
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      })();
+    </script>
     <title>Our Process | Rahma Media</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>

@@ -7,6 +7,16 @@
       name="description"
       content="Rahma Media portfolio — selected brand films, campaigns, and digital work."
     />
+    <script>
+      (() => {
+        let lang = "en";
+        try {
+          lang = localStorage.getItem("rm-lang") === "ar" ? "ar" : "en";
+        } catch {}
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      })();
+    </script>
     <title>Portfolio | Rahma Media</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>

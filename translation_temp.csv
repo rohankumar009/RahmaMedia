@@ -1,0 +1,35 @@
+﻿page,key,english,arabic
+,,,
+common,common.nav.home,Home,الصفحة الرئيسية
+,,,
+common,common.nav.about,About,حول
+common,common.nav.services,Services,الخدمات
+common,common.nav.process,Process,عملية
+common,common.nav.contact,Contact,الاتصال
+common,common.nav.cta,Start a project,ابدأ مشروعًا
+common,common.aria.main_navigation,builds brands people can feel.,تبني علامات تجارية يمكن للناس أن يتفاعلوا معها
+common,common.aria.portfolio_navigation,"We build brands that speak with clarity, intention, and impact ‚Äî from identity systems to integrated campaigns that drive real results.",نحن نبني علامات تجارية تتحدث بوضوح وتصميم وتأثير — بدءًا من أنظمة الهوية وصولاً إلى الحملات المتكاملة التي تحقق نتائج ملموسة.
+common,common.aria.language_selection,About us,نبذة عنا
+common,common.aria.arabic,Book a call,احجز مكالمة
+,,,
+,,,
+common,common.footer.tagline,Crafted for launch momentum.,
+common,common.footer.tagline_no_period,Crafted for launch momentum,
+index,index.meta.description,"Rahma Media crafts cinematic brand stories, launch campaigns, social content, and digital experiences for ambitious teams.",
+index,index.meta.title,Rahma Media | Creative Studio,
+index,index.hero.image_alt,Rahma Media creative studio,
+index,index.hero.headline_brand,Rahma Media,
+index,index.hero.headline_line,builds brands people can feel.,
+index,index.hero.body,"We build brands that speak with clarity, intention, and impact ‚Äî from identity systems to integrated campaigns that drive real results.",
+,,,
+,,,
+index,index.ticker.social_media,Social Media,وسائل التواصل الاجتماعي
+index,index.ticker.visual_identity,Visual Identity,الهوية البصرية
+index,index.ticker.brand_strategy,Brand Strategy,استراتيجية العلامة التجارية
+index,index.ticker.digital_marketing,Digital Marketing,التسويق الرقمي
+index,index.ticker.content_creation,Content Creation,إنشاء المحتوى
+,,,
+index,index.about.title,A marketing agency with good taste.,وكالة تسويق تتمتع بذوق رفيع.
+index,index.about.body_1,Rahma Media is a creative studio built for brands that mean something. We believe every business has a story worth telling beautifully- and we're committed to telling yours.,"”رحمة ميديا“ هو استوديو إبداعي مخصص للعلامات التجارية التي تحمل قيمة حقيقية. نحن نؤمن بأن لكل شركة قصة تستحق أن تُروى بأسلوب جميل، ونحن ملتزمون برواية قصتكم."
+index,index.about.body_2,"We design campaigns, content, websites, launch ideas, little brand moments, big brand moments, and the moments that don't just look expensive- they feel intentional. Because your business deserves more than generic.","نحن نصمم الحملات والمحتوى والمواقع الإلكترونية، ونطلق الأفكار، ونبتكر اللحظات الصغيرة والكبيرة للعلامة التجارية، ونصنع اللحظات التي لا تبدو باهظة التكلفة فحسب، بل تبدو مدروسة بعناية. لأن شركتك تستحق أكثر من مجرد تصميمات عامة."
+index,index.about.body_3,Sharp visuals. Clean messaging. Better taste. Fast edits. All of it made with teh care your business deserves,صور واضحة. رسائل موجزة. ذوق رفيع. تعديلات سريعة. كل ذلك تم إعداده بالعناية التي يستحقها عملك

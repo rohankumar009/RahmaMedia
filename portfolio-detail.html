@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Rahma Media portfolio project." />
+    <script>
+      (() => {
+        let lang = "en";
+        try {
+          lang = localStorage.getItem("rm-lang") === "ar" ? "ar" : "en";
+        } catch {}
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      })();
+    </script>
     <title>Portfolio | Rahma Media</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -76,5 +86,6 @@
       document.getElementById("project-desc").textContent = data.desc;
       document.title = data.kicker + " | Rahma Media Portfolio";
     </script>
+    <script type="module" src="./app.js"></script>
   </body>
 </html>

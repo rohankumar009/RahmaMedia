@@ -13,6 +13,39 @@ body {
     #f8f0e5;
 }
 
+html[dir="rtl"] body {
+  direction: ltr;
+}
+
+html[lang="ar"] [data-i18n-active="true"] {
+  direction: rtl;
+  unicode-bidi: plaintext;
+  font-family: "Noto Sans Arabic", "Tahoma", "Arial", system-ui, sans-serif;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+html[lang="ar"] h1 [data-i18n-active="true"],
+html[lang="ar"] h2[data-i18n-active="true"],
+html[lang="ar"] h3[data-i18n-active="true"],
+html[lang="ar"] .font-display[data-i18n-active="true"] {
+  font-family: "Noto Naskh Arabic", "Noto Sans Arabic", "Tahoma", "Arial", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+html[lang="ar"] .nav-link[data-i18n-active="true"],
+html[lang="ar"] .nav-cta[data-i18n-active="true"],
+html[lang="ar"] .service-row a[data-i18n-active="true"],
+html[lang="ar"] .contact-form button[data-i18n-active="true"] {
+  text-align: center;
+  white-space: nowrap;
+}
+
+html[lang="ar"] .hero-ticker [data-i18n-active="true"] {
+  display: inline-flex;
+  align-items: center;
+}
+
 ::selection {
   background: #dac0a3;
   color: #102c57;
@@ -222,6 +255,7 @@ h3 {
 /* ---- Nav links ---- */
 .nav-link {
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-link::after {
