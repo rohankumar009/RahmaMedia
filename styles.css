@@ -209,10 +209,6 @@ h3 {
 }
 
 @media (max-width: 767px) {
-  .hero-copy-container {
-    transform: translateY(-2rem);
-  }
-
   .hero-ticker .ticker-track > span > span {
     color: rgba(248, 240, 229, 0.78) !important;
   }
@@ -403,6 +399,12 @@ h3 {
   background: #6b3a2a;
   color: #f8f0e5;
   transform: translateY(-1px);
+}
+
+.process-link:hover .process-link-text {
+  text-decoration: underline;
+  text-decoration-color: #DAC0A3;
+  text-underline-offset: 4px;
 }
 
 /* ---- Portfolio page ---- */

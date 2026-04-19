@@ -107,23 +107,23 @@
     <main id="main">
 
       <!-- Hero -->
-      <section class="relative flex flex-col overflow-hidden bg-paper text-paper" data-nav-theme="dark" data-hero>
+      <section class="relative flex min-h-screen flex-col overflow-hidden bg-paper text-paper" data-nav-theme="dark" data-hero>
         <img
           src="./assets/hero.jpg"
           alt="Rahma Media creative studio"
           class="absolute inset-0 h-full w-full object-cover"
         />
 
-        <!-- Hero content — fills viewport height -->
-        <div class="relative flex min-h-screen flex-col justify-center">
-          <div class="hero-copy-container content-container pb-16 pt-28 lg:-translate-y-[100px] lg:translate-x-[30px] lg:pb-20 lg:pt-32">
+        <!-- Hero content — fills remaining viewport height above ticker -->
+        <div class="relative flex flex-1 flex-col justify-center">
+          <div class="hero-copy-container content-container pb-10 pt-24 lg:-translate-y-[60px] lg:translate-x-[30px] lg:pb-12 lg:pt-28">
             <div class="max-w-4xl" data-reveal>
               <h1 class="font-display text-paper">
                 <span class="block text-6xl leading-[0.88] text-[#FDCEDF] md:text-8xl lg:text-[8rem]">Rahma Media</span>
-                <span class="mt-3 block pl-[2px] text-2xl leading-snug text-paper/90 md:text-3xl lg:text-4xl">builds brands people can feel.</span>
+                <span class="mt-3 block pl-[10px] text-2xl leading-snug text-paper/70 md:text-3xl lg:text-4xl">builds brands people can feel.</span>
               </h1>
-              <div class="mt-10 flex flex-col gap-8 pl-[2px] md:flex-row md:items-end md:justify-between">
-                <p class="max-w-xl text-lg leading-[1.75] text-paper/90 md:text-xl">
+              <div class="mt-10 flex flex-col gap-8 pl-[10px] md:flex-row md:items-end md:justify-between">
+                <p class="max-w-xl text-lg leading-[1.75] text-paper/70 md:text-xl">
                   We build brands that speak with clarity, intention, and impact — from identity systems to integrated campaigns that drive real results.
                 </p>
                 <div class="flex shrink-0 flex-row gap-3">
@@ -142,46 +142,46 @@
         <!-- Ticker — full width, section ends here -->
         <div class="hero-ticker relative overflow-hidden border-y border-paper/12 py-5" aria-hidden="true">
           <div class="ticker-track flex items-center whitespace-nowrap">
-            <span class="inline-flex items-center gap-10 pr-10 text-xs font-semibold uppercase tracking-[0.28em] text-paper/45">
-              <span class="text-paper/90">Social Media</span>
+            <span class="inline-flex items-center gap-10 pr-10 text-xs font-semibold uppercase tracking-[0.28em] text-paper/65">
+              <span>Social Media</span>
               <span class="text-paper/20">—</span>
               <span>Visual Identity</span>
               <span class="text-paper/20">—</span>
-              <span class="text-paper/90">Brand Strategy</span>
+              <span>Brand Strategy</span>
               <span class="text-paper/20">—</span>
               <span>Digital Marketing</span>
               <span class="text-paper/20">—</span>
-              <span class="text-paper/90">Content Creation</span>
+              <span>Content Creation</span>
               <span class="text-paper/20">—</span>
               <span>Social Media</span>
               <span class="text-paper/20">—</span>
-              <span class="text-paper/90">Visual Identity</span>
+              <span>Visual Identity</span>
               <span class="text-paper/20">—</span>
               <span>Brand Strategy</span>
               <span class="text-paper/20">—</span>
-              <span class="text-paper/90">Digital Marketing</span>
+              <span>Digital Marketing</span>
               <span class="text-paper/20">—</span>
               <span>Content Creation</span>
               <span class="text-paper/20">—</span>
             </span>
-            <span class="inline-flex items-center gap-10 pr-10 text-xs font-semibold uppercase tracking-[0.28em] text-paper/45" aria-hidden="true">
-              <span class="text-paper/90">Social Media</span>
+            <span class="inline-flex items-center gap-10 pr-10 text-xs font-semibold uppercase tracking-[0.28em] text-paper/65" aria-hidden="true">
+              <span>Social Media</span>
               <span class="text-paper/20">—</span>
               <span>Visual Identity</span>
               <span class="text-paper/20">—</span>
-              <span class="text-paper/90">Brand Strategy</span>
+              <span>Brand Strategy</span>
               <span class="text-paper/20">—</span>
               <span>Digital Marketing</span>
               <span class="text-paper/20">—</span>
-              <span class="text-paper/90">Content Creation</span>
+              <span>Content Creation</span>
               <span class="text-paper/20">—</span>
               <span>Social Media</span>
               <span class="text-paper/20">—</span>
-              <span class="text-paper/90">Visual Identity</span>
+              <span>Visual Identity</span>
               <span class="text-paper/20">—</span>
               <span>Brand Strategy</span>
               <span class="text-paper/20">—</span>
-              <span class="text-paper/90">Digital Marketing</span>
+              <span>Digital Marketing</span>
               <span class="text-paper/20">—</span>
               <span>Content Creation</span>
               <span class="text-paper/20">—</span>
@@ -254,8 +254,8 @@
               <a href="/portfolio" class="rounded-full bg-paper px-7 py-3 text-xs font-bold uppercase tracking-[0.1em] text-ink transition hover:-translate-y-0.5 hover:opacity-90">
                 View Our Work
               </a>
-              <a href="/process" class="inline-flex items-center gap-2 text-sm font-semibold text-paper/65 transition hover:text-paper">
-                Our process <span aria-hidden="true">→</span>
+              <a href="/process" class="process-link inline-flex items-center gap-2 text-sm font-semibold text-paper/65 transition hover:text-ember">
+                <span class="process-link-text">Our process</span> <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
@@ -367,7 +367,7 @@
 
     <footer class="bg-ink py-10 text-paper lg:py-12" data-nav-theme="dark">
       <div class="content-container flex flex-col gap-5 text-sm text-paper/50 md:flex-row md:items-center md:justify-between">
-        <p class="font-display text-base font-bold tracking-tight text-[#fdcedf]">Rahma Media</p>
+        <p class="font-display text-base font-normal tracking-tight text-paper/70">Rahma Media</p>
         <p>© <span data-year></span> Rahma Media. Crafted for launch momentum.</p>
         <div class="flex gap-6 font-medium text-paper/60">
           <a class="transition hover:text-paper" href="/#about">About</a>
