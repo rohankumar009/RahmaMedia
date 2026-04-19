@@ -218,6 +218,11 @@ h3 {
   }
 }
 
+/* ---- Mobile menu link readability ---- */
+[data-mobile-menu] a {
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
 /* ---- Nav links ---- */
 .nav-link {
   position: relative;
