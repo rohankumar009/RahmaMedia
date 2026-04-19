@@ -91,10 +91,6 @@ h3 {
   z-index: 1;
 }
 
-[data-mobile-menu] {
-  background-color: rgba(16, 44, 87, 0.93);
-}
-
 @media (min-width: 1024px) {
   .main-nav {
     display: grid;
