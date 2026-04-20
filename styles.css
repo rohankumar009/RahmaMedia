@@ -39,6 +39,15 @@ html[lang="ar"] .contact-form button {
   text-transform: none !important;
 }
 
+.dir-arrow {
+  display: inline-block;
+  transform: scaleX(1);
+}
+
+html[dir="rtl"] .dir-arrow {
+  transform: scaleX(-1);
+}
+
 ::selection {
   background: #dac0a3;
   color: #102c57;

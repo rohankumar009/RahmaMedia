@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth notranslate" translate="no">
   <head>
     <meta charset="UTF-8" />
+    <meta name="google" content="notranslate" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
@@ -10,9 +11,11 @@
     />
     <script>
       (() => {
-        let lang = "en";
+        let lang = "ar";
         try {
-          lang = localStorage.getItem("rm-lang") === "ar" ? "ar" : "en";
+          const savedLang = localStorage.getItem("rm-lang");
+          const defaultVersion = localStorage.getItem("rm-lang-default-version");
+          lang = defaultVersion === "ar-default-v1" && (savedLang === "en" || savedLang === "ar") ? savedLang : "ar";
         } catch {}
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
@@ -66,12 +69,12 @@
 
         <!-- Desktop: language toggle + CTA -->
         <div class="nav-actions hidden lg:flex">
-          <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
-            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
+          <div class="lang-toggle" data-lang-toggle data-active="ar" role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
+            <button class="lang-opt" data-lang="ar" aria-pressed="true" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
               <span class="lang-flag" aria-hidden="true">🇸🇦</span>
               <span class="lang-label" data-i18n="common.language.ar_label">AR</span>
             </button>
-            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
+            <button class="lang-opt" data-lang="en" aria-pressed="false" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
               <span class="lang-flag" aria-hidden="true">🇺🇸</span>
               <span class="lang-label" data-i18n="common.language.en_label">EN</span>
             </button>
@@ -88,12 +91,12 @@
 
         <!-- Mobile: language toggle + hamburger -->
         <div class="flex items-center gap-2 lg:hidden">
-          <div class="lang-toggle lang-toggle-sm" data-lang-toggle role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
-            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
+          <div class="lang-toggle lang-toggle-sm" data-lang-toggle data-active="ar" role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
+            <button class="lang-opt" data-lang="ar" aria-pressed="true" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
               <span class="lang-flag" aria-hidden="true">🇸🇦</span>
               <span class="lang-label" data-i18n="common.language.ar_label">AR</span>
             </button>
-            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
+            <button class="lang-opt" data-lang="en" aria-pressed="false" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
               <span class="lang-flag" aria-hidden="true">🇺🇸</span>
               <span class="lang-label" data-i18n="common.language.en_label">EN</span>
             </button>
@@ -129,7 +132,7 @@
       <!-- Page header -->
       <section class="bg-paper pt-40 pb-16 lg:pt-52 lg:pb-20" data-nav-theme="light">
         <div class="content-container xl:px-12" data-reveal>
-          <a href="/" class="project-back-link"><span aria-hidden="true">←</span> <span data-i18n="process_page.header.back_home">Rahma Media</span></a>
+          <a href="/" class="project-back-link"><span class="dir-arrow" aria-hidden="true">←</span> <span data-i18n="process_page.header.back_home">Rahma Media</span></a>
           <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ember" data-i18n="process_page.header.kicker">How we work</p>
           <h1 class="mt-5 font-display text-6xl leading-[0.9] text-ink md:text-7xl lg:text-[5.5rem]" data-i18n="process_page.header.title">Our Process.</h1>
           <p class="mt-8 max-w-2xl text-xl leading-[1.75] text-ink/60" data-i18n="process_page.header.body">
@@ -144,7 +147,7 @@
 
             <a href="/#contact"
               class="inline-flex items-center gap-2 text-sm font-semibold text-ink/100 transition hover:text-ember">
-              <span data-i18n="common.nav.cta">Start a project</span> <span aria-hidden="true">→</span>
+              <span data-i18n="common.nav.cta">Start a project</span> <span class="dir-arrow" aria-hidden="true">→</span>
             </a>
           </div>
         </div>
@@ -280,7 +283,7 @@
                     Start a project
                   </a>
                   <a href="/portfolio" class="inline-flex items-center gap-2 text-sm font-semibold text-ink/100 transition hover:text-ember">
-                    <span data-i18n="process_page.closing.see_work_cta">See our work</span> <span aria-hidden="true">→</span>
+                    <span data-i18n="process_page.closing.see_work_cta">See our work</span> <span class="dir-arrow" aria-hidden="true">→</span>
                   </a>
                 </div>
               </div>

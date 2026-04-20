@@ -6,9 +6,11 @@
     <meta name="description" content="Rahma Media portfolio project." data-i18n-content="project.meta.description" />
     <script>
       (() => {
-        let lang = "en";
+        let lang = "ar";
         try {
-          lang = localStorage.getItem("rm-lang") === "ar" ? "ar" : "en";
+          const savedLang = localStorage.getItem("rm-lang");
+          const defaultVersion = localStorage.getItem("rm-lang-default-version");
+          lang = defaultVersion === "ar-default-v1" && (savedLang === "en" || savedLang === "ar") ? savedLang : "ar";
         } catch {}
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
