@@ -13,37 +13,30 @@ body {
     #f8f0e5;
 }
 
-html[dir="rtl"] body {
-  direction: ltr;
+html[lang="ar"],
+html[lang="ar"] body {
+  font-family: "Tajawal", "Tahoma", "Arial", system-ui, sans-serif;
 }
 
-html[lang="ar"] [data-i18n-active="true"] {
-  direction: rtl;
-  unicode-bidi: plaintext;
-  font-family: "Noto Sans Arabic", "Tahoma", "Arial", system-ui, sans-serif;
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] .font-display,
+html[lang="ar"] .logo-wordmark,
+html[lang="ar"] .portfolio-title,
+html[lang="ar"] .services-title {
+  font-family: "Tajawal", "Tahoma", "Arial", system-ui, sans-serif;
+  font-weight: 700;
+}
+
+html[lang="ar"] .uppercase,
+html[lang="ar"] [class*="tracking-"],
+html[lang="ar"] .project-kicker,
+html[lang="ar"] .contact-form span,
+html[lang="ar"] .service-row a,
+html[lang="ar"] .contact-form button {
   letter-spacing: 0 !important;
   text-transform: none !important;
-}
-
-html[lang="ar"] h1 [data-i18n-active="true"],
-html[lang="ar"] h2[data-i18n-active="true"],
-html[lang="ar"] h3[data-i18n-active="true"],
-html[lang="ar"] .font-display[data-i18n-active="true"] {
-  font-family: "Noto Naskh Arabic", "Noto Sans Arabic", "Tahoma", "Arial", system-ui, sans-serif;
-  font-weight: 600;
-}
-
-html[lang="ar"] .nav-link[data-i18n-active="true"],
-html[lang="ar"] .nav-cta[data-i18n-active="true"],
-html[lang="ar"] .service-row a[data-i18n-active="true"],
-html[lang="ar"] .contact-form button[data-i18n-active="true"] {
-  text-align: center;
-  white-space: nowrap;
-}
-
-html[lang="ar"] .hero-ticker [data-i18n-active="true"] {
-  display: inline-flex;
-  align-items: center;
 }
 
 ::selection {
@@ -71,8 +64,7 @@ h3 {
 /* ---- Shared layout rail ---- */
 .content-container {
   width: min(100% - 2.5rem, 80rem);
-  margin-right: auto;
-  margin-left: auto;
+  margin-inline: auto;
 }
 
 @media (min-width: 1024px) {
@@ -95,8 +87,7 @@ h3 {
 [data-header] {
   position: fixed;
   top: 0;
-  right: 0;
-  left: 0;
+  inset-inline: 0;
   z-index: 50;
   width: 100%;
   background: transparent;
@@ -247,6 +238,20 @@ h3 {
   }
 }
 
+.hero-ticker {
+  direction: ltr;
+}
+
+@media (min-width: 1024px) {
+  .hero-copy-container {
+    transform: translate(30px, -60px);
+  }
+
+  html[dir="rtl"] .hero-copy-container {
+    transform: translate(-30px, -60px);
+  }
+}
+
 /* ---- Mobile menu link readability ---- */
 [data-mobile-menu] a {
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
@@ -260,14 +265,13 @@ h3 {
 
 .nav-link::after {
   position: absolute;
-  right: 0;
   bottom: -0.35rem;
-  left: 0;
+  inset-inline: 0;
   height: 1.5px;
   background: currentColor;
   content: "";
   transform: scaleX(0);
-  transform-origin: right;
+  transform-origin: 100% 50%;
   transition: transform 240ms ease;
 }
 
@@ -279,7 +283,16 @@ h3 {
 .nav-link:hover::after,
 .nav-link:focus-visible::after {
   transform: scaleX(1);
-  transform-origin: left;
+  transform-origin: 0% 50%;
+}
+
+html[dir="rtl"] .nav-link::after {
+  transform-origin: 0% 50%;
+}
+
+html[dir="rtl"] .nav-link:hover::after,
+html[dir="rtl"] .nav-link:focus-visible::after {
+  transform-origin: 100% 50%;
 }
 
 /* ---- Mobile menu icon ---- */
@@ -371,8 +384,7 @@ h3 {
 
 .services-list {
   margin-top: clamp(5.5rem, 11vw, 10rem);
-  margin-right: auto;
-  margin-left: auto;
+  margin-inline: auto;
   max-width: 56rem;
   padding: clamp(1rem, 2vw, 1.5rem) clamp(1.1rem, 3vw, 2rem);
   border-top: 1px solid rgba(107, 58, 42, 0.24);
@@ -452,6 +464,7 @@ h3 {
   position: relative;
   display: inline-flex;
   align-items: center;
+  direction: ltr;
   border-radius: 9999px;
   border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
   background: color-mix(in srgb, currentColor 7%, transparent);
@@ -497,8 +510,8 @@ h3 {
 .lang-thumb {
   position: absolute;
   top: 3px;
-  left: 3px;
-  /* covers the left option by default; JS drives data-active */
+  inset-inline-start: 3px;
+  /* covers the first option by default; JS drives data-active */
   width: calc(50% - 3px);
   height: calc(100% - 6px);
   border-radius: 9999px;
@@ -541,7 +554,7 @@ h3 {
 
 .lang-toggle-sm .lang-thumb {
   top: 2px;
-  left: 2px;
+  inset-inline-start: 2px;
   width: calc(50% - 2px);
   height: calc(100% - 4px);
 }
@@ -595,7 +608,7 @@ h3 {
 .portfolio-title::after {
   position: absolute;
   top: 42%;
-  left: 50%;
+  inset-inline-start: 50%;
   width: 0.42rem;
   height: 0.42rem;
   border-radius: 999px;
@@ -796,8 +809,8 @@ h3 {
 
 /* ---- Process steps ---- */
 .process-step {
-  border-left: 1.5px solid rgba(16, 44, 87, 0.35);
-  padding-left: 1rem;
+  border-inline-start: 1.5px solid rgba(16, 44, 87, 0.35);
+  padding-inline-start: 1rem;
 }
 
 .process-step span {

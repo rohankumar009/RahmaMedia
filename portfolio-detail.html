@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Rahma Media portfolio project." />
+    <meta name="description" content="Rahma Media portfolio project." data-i18n-content="project.meta.description" />
     <script>
       (() => {
         let lang = "en";
@@ -14,7 +14,7 @@
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
       })();
     </script>
-    <title>Portfolio | Rahma Media</title>
+    <title data-i18n="project.meta.title">Portfolio | Rahma Media</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -35,56 +35,94 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="project-detail-page font-body text-ink antialiased">
     <main class="project-detail-shell">
-      <a class="project-back-link" href="/portfolio">Back to portfolio</a>
+      <a class="project-back-link" href="/portfolio" data-i18n="project.detail.back_to_portfolio">Back to portfolio</a>
       <section class="project-detail-panel">
-        <img id="project-img" src="" alt="" />
+        <img id="project-img" src="" alt="" data-i18n-alt="project.cafe.image_alt" />
         <div>
-          <p class="project-kicker" id="project-kicker"></p>
-          <h1 id="project-title"></h1>
-          <p id="project-desc"></p>
+          <p class="project-kicker" id="project-kicker" data-i18n="project.cafe.kicker"></p>
+          <h1 id="project-title" data-i18n="project.cafe.title"></h1>
+          <p id="project-desc" data-i18n="project.cafe.description"></p>
         </div>
       </section>
     </main>
 
+    <script src="./js/i18n.js"></script>
     <script>
       const projects = {
         cafe: {
           img: "./assets/hayaticafe.jpg",
+          altKey: "project.cafe.image_alt",
           alt: "Hayati Café",
+          kickerKey: "project.cafe.kicker",
           kicker: "Café",
+          titleKey: "project.cafe.title",
           title: "A welcoming café brand brought to life.",
+          descriptionKey: "project.cafe.description",
           desc: "Visual identity, content direction, and digital presence crafted for Hayati Café.",
         },
         clinic: {
           img: "./assets/hayaticlinic.jpg",
+          altKey: "project.clinic.image_alt",
           alt: "Hayati Clinic",
+          kickerKey: "project.clinic.kicker",
           kicker: "Clinic",
+          titleKey: "project.clinic.title",
           title: "A trusted clinic brand built for modern patients.",
+          descriptionKey: "project.clinic.description",
           desc: "Brand storytelling and digital content designed to build credibility and attract the right audience.",
         },
         salon: {
           img: "./assets/hayatisalon.jpg",
+          altKey: "project.salon.image_alt",
           alt: "Hayati Salon",
+          kickerKey: "project.salon.kicker",
           kicker: "Salon",
+          titleKey: "project.salon.title",
           title: "A premium salon experience, captured and shared.",
+          descriptionKey: "project.salon.description",
           desc: "Content strategy and visual production that communicates quality and drives bookings.",
         },
       };
 
       const key = new URLSearchParams(window.location.search).get("project") || "cafe";
       const data = projects[key] || projects.cafe;
+      const translateProject = (translationKey, fallback, replacements) =>
+        window.RM_I18N?.t ? window.RM_I18N.t(translationKey, fallback, replacements) : fallback;
 
-      document.getElementById("project-img").src = data.img;
-      document.getElementById("project-img").alt = data.alt;
-      document.getElementById("project-kicker").textContent = data.kicker;
-      document.getElementById("project-title").textContent = data.title;
-      document.getElementById("project-desc").textContent = data.desc;
-      document.title = data.kicker + " | Rahma Media Portfolio";
+      function renderProject() {
+        const image = document.getElementById("project-img");
+        const kicker = document.getElementById("project-kicker");
+        const title = document.getElementById("project-title");
+        const description = document.getElementById("project-desc");
+        const projectName = translateProject(data.kickerKey, data.kicker);
+
+        image.src = data.img;
+        image.setAttribute("data-i18n-alt", data.altKey);
+        image.alt = translateProject(data.altKey, data.alt);
+
+        kicker.setAttribute("data-i18n", data.kickerKey);
+        kicker.textContent = projectName;
+
+        title.setAttribute("data-i18n", data.titleKey);
+        title.textContent = translateProject(data.titleKey, data.title);
+
+        description.setAttribute("data-i18n", data.descriptionKey);
+        description.textContent = translateProject(data.descriptionKey, data.desc);
+
+        document.title = translateProject(
+          "project.detail.document_title",
+          "{project} | Rahma Media Portfolio",
+          { project: projectName }
+        );
+      }
+
+      renderProject();
+      window.addEventListener("i18n:change", renderProject);
     </script>
     <script type="module" src="./app.js"></script>
   </body>

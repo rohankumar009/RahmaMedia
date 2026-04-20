@@ -6,6 +6,7 @@
     <meta
       name="description"
       content="Rahma Media crafts cinematic brand stories, launch campaigns, social content, and digital experiences for ambitious teams."
+      data-i18n-content="index.meta.description"
     />
     <script>
       (() => {
@@ -17,7 +18,7 @@
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
       })();
     </script>
-    <title>Rahma Media | Creative Studio</title>
+    <title data-i18n="index.meta.title">Rahma Media | Creative Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -43,7 +44,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="stylesheet" href="./styles.css" />
     <style>
@@ -62,44 +63,45 @@
   <body class="bg-paper font-body text-ink antialiased">
     <a
       href="#main"
-      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-3 focus:text-paper"
+      class="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-3 focus:text-paper"
     >
-      Skip to content
+      <span data-i18n="common.skip_to_content">Skip to content</span>
     </a>
 
     <header class="fixed inset-x-0 top-0 z-50" data-header>
-      <nav class="main-nav content-container flex items-center justify-between py-5" aria-label="Main navigation">
-        <a href="/" class="group flex items-center" aria-label="Rahma Media home">
-          <span class="logo-wordmark transition">
+      <nav class="main-nav content-container flex items-center justify-between py-5" aria-label="Main navigation" data-i18n-aria-label="common.nav.main_aria">
+        <a href="/" class="group flex items-center" aria-label="Rahma Media home" data-i18n-aria-label="common.nav.home_aria">
+          <span class="logo-wordmark transition" data-i18n="common.brand">
             Rahma Media
           </span>
         </a>
 
         <div class="hidden items-center gap-8 px-6 py-3 text-sm font-medium lg:flex">
-          <a class="nav-link" href="/">Home</a>
-          <a class="nav-link" href="/portfolio">Portfolio</a>
-          <a class="nav-link" href="/#about">About</a>
-          <a class="nav-link" href="/#services">Services</a>
-          <a class="nav-link" href="/#process">Process</a>
-          <a class="nav-link" href="/#contact">Contact</a>
+          <a class="nav-link" href="/" data-i18n="common.nav.home">Home</a>
+          <a class="nav-link" href="/portfolio" data-i18n="common.nav.portfolio">Our Work</a>
+          <a class="nav-link" href="/#about" data-i18n="common.nav.about">About</a>
+          <a class="nav-link" href="/#services" data-i18n="common.nav.services">Services</a>
+          <a class="nav-link" href="/#process" data-i18n="common.nav.process">Process</a>
+          <a class="nav-link" href="/#contact" data-i18n="common.nav.contact">Contact</a>
         </div>
 
         <!-- Desktop: language toggle + CTA -->
         <div class="nav-actions hidden lg:flex">
-          <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language selection">
-            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic">
+          <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
+            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
               <span class="lang-flag" aria-hidden="true">🇸🇦</span>
-              <span class="lang-label">AR</span>
+              <span class="lang-label" data-i18n="common.language.ar_label">AR</span>
             </button>
-            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English">
+            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
               <span class="lang-flag" aria-hidden="true">🇺🇸</span>
-              <span class="lang-label">EN</span>
+              <span class="lang-label" data-i18n="common.language.en_label">EN</span>
             </button>
             <span class="lang-thumb" aria-hidden="true"></span>
           </div>
           <a
             href="/#contact"
             class="nav-cta rounded-full border px-5 py-2.5 text-sm font-semibold transition inline-flex"
+            data-i18n="common.nav.cta"
           >
             Start a project
           </a>
@@ -107,14 +109,14 @@
 
         <!-- Mobile: language toggle + hamburger -->
         <div class="flex items-center gap-2 lg:hidden">
-          <div class="lang-toggle lang-toggle-sm" data-lang-toggle role="group" aria-label="Language selection">
-            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic">
+          <div class="lang-toggle lang-toggle-sm" data-lang-toggle role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
+            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
               <span class="lang-flag" aria-hidden="true">🇸🇦</span>
-              <span class="lang-label">AR</span>
+              <span class="lang-label" data-i18n="common.language.ar_label">AR</span>
             </button>
-            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English">
+            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
               <span class="lang-flag" aria-hidden="true">🇺🇸</span>
-              <span class="lang-label">EN</span>
+              <span class="lang-label" data-i18n="common.language.en_label">EN</span>
             </button>
             <span class="lang-thumb" aria-hidden="true"></span>
           </div>
@@ -122,6 +124,7 @@
             class="grid h-10 w-10 place-items-center rounded-full bg-transparent"
             type="button"
             aria-label="Open menu"
+            data-i18n-aria-label="common.nav.open_menu_aria"
             aria-expanded="false"
             data-menu-button
           >
@@ -132,12 +135,12 @@
 
       <div class="hidden border-t border-paper/10 bg-ink/96 py-6 text-paper backdrop-blur-xl lg:hidden" data-mobile-menu>
         <div class="content-container grid gap-5 text-xl font-medium">
-          <a href="/">Home</a>
-          <a href="/portfolio">Portfolio</a>
-          <a href="/#about">About</a>
-          <a href="/#services">Services</a>
-          <a href="/#process">Process</a>
-          <a href="/#contact">Contact</a>
+          <a href="/" data-i18n="common.nav.home">Home</a>
+          <a href="/portfolio" data-i18n="common.nav.portfolio">Our Work</a>
+          <a href="/#about" data-i18n="common.nav.about">About</a>
+          <a href="/#services" data-i18n="common.nav.services">Services</a>
+          <a href="/#process" data-i18n="common.nav.process">Process</a>
+          <a href="/#contact" data-i18n="common.nav.contact">Contact</a>
         </div>
       </div>
     </header>
@@ -149,26 +152,27 @@
         <img
           src="./assets/hero.jpg"
           alt="Rahma Media creative studio"
+          data-i18n-alt="index.hero.image_alt"
           class="absolute inset-0 h-full w-full object-cover"
         />
 
         <!-- Hero content — fills remaining viewport height above ticker -->
         <div class="relative flex flex-1 flex-col justify-center">
-          <div class="hero-copy-container content-container pb-10 pt-24 lg:-translate-y-[60px] lg:translate-x-[30px] lg:pb-12 lg:pt-28">
+          <div class="hero-copy-container content-container pb-10 pt-24 lg:pb-12 lg:pt-28">
             <div class="max-w-4xl" data-reveal>
               <h1 class="font-display text-paper">
-                <span class="block text-6xl leading-[0.88] text-[#FDCEDF] md:text-8xl lg:text-[8rem]">Rahma Media</span>
-                <span class="mt-3 block pl-[10px] text-2xl leading-snug text-paper/70 md:text-3xl lg:text-4xl">builds brands people can feel.</span>
+                <span class="block text-6xl leading-[0.88] text-[#FDCEDF] md:text-8xl lg:text-[8rem]" data-i18n="index.hero.headline_brand">Rahma Media</span>
+                <span class="mt-3 block ps-[10px] text-2xl leading-snug text-[#102c57] md:text-3xl lg:text-4xl" data-i18n="index.hero.headline_line">builds brands people can feel.</span>
               </h1>
-              <div class="mt-10 flex flex-col gap-8 pl-[10px] md:flex-row md:items-end md:justify-between">
-                <p class="max-w-xl text-lg leading-[1.75] text-paper/70 md:text-xl">
+              <div class="mt-10 flex flex-col gap-8 ps-[10px] md:flex-row md:items-end md:justify-between">
+                <p class="max-w-xl text-lg leading-[1.75] text-[#102c57] md:text-xl" data-i18n="index.hero.body">
                   We build brands that speak with clarity, intention, and impact — from identity systems to integrated campaigns that drive real results.
                 </p>
                 <div class="flex shrink-0 flex-row gap-3">
-                  <a href="/#about" class="rounded-full bg-paper px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:opacity-90">
+                  <a href="/#about" class="rounded-full bg-paper px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:opacity-90" data-i18n="index.hero.about_cta">
                     About us
                   </a>
-                  <a href="/#contact" class="rounded-full border border-paper bg-transparent px-6 py-3 text-sm font-semibold text-paper transition hover:-translate-y-0.5 hover:bg-paper hover:text-ink">
+                  <a href="/#contact" class="rounded-full border border-paper bg-transparent px-6 py-3 text-sm font-semibold text-paper transition hover:-translate-y-0.5 hover:bg-paper hover:text-ink" data-i18n="index.hero.book_cta">
                     Book a call
                   </a>
                 </div>
@@ -180,48 +184,48 @@
         <!-- Ticker — full width, section ends here -->
         <div class="hero-ticker relative overflow-hidden border-y border-paper/12 py-5" aria-hidden="true">
           <div class="ticker-track flex items-center whitespace-nowrap">
-            <span class="inline-flex items-center gap-10 pr-10 text-xs font-semibold uppercase tracking-[0.28em] text-paper/65">
-              <span>Social Media</span>
+            <span class="inline-flex items-center gap-10 pe-10 text-xs font-semibold uppercase tracking-[0.28em] text-paper/65">
+              <span data-i18n="index.ticker.social_media">Social Media</span>
               <span class="text-paper/20">—</span>
-              <span>Visual Identity</span>
+              <span data-i18n="index.ticker.visual_identity">Visual Identity</span>
               <span class="text-paper/20">—</span>
-              <span>Brand Strategy</span>
+              <span data-i18n="index.ticker.brand_strategy">Brand Strategy</span>
               <span class="text-paper/20">—</span>
-              <span>Digital Marketing</span>
+              <span data-i18n="index.ticker.digital_marketing">Digital Marketing</span>
               <span class="text-paper/20">—</span>
-              <span>Content Creation</span>
+              <span data-i18n="index.ticker.content_creation">Content Creation</span>
               <span class="text-paper/20">—</span>
-              <span>Social Media</span>
+              <span data-i18n="index.ticker.social_media">Social Media</span>
               <span class="text-paper/20">—</span>
-              <span>Visual Identity</span>
+              <span data-i18n="index.ticker.visual_identity">Visual Identity</span>
               <span class="text-paper/20">—</span>
-              <span>Brand Strategy</span>
+              <span data-i18n="index.ticker.brand_strategy">Brand Strategy</span>
               <span class="text-paper/20">—</span>
-              <span>Digital Marketing</span>
+              <span data-i18n="index.ticker.digital_marketing">Digital Marketing</span>
               <span class="text-paper/20">—</span>
-              <span>Content Creation</span>
+              <span data-i18n="index.ticker.content_creation">Content Creation</span>
               <span class="text-paper/20">—</span>
             </span>
-            <span class="inline-flex items-center gap-10 pr-10 text-xs font-semibold uppercase tracking-[0.28em] text-paper/65" aria-hidden="true">
-              <span>Social Media</span>
+            <span class="inline-flex items-center gap-10 pe-10 text-xs font-semibold uppercase tracking-[0.28em] text-paper/65" aria-hidden="true">
+              <span data-i18n="index.ticker.social_media">Social Media</span>
               <span class="text-paper/20">—</span>
-              <span>Visual Identity</span>
+              <span data-i18n="index.ticker.visual_identity">Visual Identity</span>
               <span class="text-paper/20">—</span>
-              <span>Brand Strategy</span>
+              <span data-i18n="index.ticker.brand_strategy">Brand Strategy</span>
               <span class="text-paper/20">—</span>
-              <span>Digital Marketing</span>
+              <span data-i18n="index.ticker.digital_marketing">Digital Marketing</span>
               <span class="text-paper/20">—</span>
-              <span>Content Creation</span>
+              <span data-i18n="index.ticker.content_creation">Content Creation</span>
               <span class="text-paper/20">—</span>
-              <span>Social Media</span>
+              <span data-i18n="index.ticker.social_media">Social Media</span>
               <span class="text-paper/20">—</span>
-              <span>Visual Identity</span>
+              <span data-i18n="index.ticker.visual_identity">Visual Identity</span>
               <span class="text-paper/20">—</span>
-              <span>Brand Strategy</span>
+              <span data-i18n="index.ticker.brand_strategy">Brand Strategy</span>
               <span class="text-paper/20">—</span>
-              <span>Digital Marketing</span>
+              <span data-i18n="index.ticker.digital_marketing">Digital Marketing</span>
               <span class="text-paper/20">—</span>
-              <span>Content Creation</span>
+              <span data-i18n="index.ticker.content_creation">Content Creation</span>
               <span class="text-paper/20">—</span>
             </span>
           </div>
@@ -232,17 +236,17 @@
       <section id="about" class="about-page bg-paper py-32 lg:py-40" data-nav-theme="light">
         <div class="content-container grid gap-16 lg:grid-cols-[0.9fr_0.95fr] lg:items-start lg:gap-14 xl:px-12">
           <div data-reveal>
-            <p class="text-xs font-semibold uppercase tracking-[0.28em] text-tide">About*</p>
-            <h2 class="mt-5 font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl">A marketing agency with good taste.</h2>
+            <p class="text-xs font-semibold uppercase tracking-[0.28em] text-tide" data-i18n="index.about.kicker">About</p>
+            <h2 class="mt-5 font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl" data-i18n="index.about.title">A marketing agency with good taste.</h2>
           </div>
           <div class="w-full space-y-7 text-lg leading-[1.8] lg:max-w-[35rem] lg:justify-self-end" data-reveal>
-            <p>
+            <p data-i18n="index.about.body_1">
               Rahma Media is a creative studio built for brands that mean something. We believe every business has a story worth
               telling beautifully- and we're committed to telling yours.
             </p>
-            <p>
+            <p data-i18n="index.about.body_2">
               We design campaigns, content, websites, launch ideas, little brand moments, big brand moments, and the moments that don't just look expensive- they feel intentional. Because your business deserves more than generic.</p>
-            <p>
+            <p data-i18n="index.about.body_3">
               Sharp visuals. Clean messaging. Better taste. Fast edits. All of it made with the care your business deserves
             </p>
           </div>
@@ -252,28 +256,28 @@
       <!-- Services -->
       <section id="services" class="services-page py-24 lg:py-28" data-nav-theme="light">
         <div class="content-container min-h-[720px]">
-          <h2 class="services-title" data-reveal>Our Services</h2>
+          <h2 class="services-title" data-reveal data-i18n="index.services.title">Our Services</h2>
 
           <div class="services-list" data-reveal>
             <article class="service-row">
-              <h3>Free Consultation</h3>
-              <p>1 hr</p>
-              <a href="/#contact">Book Now</a>
+              <h3 data-i18n="index.services.free_consultation.title">Free Consultation</h3>
+              <p data-i18n="index.services.duration_one_hour">1 hr</p>
+              <a href="/#contact" data-i18n="index.services.book_now">Book Now</a>
             </article>
             <article class="service-row">
-              <h3>Brand Direction</h3>
-              <p>1 hr<br /><span>US$100</span></p>
-              <a href="/#contact">Book Now</a>
+              <h3 data-i18n="index.services.brand_direction.title">Brand Direction</h3>
+              <p><span data-i18n="index.services.duration_one_hour">1 hr</span><br /><span data-i18n="index.services.price_usd_100">US$100</span></p>
+              <a href="/#contact" data-i18n="index.services.book_now">Book Now</a>
             </article>
             <article class="service-row">
-              <h3>Campaign Planning</h3>
-              <p>1 hr<br /><span>US$100</span></p>
-              <a href="/#contact">Book Now</a>
+              <h3 data-i18n="index.services.campaign_planning.title">Campaign Planning</h3>
+              <p><span data-i18n="index.services.duration_one_hour">1 hr</span><br /><span data-i18n="index.services.price_usd_100">US$100</span></p>
+              <a href="/#contact" data-i18n="index.services.book_now">Book Now</a>
             </article>
             <article class="service-row">
-              <h3>Content Management</h3>
-              <p>1 hr<br /><span>US$100</span></p>
-              <a href="/#contact">Book Now</a>
+              <h3 data-i18n="index.services.content_management.title">Content Management</h3>
+              <p><span data-i18n="index.services.duration_one_hour">1 hr</span><br /><span data-i18n="index.services.price_usd_100">US$100</span></p>
+              <a href="/#contact" data-i18n="index.services.book_now">Book Now</a>
             </article>
           </div>
         </div>
@@ -283,17 +287,17 @@
       <section id="process" class="overflow-hidden bg-ink py-32 text-paper lg:py-40" data-nav-theme="dark">
         <div class="content-container grid gap-16 lg:grid-cols-[0.9fr_0.95fr] lg:items-center lg:gap-14 xl:px-12">
           <div data-reveal>
-            <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ember">Process</p>
-            <h2 class="mt-5 font-display text-5xl leading-[1.0] text-paper md:text-6xl lg:text-7xl">From signal to launch in weeks.</h2>
-            <p class="mt-8 max-w-lg text-lg leading-[1.8] text-paper/60">
+            <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ember" data-i18n="index.process.kicker">Process</p>
+            <h2 class="mt-5 font-display text-5xl leading-[1.0] text-paper md:text-6xl lg:text-7xl" data-i18n="index.process.title">From signal to launch in weeks.</h2>
+            <p class="mt-8 max-w-lg text-lg leading-[1.8] text-paper/60" data-i18n="index.process.body">
               The workflow is tight on purpose: clarify what needs to move, make the work, measure the response, then sharpen the next wave.
             </p>
             <div class="mt-10 flex flex-wrap items-center gap-6">
-              <a href="/portfolio" class="rounded-full bg-paper px-7 py-3 text-xs font-bold uppercase tracking-[0.1em] text-ink transition hover:-translate-y-0.5 hover:opacity-90">
+              <a href="/portfolio" class="rounded-full bg-paper px-7 py-3 text-xs font-bold uppercase tracking-[0.1em] text-ink transition hover:-translate-y-0.5 hover:opacity-90" data-i18n="index.process.work_cta">
                 View Our Work
               </a>
               <a href="/process" class="process-link inline-flex items-center gap-2 text-sm font-semibold text-paper/65 transition hover:text-ember">
-                <span class="process-link-text">Our process</span> <span aria-hidden="true">→</span>
+                <span class="process-link-text" data-i18n="index.process.process_cta">Our process</span> <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
@@ -302,23 +306,24 @@
             <img
               src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=85"
               alt="Creative team workshopping a launch plan at a table"
+              data-i18n-alt="index.process.image_alt"
               class="aspect-[4/5] w-full object-cover md:aspect-[5/4]"
             />
             <div class="absolute inset-x-4 bottom-4 grid gap-4 bg-paper/92 p-6 text-ink backdrop-blur-xl sm:grid-cols-3">
               <div class="process-step">
-                <span>01</span>
-                <strong>Map</strong>
-                <p>Audience, offer, story, channels.</p>
+                <span data-i18n="index.process.map.number">01</span>
+                <strong data-i18n="index.process.map.title">Map</strong>
+                <p data-i18n="index.process.map.body">Audience, offer, story, channels.</p>
               </div>
               <div class="process-step">
-                <span>02</span>
-                <strong>Make</strong>
-                <p>Films, edits, pages, posts.</p>
+                <span data-i18n="index.process.make.number">02</span>
+                <strong data-i18n="index.process.make.title">Make</strong>
+                <p data-i18n="index.process.make.body">Films, edits, pages, posts.</p>
               </div>
               <div class="process-step">
-                <span>03</span>
-                <strong>Move</strong>
-                <p>Launch, measure, optimize.</p>
+                <span data-i18n="index.process.move.number">03</span>
+                <strong data-i18n="index.process.move.title">Move</strong>
+                <p data-i18n="index.process.move.body">Launch, measure, optimize.</p>
               </div>
             </div>
           </div>
@@ -328,8 +333,8 @@
       <!-- CTA -->
       <section class="bg-paper py-28 text-[#452829] lg:py-36" data-nav-theme="light">
         <div class="content-container grid gap-16 lg:grid-cols-[0.9fr_0.95fr] lg:items-center lg:gap-14 xl:px-12" data-reveal>
-          <h2 class="font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl">Bring the idea. We'll make it impossible to ignore.</h2>
-          <p class="w-full text-lg leading-[1.8] text-[#452829]/72 lg:max-w-[35rem] lg:justify-self-end">
+          <h2 class="font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl" data-i18n="index.cta.title">Bring the idea. We'll make it impossible to ignore.</h2>
+          <p class="w-full text-lg leading-[1.8] text-[#452829]/72 lg:max-w-[35rem] lg:justify-self-end" data-i18n="index.cta.body">
             Built for teams that want taste, speed, and a launch partner who can move from strategy to finished creative without losing the thread.
           </p>
         </div>
@@ -340,25 +345,25 @@
         <div class="content-container grid gap-16 lg:grid-cols-[0.9fr_0.95fr] lg:items-start lg:gap-14 xl:px-12">
       
           <div data-reveal>
-            <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ember">Contact</p>
+            <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ember" data-i18n="index.contact.kicker">Contact</p>
       
-            <h2 class="mt-5 font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl">
+            <h2 class="mt-5 font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl" data-i18n="index.contact.title">
               Tell us what you're building.
             </h2>
       
             <!-- Added spacing here -->
-            <p class="mt-8 text-lg leading-[1.8] text-[#452829]/65">
+            <p class="mt-8 text-lg leading-[1.8] text-[#452829]/65" data-i18n="index.contact.body">
               Share the rough version. The launch date, the audience, the problem, the dream.
               We can shape the rest together.
             </p>
 
             <!-- Added spacing here -->
             <div class="mt-10 space-y-3">
-              <a class="block text-[#452829]/80 transition hover:text-[#452829]" href="mailto:ramlline10@gmail.com">
+              <a class="block text-[#452829]/80 transition hover:text-[#452829]" href="mailto:ramlline10@gmail.com" data-i18n="index.contact.email">
                 ramlline10@gmail.com
               </a>
 
-              <a class="block text-[#452829]/80 transition hover:text-[#452829]" href="tel:+966501877873">
+              <a class="block text-[#452829]/80 transition hover:text-[#452829]" href="tel:+966501877873" data-i18n="index.contact.phone">
                 Phone: +966 50 187 7873
               </a>
             </div>
@@ -367,35 +372,35 @@
           <form class="contact-form mt-12 lg:mt-0" data-contact-form>
             <div class="grid gap-6 sm:grid-cols-2">
               <label>
-                <span>Name</span>
+                <span data-i18n="index.contact.form.name_label">Name</span>
                 <input name="name" type="text" autocomplete="name" required />
               </label>
       
               <label>
-                <span>Email</span>
+                <span data-i18n="index.contact.form.email_label">Email</span>
                 <input name="email" type="email" autocomplete="email" required />
               </label>
             </div>
       
             <label>
-              <span>Project type</span>
+              <span data-i18n="index.contact.form.project_type_label">Project type</span>
               <select name="project">
-                <option>Please Choose Your Project</option>
-                <option>Marketing Campaign</option>
-                <option>Brand film</option>
-                <option>Social campaign</option>
-                <option>Website</option>
-                <option>Full launch</option>
+                <option data-i18n="index.contact.form.project_placeholder">Please Choose Your Project</option>
+                <option data-i18n="index.contact.form.project_marketing_campaign">Marketing Campaign</option>
+                <option data-i18n="index.contact.form.project_brand_film">Brand film</option>
+                <option data-i18n="index.contact.form.project_social_campaign">Social campaign</option>
+                <option data-i18n="index.contact.form.project_website">Website</option>
+                <option data-i18n="index.contact.form.project_full_launch">Full launch</option>
               </select>
             </label>
       
             <label>
-              <span>What should this project accomplish?</span>
+              <span data-i18n="index.contact.form.message_label">What should this project accomplish?</span>
               <textarea name="message" rows="5" required></textarea>
             </label>
       
             <div class="flex flex-wrap items-center gap-5">
-              <button type="submit">Send inquiry</button>
+              <button type="submit" data-i18n="index.contact.form.submit">Send inquiry</button>
               <p class="text-sm text-[#452829]/50" data-form-status aria-live="polite"></p>
             </div>
           </form>
@@ -405,16 +410,17 @@
 
     <footer class="bg-ink py-10 text-paper lg:py-12" data-nav-theme="dark">
       <div class="content-container flex flex-col gap-5 text-sm text-paper/50 md:flex-row md:items-center md:justify-between">
-        <p class="font-display text-base font-bold tracking-tight text-[#FDCEDF]">Rahma Media</p>
-        <p>© <span data-year></span> Rahma Media. Crafted for launch momentum.</p>
+        <p class="font-display text-base font-bold tracking-tight text-[#FDCEDF]" data-i18n="common.brand">Rahma Media</p>
+        <p>© <span data-year></span> <span data-i18n="common.footer.copyright">Rahma Media. Crafted for launch momentum.</span></p>
         <div class="flex gap-6 font-medium text-paper/60">
-          <a class="transition hover:text-paper" href="/#about">About</a>
-          <a class="transition hover:text-paper" href="/#services">Services</a>
-          <a class="transition hover:text-paper" href="/#contact">Contact</a>
+          <a class="transition hover:text-paper" href="/#about" data-i18n="common.nav.about">About</a>
+          <a class="transition hover:text-paper" href="/#services" data-i18n="common.nav.services">Services</a>
+          <a class="transition hover:text-paper" href="/#contact" data-i18n="common.nav.contact">Contact</a>
         </div>
       </div>
     </footer>
 
+    <script src="./js/i18n.js"></script>
     <script type="module" src="./app.js"></script>
   </body>
 </html>

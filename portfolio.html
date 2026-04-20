@@ -6,6 +6,7 @@
     <meta
       name="description"
       content="Rahma Media portfolio — selected brand films, campaigns, and digital work."
+      data-i18n-content="portfolio.meta.description"
     />
     <script>
       (() => {
@@ -17,7 +18,7 @@
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
       })();
     </script>
-    <title>Portfolio | Rahma Media</title>
+    <title data-i18n="portfolio.meta.title">Portfolio | Rahma Media</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -40,44 +41,45 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="portfolio-page font-body text-ink antialiased">
     <header class="fixed inset-x-0 top-0 z-50" data-header>
-      <nav class="main-nav content-container flex items-center justify-between py-5" aria-label="Portfolio navigation">
-        <a href="/" class="group flex items-center" aria-label="Rahma Media home">
-          <span class="logo-wordmark transition">
+      <nav class="main-nav content-container flex items-center justify-between py-5" aria-label="Portfolio navigation" data-i18n-aria-label="common.nav.portfolio_aria">
+        <a href="/" class="group flex items-center" aria-label="Rahma Media home" data-i18n-aria-label="common.nav.home_aria">
+          <span class="logo-wordmark transition" data-i18n="common.brand">
             Rahma Media
           </span>
         </a>
 
         <div class="hidden items-center gap-8 px-6 py-3 text-sm font-medium lg:flex">
-          <a class="nav-link" href="/">Home</a>
-          <a class="nav-link" href="/portfolio">Portfolio</a>
-          <a class="nav-link" href="/#about">About</a>
-          <a class="nav-link" href="/#services">Services</a>
-          <a class="nav-link" href="/#process">Process</a>
-          <a class="nav-link" href="/#contact">Contact</a>
+          <a class="nav-link" href="/" data-i18n="common.nav.home">Home</a>
+          <a class="nav-link" href="/portfolio" data-i18n="common.nav.portfolio">Our Work</a>
+          <a class="nav-link" href="/#about" data-i18n="common.nav.about">About</a>
+          <a class="nav-link" href="/#services" data-i18n="common.nav.services">Services</a>
+          <a class="nav-link" href="/#process" data-i18n="common.nav.process">Process</a>
+          <a class="nav-link" href="/#contact" data-i18n="common.nav.contact">Contact</a>
         </div>
 
         <!-- Desktop: language toggle + CTA -->
         <div class="nav-actions hidden lg:flex">
-          <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language selection">
-            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic">
+          <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
+            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
               <span class="lang-flag" aria-hidden="true">🇸🇦</span>
-              <span class="lang-label">AR</span>
+              <span class="lang-label" data-i18n="common.language.ar_label">AR</span>
             </button>
-            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English">
+            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
               <span class="lang-flag" aria-hidden="true">🇺🇸</span>
-              <span class="lang-label">EN</span>
+              <span class="lang-label" data-i18n="common.language.en_label">EN</span>
             </button>
             <span class="lang-thumb" aria-hidden="true"></span>
           </div>
           <a
             href="/#contact"
             class="nav-cta rounded-full border px-5 py-2.5 text-sm font-semibold transition inline-flex"
+            data-i18n="common.nav.cta"
           >
             Start a project
           </a>
@@ -85,14 +87,14 @@
 
         <!-- Mobile: language toggle + hamburger -->
         <div class="flex items-center gap-2 lg:hidden">
-          <div class="lang-toggle lang-toggle-sm" data-lang-toggle role="group" aria-label="Language selection">
-            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic">
+          <div class="lang-toggle lang-toggle-sm" data-lang-toggle role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
+            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
               <span class="lang-flag" aria-hidden="true">🇸🇦</span>
-              <span class="lang-label">AR</span>
+              <span class="lang-label" data-i18n="common.language.ar_label">AR</span>
             </button>
-            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English">
+            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
               <span class="lang-flag" aria-hidden="true">🇺🇸</span>
-              <span class="lang-label">EN</span>
+              <span class="lang-label" data-i18n="common.language.en_label">EN</span>
             </button>
             <span class="lang-thumb" aria-hidden="true"></span>
           </div>
@@ -100,6 +102,7 @@
             class="grid h-10 w-10 place-items-center rounded-full bg-transparent"
             type="button"
             aria-label="Open menu"
+            data-i18n-aria-label="common.nav.open_menu_aria"
             aria-expanded="false"
             data-menu-button
           >
@@ -110,12 +113,12 @@
 
       <div class="hidden border-t border-paper/10 bg-ink/96 py-6 text-paper backdrop-blur-xl lg:hidden" data-mobile-menu>
         <div class="content-container grid gap-5 text-xl font-medium">
-          <a href="/">Home</a>
-          <a href="/portfolio">Portfolio</a>
-          <a href="/#about">About</a>
-          <a href="/#services">Services</a>
-          <a href="/#process">Process</a>
-          <a href="/#contact">Contact</a>
+          <a href="/" data-i18n="common.nav.home">Home</a>
+          <a href="/portfolio" data-i18n="common.nav.portfolio">Our Work</a>
+          <a href="/#about" data-i18n="common.nav.about">About</a>
+          <a href="/#services" data-i18n="common.nav.services">Services</a>
+          <a href="/#process" data-i18n="common.nav.process">Process</a>
+          <a href="/#contact" data-i18n="common.nav.contact">Contact</a>
         </div>
       </div>
     </header>
@@ -124,43 +127,46 @@
       <section class="portfolio-showcase" data-nav-theme="light">
         <div class="content-container">
           <div class="portfolio-title-wrap">
-            <h1 class="portfolio-title">Portfolio</h1>
+            <h1 class="portfolio-title" data-i18n="portfolio.showcase.title">Our Work</h1>
           </div>
 
           <div class="portfolio-card-grid" data-reveal>
-            <a class="portfolio-card" href="/portfolio-detail?project=cafe" aria-label="Open Café portfolio project">
+            <a class="portfolio-card" href="/portfolio-detail?project=cafe" aria-label="Open Café portfolio project" data-i18n-aria-label="portfolio.cards.cafe.aria_label">
               <div class="portfolio-card-img-wrap">
                 <img
                   src="./assets/hayaticafe.jpg"
                   alt="Hayati Café"
+                  data-i18n-alt="portfolio.cards.cafe.image_alt"
                 />
               </div>
               <span class="portfolio-card-copy">
-                <span>Café</span>
+                <span data-i18n="portfolio.cards.cafe.title">Café</span>
               </span>
             </a>
 
-            <a class="portfolio-card" href="/portfolio-detail?project=clinic" aria-label="Open Clinic portfolio project">
+            <a class="portfolio-card" href="/portfolio-detail?project=clinic" aria-label="Open Clinic portfolio project" data-i18n-aria-label="portfolio.cards.clinic.aria_label">
               <div class="portfolio-card-img-wrap">
                 <img
                   src="./assets/hayaticlinic.jpg"
                   alt="Hayati Clinic"
+                  data-i18n-alt="portfolio.cards.clinic.image_alt"
                 />
               </div>
               <span class="portfolio-card-copy">
-                <span>Clinic</span>
+                <span data-i18n="portfolio.cards.clinic.title">Clinic</span>
               </span>
             </a>
 
-            <a class="portfolio-card" href="/portfolio-detail?project=salon" aria-label="Open Salon portfolio project">
+            <a class="portfolio-card" href="/portfolio-detail?project=salon" aria-label="Open Salon portfolio project" data-i18n-aria-label="portfolio.cards.salon.aria_label">
               <div class="portfolio-card-img-wrap">
                 <img
                   src="./assets/hayatisalon.jpg"
                   alt="Hayati Salon"
+                  data-i18n-alt="portfolio.cards.salon.image_alt"
                 />
               </div>
               <span class="portfolio-card-copy">
-                <span>Salon</span>
+                <span data-i18n="portfolio.cards.salon.title">Salon</span>
               </span>
             </a>
           </div>
@@ -168,6 +174,7 @@
       </section>
     </main>
 
+    <script src="./js/i18n.js"></script>
     <script type="module" src="./app.js"></script>
   </body>
 </html>

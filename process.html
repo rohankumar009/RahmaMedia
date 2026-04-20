@@ -6,6 +6,7 @@
     <meta
       name="description"
       content="How Rahma Media works — a tight three-phase process from strategy to launch."
+      data-i18n-content="process_page.meta.description"
     />
     <script>
       (() => {
@@ -17,7 +18,7 @@
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
       })();
     </script>
-    <title>Our Process | Rahma Media</title>
+    <title data-i18n="process_page.meta.title">Our Process | Rahma Media</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -43,42 +44,43 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="bg-paper font-body text-ink antialiased">
 
     <header class="fixed inset-x-0 top-0 z-50" data-header>
-      <nav class="main-nav content-container flex items-center justify-between py-5" aria-label="Main navigation">
-        <a href="/" class="group flex items-center" aria-label="Rahma Media home">
-          <span class="logo-wordmark transition">Rahma Media</span>
+      <nav class="main-nav content-container flex items-center justify-between py-5" aria-label="Main navigation" data-i18n-aria-label="common.nav.main_aria">
+        <a href="/" class="group flex items-center" aria-label="Rahma Media home" data-i18n-aria-label="common.nav.home_aria">
+          <span class="logo-wordmark transition" data-i18n="common.brand">Rahma Media</span>
         </a>
 
         <div class="hidden items-center gap-8 px-6 py-3 text-sm font-medium lg:flex">
-          <a class="nav-link" href="/">Home</a>
-          <a class="nav-link" href="/portfolio">Portfolio</a>
-          <a class="nav-link" href="/#about">About</a>
-          <a class="nav-link" href="/#services">Services</a>
-          <a class="nav-link" href="/process">Process</a>
-          <a class="nav-link" href="/#contact">Contact</a>
+          <a class="nav-link" href="/" data-i18n="common.nav.home">Home</a>
+          <a class="nav-link" href="/portfolio" data-i18n="common.nav.portfolio">Our Work</a>
+          <a class="nav-link" href="/#about" data-i18n="common.nav.about">About</a>
+          <a class="nav-link" href="/#services" data-i18n="common.nav.services">Services</a>
+          <a class="nav-link" href="/process" data-i18n="common.nav.process">Process</a>
+          <a class="nav-link" href="/#contact" data-i18n="common.nav.contact">Contact</a>
         </div>
 
         <!-- Desktop: language toggle + CTA -->
         <div class="nav-actions hidden lg:flex">
-          <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language selection">
-            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic">
+          <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
+            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
               <span class="lang-flag" aria-hidden="true">🇸🇦</span>
-              <span class="lang-label">AR</span>
+              <span class="lang-label" data-i18n="common.language.ar_label">AR</span>
             </button>
-            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English">
+            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
               <span class="lang-flag" aria-hidden="true">🇺🇸</span>
-              <span class="lang-label">EN</span>
+              <span class="lang-label" data-i18n="common.language.en_label">EN</span>
             </button>
             <span class="lang-thumb" aria-hidden="true"></span>
           </div>
           <a
             href="/#contact"
             class="nav-cta rounded-full border px-5 py-2.5 text-sm font-semibold transition inline-flex"
+            data-i18n="common.nav.cta"
           >
             Start a project
           </a>
@@ -86,14 +88,14 @@
 
         <!-- Mobile: language toggle + hamburger -->
         <div class="flex items-center gap-2 lg:hidden">
-          <div class="lang-toggle lang-toggle-sm" data-lang-toggle role="group" aria-label="Language selection">
-            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic">
+          <div class="lang-toggle lang-toggle-sm" data-lang-toggle role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
+            <button class="lang-opt" data-lang="ar" aria-pressed="false" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
               <span class="lang-flag" aria-hidden="true">🇸🇦</span>
-              <span class="lang-label">AR</span>
+              <span class="lang-label" data-i18n="common.language.ar_label">AR</span>
             </button>
-            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English">
+            <button class="lang-opt" data-lang="en" aria-pressed="true" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
               <span class="lang-flag" aria-hidden="true">🇺🇸</span>
-              <span class="lang-label">EN</span>
+              <span class="lang-label" data-i18n="common.language.en_label">EN</span>
             </button>
             <span class="lang-thumb" aria-hidden="true"></span>
           </div>
@@ -101,6 +103,7 @@
             class="grid h-10 w-10 place-items-center rounded-full bg-transparent"
             type="button"
             aria-label="Open menu"
+            data-i18n-aria-label="common.nav.open_menu_aria"
             aria-expanded="false"
             data-menu-button
           >
@@ -111,12 +114,12 @@
 
       <div class="hidden border-t border-paper/10 bg-ink/96 py-6 text-paper backdrop-blur-xl lg:hidden" data-mobile-menu>
         <div class="content-container grid gap-5 text-xl font-medium">
-          <a href="/">Home</a>
-          <a href="/portfolio">Portfolio</a>
-          <a href="/#about">About</a>
-          <a href="/#services">Services</a>
-          <a href="/process">Process</a>
-          <a href="/#contact">Contact</a>
+          <a href="/" data-i18n="common.nav.home">Home</a>
+          <a href="/portfolio" data-i18n="common.nav.portfolio">Our Work</a>
+          <a href="/#about" data-i18n="common.nav.about">About</a>
+          <a href="/#services" data-i18n="common.nav.services">Services</a>
+          <a href="/process" data-i18n="common.nav.process">Process</a>
+          <a href="/#contact" data-i18n="common.nav.contact">Contact</a>
         </div>
       </div>
     </header>
@@ -126,21 +129,22 @@
       <!-- Page header -->
       <section class="bg-paper pt-40 pb-16 lg:pt-52 lg:pb-20" data-nav-theme="light">
         <div class="content-container xl:px-12" data-reveal>
-          <a href="/" class="project-back-link">← Rahma Media</a>
-          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ember">How we work</p>
-          <h1 class="mt-5 font-display text-6xl leading-[0.9] text-ink md:text-7xl lg:text-[5.5rem]">Our Process.</h1>
-          <p class="mt-8 max-w-2xl text-xl leading-[1.75] text-ink/60">
+          <a href="/" class="project-back-link"><span aria-hidden="true">←</span> <span data-i18n="process_page.header.back_home">Rahma Media</span></a>
+          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ember" data-i18n="process_page.header.kicker">How we work</p>
+          <h1 class="mt-5 font-display text-6xl leading-[0.9] text-ink md:text-7xl lg:text-[5.5rem]" data-i18n="process_page.header.title">Our Process.</h1>
+          <p class="mt-8 max-w-2xl text-xl leading-[1.75] text-ink/60" data-i18n="process_page.header.body">
             Five phases. Each one is tight, purposeful, and built to move fast without losing the thread
           </p>
           <div class="mt-10 flex flex-wrap items-center gap-6">
             <a href="/portfolio"
-              class="rounded-full bg-ink px-7 py-3 text-xs font-bold uppercase tracking-[0.1em] text-paper transition hover:-translate-y-0.5 hover:bg-ink/85 hover:text-ember focus:text-ember">
+              class="rounded-full bg-ink px-7 py-3 text-xs font-bold uppercase tracking-[0.1em] text-paper transition hover:-translate-y-0.5 hover:bg-ink/85 hover:text-ember focus:text-ember"
+              data-i18n="process_page.header.view_work_cta">
               View Our Work
             </a>
 
             <a href="/#contact"
               class="inline-flex items-center gap-2 text-sm font-semibold text-ink/100 transition hover:text-ember">
-              Start a project <span aria-hidden="true">→</span>
+              <span data-i18n="common.nav.cta">Start a project</span> <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
@@ -151,7 +155,7 @@
         <div class="content-container xl:px-12">
           <div class="border-t border-ink/12 pt-16 lg:pt-20">
 
-            <h2 class="font-display text-4xl leading-[1.0] lg:text-5xl" data-reveal>How We Build Momentum</h2>
+            <h2 class="font-display text-4xl leading-[1.0] lg:text-5xl" data-reveal data-i18n="process_page.momentum.title">How We Build Momentum</h2>
 
             <!-- Vertical timeline -->
             <div class="mt-14 max-w-2xl">
@@ -163,13 +167,13 @@
                   <div class="mt-3 w-px flex-1 bg-ink/12"></div>
                 </div>
                 <div class="pb-14">
-                  <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ink/35">01</p>
-                  <h3 class="mt-2.5 font-display text-3xl leading-[1.05] lg:text-4xl">Audit</h3>
-                  <p class="mt-4 text-lg leading-[1.85] text-ink/62">
+                  <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ink/35" data-i18n="process_page.timeline.audit.number">01</p>
+                  <h3 class="mt-2.5 font-display text-3xl leading-[1.05] lg:text-4xl" data-i18n="process_page.timeline.audit.title">Audit</h3>
+                  <p class="mt-4 text-lg leading-[1.85] text-ink/62" data-i18n="process_page.timeline.audit.body">
                     We assess brand identity, menu/product offer, content quality, platform performance, and customer experience
                   </p>
-                  <div class="mt-5 border-l-2 border-ember pl-4">
-                    <p class="text-sm leading-[1.7] text-ink/48">Example: Café had unclear menu, weak TikTok use, no signature items</p>
+                  <div class="mt-5 border-s-2 border-ember ps-4">
+                    <p class="text-sm leading-[1.7] text-ink/48" data-i18n="process_page.timeline.audit.example">Example: Café had unclear menu, weak TikTok use, no signature items</p>
                   </div>
                 </div>
               </div>
@@ -181,14 +185,14 @@
                   <div class="mt-3 w-px flex-1 bg-ink/12"></div>
                 </div>
                 <div class="pb-14">
-                  <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ink/35">02</p>
-                  <h3 class="mt-2.5 font-display text-3xl leading-[1.05] lg:text-4xl">Strategy</h3>
-                  <p class="mt-4 text-lg leading-[1.85] text-ink/62">
+                  <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ink/35" data-i18n="process_page.timeline.strategy.number">02</p>
+                  <h3 class="mt-2.5 font-display text-3xl leading-[1.05] lg:text-4xl" data-i18n="process_page.timeline.strategy.title">Strategy</h3>
+                  <p class="mt-4 text-lg leading-[1.85] text-ink/62" data-i18n="process_page.timeline.strategy.body">
                     We prioritize the highest-leverage opportunities, develop a focused growth roadmap, and create a weekly content
                     calendar for consistent execution
                   </p>
-                  <div class="mt-5 border-l-2 border-ember pl-4">
-                    <p class="text-sm leading-[1.7] text-ink/48">Example: Simplify menu, introduce signature products, unify visuals, design seasonal campaigns</p>
+                  <div class="mt-5 border-s-2 border-ember ps-4">
+                    <p class="text-sm leading-[1.7] text-ink/48" data-i18n="process_page.timeline.strategy.example">Example: Simplify menu, introduce signature products, unify visuals, design seasonal campaigns</p>
                   </div>
                 </div>
               </div>
@@ -200,13 +204,13 @@
                   <div class="mt-3 w-px flex-1 bg-ink/12"></div>
                 </div>
                 <div class="pb-14">
-                  <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ink/35">03</p>
-                  <h3 class="mt-2.5 font-display text-3xl leading-[1.05] lg:text-4xl">Create &amp; Launch</h3>
-                  <p class="mt-4 text-lg leading-[1.85] text-ink/62">
+                  <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ink/35" data-i18n="process_page.timeline.create_launch.number">03</p>
+                  <h3 class="mt-2.5 font-display text-3xl leading-[1.05] lg:text-4xl" data-i18n="process_page.timeline.create_launch.title">Create &amp; Launch</h3>
+                  <p class="mt-4 text-lg leading-[1.85] text-ink/62" data-i18n="process_page.timeline.create_launch.body">
                     We produce content systems, campaigns, visuals, and rollout plans fast
                   </p>
-                  <div class="mt-5 border-l-2 border-ember pl-4">
-                    <p class="text-sm leading-[1.7] text-ink/48">Example: Daily content cadence, Instagram refresh, TikTok concepts, morning offers</p>
+                  <div class="mt-5 border-s-2 border-ember ps-4">
+                    <p class="text-sm leading-[1.7] text-ink/48" data-i18n="process_page.timeline.create_launch.example">Example: Daily content cadence, Instagram refresh, TikTok concepts, morning offers</p>
                   </div>
                 </div>
               </div>
@@ -217,13 +221,13 @@
                   <div class="h-3 w-3 shrink-0 rounded-full bg-ember ring-4 ring-ember/25"></div>
                 </div>
                 <div class="pb-2">
-                  <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ink/35">05</p>
-                  <h3 class="mt-2.5 font-display text-3xl leading-[1.05] lg:text-4xl">Analyze</h3>
-                  <p class="mt-4 text-lg leading-[1.85] text-ink/62">
+                  <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ink/35" data-i18n="process_page.timeline.analyze.number">05</p>
+                  <h3 class="mt-2.5 font-display text-3xl leading-[1.05] lg:text-4xl" data-i18n="process_page.timeline.analyze.title">Analyze</h3>
+                  <p class="mt-4 text-lg leading-[1.85] text-ink/62" data-i18n="process_page.timeline.analyze.body">
                     We collect performance data, review content results, and identify clear opportunities through audience insights
                   </p>
-                  <div class="mt-5 border-l-2 border-ember pl-4">
-                    <p class="text-sm leading-[1.7] text-ink/48">
+                  <div class="mt-5 border-s-2 border-ember ps-4">
+                    <p class="text-sm leading-[1.7] text-ink/48" data-i18n="process_page.timeline.analyze.example">
                       Example: Reach trends, engagement patterns, campaign reports, audience behavior
                     </p>
                   </div>
@@ -237,13 +241,13 @@
                   <div class="mt-3 w-px flex-1 bg-ink/12"></div>
                 </div>
                 <div class="pb-14">
-                  <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ink/35">05</p>
-                  <h3 class="mt-2.5 font-display text-3xl leading-[1.05] lg:text-4xl">Optimize</h3>
-                  <p class="mt-4 text-lg leading-[1.85] text-ink/62">
+                  <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ink/35" data-i18n="process_page.timeline.optimize.number">05</p>
+                  <h3 class="mt-2.5 font-display text-3xl leading-[1.05] lg:text-4xl" data-i18n="process_page.timeline.optimize.title">Optimize</h3>
+                  <p class="mt-4 text-lg leading-[1.85] text-ink/62" data-i18n="process_page.timeline.optimize.body">
                     We track results weekly and refine based on response
                   </p>
-                  <div class="mt-5 border-l-2 border-ember pl-4">
-                    <p class="text-sm leading-[1.7] text-ink/48">Example: Friday reviews, performance reports, content adjustments based on new insights
+                  <div class="mt-5 border-s-2 border-ember ps-4">
+                    <p class="text-sm leading-[1.7] text-ink/48" data-i18n="process_page.timeline.optimize.example">Example: Friday reviews, performance reports, content adjustments based on new insights
                     </p>
                   </div>
                 </div>
@@ -253,7 +257,7 @@
               
 
             <!-- Client result note -->
-            <p class="mt-12 text-lg leading-[1.7] text-ink/42 lg:mt-14" data-reveal>
+            <p class="mt-12 text-lg leading-[1.7] text-ink/42 lg:mt-14" data-reveal data-i18n="process_page.result_note">
               Recent client example: projected 30–50% lift through stronger execution and consistency.
             </p>
 
@@ -266,17 +270,17 @@
         <div class="content-container xl:px-12">
           <div class="pt-16 lg:pt-20" data-reveal>
             <div class="grid gap-10 lg:grid-cols-[0.9fr_0.95fr] lg:items-end lg:gap-14">
-              <h2 class="font-display text-4xl leading-[1.05] lg:text-5xl">Ready to move from idea to launch?</h2>
+              <h2 class="font-display text-4xl leading-[1.05] lg:text-5xl" data-i18n="process_page.closing.title">Ready to move from idea to launch?</h2>
               <div>
-                <p class="text-lg leading-[1.85] text-ink/62">
+                <p class="text-lg leading-[1.85] text-ink/62" data-i18n="process_page.closing.body">
                   Share the rough version- the launch date, the audience, the problem, the dream. We can shape the rest together!
                 </p>
                 <div class="mt-8 flex flex-wrap items-center gap-6">
-                  <a href="/#contact" class="rounded-full bg-ink px-7 py-3 text-xs font-bold uppercase tracking-[0.1em] text-paper transition hover:-translate-y-0.5 hover:bg-ink/85 hover:text-ember focus:text-ember">
+                  <a href="/#contact" class="rounded-full bg-ink px-7 py-3 text-xs font-bold uppercase tracking-[0.1em] text-paper transition hover:-translate-y-0.5 hover:bg-ink/85 hover:text-ember focus:text-ember" data-i18n="common.nav.cta">
                     Start a project
                   </a>
                   <a href="/portfolio" class="inline-flex items-center gap-2 text-sm font-semibold text-ink/100 transition hover:text-ember">
-                    See our work <span aria-hidden="true">→</span>
+                    <span data-i18n="process_page.closing.see_work_cta">See our work</span> <span aria-hidden="true">→</span>
                   </a>
                 </div>
               </div>
@@ -289,16 +293,17 @@
 
     <footer class="bg-ink py-10 text-paper lg:py-12" data-nav-theme="dark">
       <div class="content-container flex flex-col gap-5 text-sm text-paper/50 md:flex-row md:items-center md:justify-between">
-        <p class="font-display text-base font-bold tracking-tight text-[#FDCEDF]">Rahma Media</p>
-        <p class="font-semibold">© <span data-year></span> Rahma Media - Crafted for launch momentum</p>
+        <p class="font-display text-base font-bold tracking-tight text-[#FDCEDF]" data-i18n="common.brand">Rahma Media</p>
+        <p class="font-semibold">© <span data-year></span> <span data-i18n="common.footer.copyright_dash">Rahma Media - Crafted for launch momentum</span></p>
         <div class="flex gap-6 font-semibold text-paper/60">
-          <a class="transition hover:text-paper" href="/#about">About</a>
-          <a class="transition hover:text-paper" href="/#services">Services</a>
-          <a class="transition hover:text-paper" href="/#contact">Contact</a>
+          <a class="transition hover:text-paper" href="/#about" data-i18n="common.nav.about">About</a>
+          <a class="transition hover:text-paper" href="/#services" data-i18n="common.nav.services">Services</a>
+          <a class="transition hover:text-paper" href="/#contact" data-i18n="common.nav.contact">Contact</a>
         </div>
       </div>
     </footer>
 
+    <script src="./js/i18n.js"></script>
     <script type="module" src="./app.js"></script>
   </body>
 </html>
