@@ -375,7 +375,7 @@ html[dir="rtl"] .nav-link:focus-visible::after {
   isolation: isolate;
   background:
     linear-gradient(180deg, rgba(248, 240, 229, 0.78), rgba(218, 192, 163, 0.42)),
-    url("./assets/hayatipink.jpg") center / cover;
+    url("./assets/services-bg.jpg") center / cover;
   color: #6b3a2a;
 }
 
@@ -384,7 +384,6 @@ html[dir="rtl"] .nav-link:focus-visible::after {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(circle at 50% 8%, rgba(253, 206, 223, 0.4), transparent 34rem),
     linear-gradient(90deg, rgba(248, 240, 229, 0.22), rgba(248, 240, 229, 0.66), rgba(248, 240, 229, 0.22));
   content: "";
 }

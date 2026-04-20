@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth notranslate" translate="no">
+<html lang="ar" dir="rtl" class="scroll-smooth notranslate" translate="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="google" content="notranslate" />
@@ -11,12 +11,7 @@
     />
     <script>
       (() => {
-        let lang = "ar";
-        try {
-          const savedLang = localStorage.getItem("rm-lang");
-          const defaultVersion = localStorage.getItem("rm-lang-default-version");
-          lang = defaultVersion === "ar-default-v1" && (savedLang === "en" || savedLang === "ar") ? savedLang : "ar";
-        } catch {}
+        const lang = "ar";
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
       })();
@@ -137,8 +132,8 @@
             <a class="portfolio-card" href="/portfolio-detail?project=cafe" aria-label="Open Café portfolio project" data-i18n-aria-label="portfolio.cards.cafe.aria_label">
               <div class="portfolio-card-img-wrap">
                 <img
-                  src="./assets/hayaticafe.jpg"
-                  alt="Hayati Café"
+                  src="./assets/cafe.jpg"
+                  alt="Specialty Café"
                   data-i18n-alt="portfolio.cards.cafe.image_alt"
                 />
               </div>
@@ -150,8 +145,8 @@
             <a class="portfolio-card" href="/portfolio-detail?project=clinic" aria-label="Open Clinic portfolio project" data-i18n-aria-label="portfolio.cards.clinic.aria_label">
               <div class="portfolio-card-img-wrap">
                 <img
-                  src="./assets/hayaticlinic.jpg"
-                  alt="Hayati Clinic"
+                  src="./assets/clinic.jpg"
+                  alt="Wellness Clinic"
                   data-i18n-alt="portfolio.cards.clinic.image_alt"
                 />
               </div>
@@ -163,8 +158,8 @@
             <a class="portfolio-card" href="/portfolio-detail?project=salon" aria-label="Open Salon portfolio project" data-i18n-aria-label="portfolio.cards.salon.aria_label">
               <div class="portfolio-card-img-wrap">
                 <img
-                  src="./assets/hayatisalon.jpg"
-                  alt="Hayati Salon"
+                  src="./assets/salon.jpg"
+                  alt="Beauty Salon"
                   data-i18n-alt="portfolio.cards.salon.image_alt"
                 />
               </div>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="notranslate" translate="no">
+<html lang="ar" dir="rtl" class="notranslate" translate="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="google" content="notranslate" />
@@ -7,12 +7,7 @@
     <meta name="description" content="Rahma Media portfolio project." data-i18n-content="project.meta.description" />
     <script>
       (() => {
-        let lang = "ar";
-        try {
-          const savedLang = localStorage.getItem("rm-lang");
-          const defaultVersion = localStorage.getItem("rm-lang-default-version");
-          lang = defaultVersion === "ar-default-v1" && (savedLang === "en" || savedLang === "ar") ? savedLang : "ar";
-        } catch {}
+        const lang = "ar";
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
       })();
@@ -43,7 +38,7 @@
   </head>
   <body class="project-detail-page font-body text-ink antialiased">
     <main class="project-detail-shell">
-      <a class="project-back-link" href="/portfolio" data-i18n="project.detail.back_to_portfolio">Back to portfolio</a>
+      <a class="project-back-link" href="/portfolio" data-i18n="project.detail.back_to_portfolio">Back to Our Work</a>
       <section class="project-detail-panel">
         <img id="project-img" src="" alt="" data-i18n-alt="project.cafe.image_alt" />
         <div>
@@ -83,7 +78,7 @@
           <ul>
             <li data-i18n="project.cafe.case_study.strategy.item_1">Streamlined the menu by removing low-performing and redundant items</li>
             <li data-i18n="project.cafe.case_study.strategy.item_2">Reframed the offering around core strengths in specialty coffee and select food items</li>
-            <li data-i18n="project.cafe.case_study.strategy.item_3">Developed a signature beverage: Hayati Spanish Latte, supported by custom cup branding and launch assets</li>
+            <li data-i18n="project.cafe.case_study.strategy.item_3">Developed a signature beverage: Signature Spanish Latte, supported by custom cup branding and launch assets</li>
             <li data-i18n="project.cafe.case_study.strategy.item_4">Shifted content priorities toward TikTok and Snapchat as primary awareness channels</li>
             <li data-i18n="project.cafe.case_study.strategy.item_5">Repositioned Instagram as a polished brand showcase rather than the main discovery platform</li>
             <li data-i18n="project.cafe.case_study.strategy.item_6">Introduced a seasonal campaign structure tied to local consumer behavior and calendar moments</li>
@@ -95,7 +90,7 @@
           <h4 data-i18n="project.cafe.case_study.execution.menu_title">Menu &amp; Product Positioning</h4>
           <ul>
             <li data-i18n="project.cafe.case_study.execution.menu_item_1">Reduced menu complexity to improve ordering clarity and operational efficiency</li>
-            <li data-i18n="project.cafe.case_study.execution.menu_item_2">Introduced a hero-product model centered around the Hayati Spanish Latte</li>
+            <li data-i18n="project.cafe.case_study.execution.menu_item_2">Introduced a hero-product model centered around the Signature Spanish Latte</li>
             <li data-i18n="project.cafe.case_study.execution.menu_item_3">Improved pastry assortment with more intentional, complementary selections</li>
           </ul>
 
@@ -122,7 +117,7 @@
             The café established a clearer market identity, stronger content consistency, and improved customer recognition around its signature offering. Social engagement increased significantly, brand presentation became more premium and cohesive, and in-store traffic from digital channels became measurable through featured product demand.
           </p>
           <p data-i18n="project.cafe.case_study.results.body_2">
-            The Hayati Spanish Latte became a key anchor product, helping connect online engagement to in-store purchases while differentiating the café within a saturated specialty coffee market.
+            The Signature Spanish Latte became a key anchor product, helping connect online engagement to in-store purchases while differentiating the café within a saturated specialty coffee market.
           </p>
         </section>
 
@@ -318,20 +313,20 @@
     <script>
       const projects = {
         cafe: {
-          img: "./assets/hayaticafe.jpg",
+          img: "./assets/cafe.jpg",
           altKey: "project.cafe.image_alt",
-          alt: "Hayati Café",
+          alt: "Specialty Café",
           kickerKey: "project.cafe.kicker",
           kicker: "Café",
           titleKey: "project.cafe.title",
           title: "A welcoming café brand brought to life.",
           descriptionKey: "project.cafe.description",
-          desc: "Visual identity, content direction, and digital presence crafted for Hayati Café.",
+          desc: "Visual identity, content direction, and digital presence crafted for the café.",
         },
         clinic: {
-          img: "./assets/hayaticlinic.jpg",
+          img: "./assets/clinic.jpg",
           altKey: "project.clinic.image_alt",
-          alt: "Hayati Clinic",
+          alt: "Wellness Clinic",
           kickerKey: "project.clinic.kicker",
           kicker: "Clinic",
           titleKey: "project.clinic.title",
@@ -340,9 +335,9 @@
           desc: "Brand storytelling and digital content designed to build credibility and attract the right audience.",
         },
         salon: {
-          img: "./assets/hayatisalon.jpg",
+          img: "./assets/salon.jpg",
           altKey: "project.salon.image_alt",
-          alt: "Hayati Salon",
+          alt: "Beauty Salon",
           kickerKey: "project.salon.kicker",
           kicker: "Salon",
           titleKey: "project.salon.title",

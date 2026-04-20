@@ -1,6 +1,4 @@
 const RM_LANG_KEY = "rm-lang";
-const RM_LANG_DEFAULT_VERSION_KEY = "rm-lang-default-version";
-const RM_LANG_DEFAULT_VERSION = "ar-default-v1";
 const RM_SUPPORTED_LANGS = new Set(["en", "ar"]);
 const RM_TRANSLATABLE_ATTRIBUTES = {
   "data-i18n-alt": "alt",
@@ -15,23 +13,11 @@ const rmI18nState = {
   dictionaries: {},
 };
 
-const getStoredLanguage = () => {
-  try {
-    const saved = localStorage.getItem(RM_LANG_KEY);
-    const defaultVersion = localStorage.getItem(RM_LANG_DEFAULT_VERSION_KEY);
-
-    if (defaultVersion !== RM_LANG_DEFAULT_VERSION) return "ar";
-
-    return RM_SUPPORTED_LANGS.has(saved) ? saved : "ar";
-  } catch {
-    return "ar";
-  }
-};
+const getStartupLanguage = () => "ar";
 
 const saveLanguage = (lang) => {
   try {
     localStorage.setItem(RM_LANG_KEY, lang);
-    localStorage.setItem(RM_LANG_DEFAULT_VERSION_KEY, RM_LANG_DEFAULT_VERSION);
   } catch {
     // Storage can be unavailable in private browsing; language still changes.
   }
@@ -127,7 +113,7 @@ function initLanguageToggle() {
 
 async function initI18n() {
   initLanguageToggle();
-  await setLanguage(getStoredLanguage());
+  await setLanguage(getStartupLanguage());
 }
 
 window.RM_I18N = {
