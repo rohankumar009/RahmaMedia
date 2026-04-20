@@ -1,5 +1,8 @@
 const RM_LANG_KEY = "rm-lang";
+const RM_LANG_DEFAULT_VERSION_KEY = "rm-lang-default-version";
+const RM_LANG_DEFAULT_VERSION = "ar-default-2026-04-20";
 const RM_SUPPORTED_LANGS = new Set(["en", "ar"]);
+const RM_I18N_BASE_URL = new URL("../i18n/", document.currentScript?.src ?? window.location.href);
 const RM_TRANSLATABLE_ATTRIBUTES = {
   "data-i18n-alt": "alt",
   "data-i18n-aria-label": "aria-label",
@@ -13,9 +16,13 @@ const rmI18nState = {
   dictionaries: {},
 };
 
-const getStoredLanguage = () => {
+const getInitialLanguage = () => {
   try {
+    const defaultVersion = localStorage.getItem(RM_LANG_DEFAULT_VERSION_KEY);
     const saved = localStorage.getItem(RM_LANG_KEY);
+
+    if (defaultVersion !== RM_LANG_DEFAULT_VERSION) return "ar";
+
     return RM_SUPPORTED_LANGS.has(saved) ? saved : "ar";
   } catch {
     return "ar";
@@ -25,6 +32,7 @@ const getStoredLanguage = () => {
 const saveLanguage = (lang) => {
   try {
     localStorage.setItem(RM_LANG_KEY, lang);
+    localStorage.setItem(RM_LANG_DEFAULT_VERSION_KEY, RM_LANG_DEFAULT_VERSION);
   } catch {
     // Storage can be unavailable in private browsing; language still changes.
   }
@@ -41,8 +49,9 @@ const interpolate = (text, replacements = {}) =>
 async function loadDictionary(lang) {
   if (rmI18nState.dictionaries[lang]) return rmI18nState.dictionaries[lang];
 
-  const response = await fetch(`/i18n/${lang}.json`, { cache: "no-store" });
-  if (!response.ok) throw new Error(`Could not load /i18n/${lang}.json`);
+  const url = new URL(`${lang}.json`, RM_I18N_BASE_URL);
+  const response = await fetch(url, { cache: "no-store" });
+  if (!response.ok) throw new Error(`Could not load ${url.pathname}`);
 
   const dictionary = await response.json();
   rmI18nState.dictionaries[lang] = dictionary;
@@ -112,15 +121,16 @@ async function setLanguage(lang) {
 
 function initLanguageToggle() {
   document.querySelectorAll("[data-lang-toggle] [data-lang]").forEach((button) => {
-    button.addEventListener("click", () => {
-      setLanguage(button.dataset.lang);
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      setLanguage(button.getAttribute("data-lang"));
     });
   });
 }
 
 async function initI18n() {
   initLanguageToggle();
-  await setLanguage(getStoredLanguage());
+  await setLanguage(getInitialLanguage());
 }
 
 window.RM_I18N = {

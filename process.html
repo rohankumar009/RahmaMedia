@@ -11,8 +11,13 @@
     />
     <script>
       (() => {
+        const defaultVersion = "ar-default-2026-04-20";
         let lang = "ar";
-        try { const s = localStorage.getItem("rm-lang"); if (s === "en" || s === "ar") lang = s; } catch {}
+        try {
+          const v = localStorage.getItem("rm-lang-default-version");
+          const s = localStorage.getItem("rm-lang");
+          if (v === defaultVersion && (s === "en" || s === "ar")) lang = s;
+        } catch {}
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
       })();
@@ -66,11 +71,11 @@
         <!-- Desktop: language toggle + CTA -->
         <div class="nav-actions hidden lg:flex">
           <div class="lang-toggle" data-lang-toggle data-active="ar" role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
-            <button class="lang-opt" data-lang="ar" aria-pressed="true" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
+            <button type="button" class="lang-opt" data-lang="ar" aria-pressed="true" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
               <span class="lang-flag" aria-hidden="true">🇸🇦</span>
               <span class="lang-label" data-i18n="common.language.ar_label">AR</span>
             </button>
-            <button class="lang-opt" data-lang="en" aria-pressed="false" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
+            <button type="button" class="lang-opt" data-lang="en" aria-pressed="false" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
               <span class="lang-flag" aria-hidden="true">🇺🇸</span>
               <span class="lang-label" data-i18n="common.language.en_label">EN</span>
             </button>
@@ -88,11 +93,11 @@
         <!-- Mobile: language toggle + hamburger -->
         <div class="flex items-center gap-2 lg:hidden">
           <div class="lang-toggle lang-toggle-sm" data-lang-toggle data-active="ar" role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
-            <button class="lang-opt" data-lang="ar" aria-pressed="true" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
+            <button type="button" class="lang-opt" data-lang="ar" aria-pressed="true" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
               <span class="lang-flag" aria-hidden="true">🇸🇦</span>
               <span class="lang-label" data-i18n="common.language.ar_label">AR</span>
             </button>
-            <button class="lang-opt" data-lang="en" aria-pressed="false" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
+            <button type="button" class="lang-opt" data-lang="en" aria-pressed="false" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
               <span class="lang-flag" aria-hidden="true">🇺🇸</span>
               <span class="lang-label" data-i18n="common.language.en_label">EN</span>
             </button>
