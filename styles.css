@@ -41,11 +41,19 @@ html[lang="ar"] .contact-form button {
 
 .dir-arrow {
   display: inline-block;
-  transform: scaleX(1);
+  min-inline-size: 1em;
+  font-size: 0;
+  line-height: 1;
+  text-align: center;
 }
 
-html[dir="rtl"] .dir-arrow {
-  transform: scaleX(-1);
+.dir-arrow::before {
+  content: "→";
+  font-size: 0.95rem;
+}
+
+html[dir="rtl"] .dir-arrow::before {
+  content: "←";
 }
 
 ::selection {
@@ -589,7 +597,6 @@ html[dir="rtl"] .nav-link:focus-visible::after {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(circle at 50% 18%, rgba(253, 206, 223, 0.42), transparent 30rem),
     linear-gradient(90deg, rgba(248, 240, 229, 0.24), rgba(248, 240, 229, 0.62), rgba(248, 240, 229, 0.24));
   content: "";
 }
@@ -816,6 +823,91 @@ html[dir="rtl"] .nav-link:focus-visible::after {
   line-height: 1.75;
 }
 
+.project-case-study {
+  width: min(100%, 53rem);
+  margin-block-start: clamp(4rem, 8vw, 7rem);
+  margin-inline-start: clamp(0rem, 8vw, 8rem);
+  padding-block-end: clamp(4rem, 8vw, 7rem);
+  color: #102c57;
+}
+
+.project-case-study header {
+  margin-block-end: clamp(2.75rem, 5vw, 4.25rem);
+}
+
+.project-case-study h2 {
+  margin-block-start: 0.9rem;
+  color: #102c57;
+  font-size: clamp(2.65rem, 6vw, 5.4rem);
+  line-height: 0.92;
+}
+
+.project-case-study header > p:last-child {
+  margin-block-start: 1.6rem;
+  max-width: 47rem;
+  color: rgba(16, 44, 87, 0.66);
+  font-size: clamp(1.05rem, 1.5vw, 1.24rem);
+  line-height: 1.85;
+}
+
+.project-case-study-section {
+  padding-block: clamp(2rem, 4vw, 3.3rem);
+  border-block-start: 1px solid rgba(16, 44, 87, 0.12);
+}
+
+.project-case-study-section h3 {
+  color: #102c57;
+  font-size: clamp(2rem, 3.4vw, 3.2rem);
+  line-height: 1;
+}
+
+.project-case-study-section h4 {
+  margin-block-start: 2.1rem;
+  color: rgba(16, 44, 87, 0.86);
+  font-family: "Gelasio", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.project-case-study-section p {
+  margin-block-start: 1rem;
+  color: rgba(16, 44, 87, 0.64);
+  font-size: 1.02rem;
+  line-height: 1.82;
+}
+
+.project-case-study-section ul {
+  display: grid;
+  gap: 0.85rem;
+  margin-block-start: 1.2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.project-case-study-section li {
+  position: relative;
+  padding-inline-start: 1.35rem;
+  color: rgba(16, 44, 87, 0.68);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.project-case-study-section li::before {
+  position: absolute;
+  inset-block-start: 0.78em;
+  inset-inline-start: 0;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: #dac0a3;
+  content: "";
+}
+
+html[lang="ar"] .project-case-study-section h4 {
+  font-family: "Tajawal", "Tahoma", "Arial", system-ui, sans-serif;
+}
+
 /* ---- Process steps ---- */
 .process-step {
   border-inline-start: 1.5px solid rgba(16, 44, 87, 0.35);
@@ -940,6 +1032,10 @@ html[dir="rtl"] .nav-link:focus-visible::after {
   .portfolio-card-grid,
   .project-detail-panel {
     grid-template-columns: 1fr;
+  }
+
+  .project-case-study {
+    margin-inline-start: 0;
   }
 
   .services-list {
