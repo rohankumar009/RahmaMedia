@@ -13,7 +13,14 @@ const rmI18nState = {
   dictionaries: {},
 };
 
-const getStartupLanguage = () => "ar";
+const getStoredLanguage = () => {
+  try {
+    const saved = localStorage.getItem(RM_LANG_KEY);
+    return RM_SUPPORTED_LANGS.has(saved) ? saved : "ar";
+  } catch {
+    return "ar";
+  }
+};
 
 const saveLanguage = (lang) => {
   try {
@@ -113,7 +120,7 @@ function initLanguageToggle() {
 
 async function initI18n() {
   initLanguageToggle();
-  await setLanguage(getStartupLanguage());
+  await setLanguage(getStoredLanguage());
 }
 
 window.RM_I18N = {

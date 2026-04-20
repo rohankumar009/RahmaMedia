@@ -11,7 +11,8 @@
     />
     <script>
       (() => {
-        const lang = "ar";
+        let lang = "ar";
+        try { const s = localStorage.getItem("rm-lang"); if (s === "en" || s === "ar") lang = s; } catch {}
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
       })();

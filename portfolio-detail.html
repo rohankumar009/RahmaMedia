@@ -7,7 +7,8 @@
     <meta name="description" content="Rahma Media portfolio project." data-i18n-content="project.meta.description" />
     <script>
       (() => {
-        const lang = "ar";
+        let lang = "ar";
+        try { const s = localStorage.getItem("rm-lang"); if (s === "en" || s === "ar") lang = s; } catch {}
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
       })();
@@ -37,6 +38,66 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="project-detail-page font-body text-ink antialiased">
+    <header class="fixed inset-x-0 top-0 z-50" data-header>
+      <nav class="content-container flex items-center justify-between py-5" aria-label="Portfolio navigation" data-i18n-aria-label="common.nav.portfolio_aria">
+        <a href="/" class="group flex items-center" aria-label="Rahma Media home" data-i18n-aria-label="common.nav.home_aria">
+          <span class="logo-wordmark transition" data-i18n="common.brand">Rahma Media</span>
+        </a>
+
+        <div class="hidden items-center gap-8 px-6 py-3 text-sm font-medium lg:flex">
+          <a class="nav-link" href="/" data-i18n="common.nav.home">Home</a>
+          <a class="nav-link" href="/portfolio" data-i18n="common.nav.portfolio">Our Work</a>
+          <a class="nav-link" href="/#about" data-i18n="common.nav.about">About</a>
+          <a class="nav-link" href="/#services" data-i18n="common.nav.services">Services</a>
+          <a class="nav-link" href="/#process" data-i18n="common.nav.process">Process</a>
+          <a class="nav-link" href="/#contact" data-i18n="common.nav.contact">Contact</a>
+        </div>
+
+        <div class="nav-actions hidden lg:flex">
+          <div class="lang-toggle" data-lang-toggle data-active="ar" role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
+            <button class="lang-opt" data-lang="ar" aria-pressed="true" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
+              <span class="lang-flag" aria-hidden="true">🇸🇦</span>
+              <span class="lang-label" data-i18n="common.language.ar_label">AR</span>
+            </button>
+            <button class="lang-opt" data-lang="en" aria-pressed="false" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
+              <span class="lang-flag" aria-hidden="true">🇺🇸</span>
+              <span class="lang-label" data-i18n="common.language.en_label">EN</span>
+            </button>
+            <span class="lang-thumb" aria-hidden="true"></span>
+          </div>
+          <a href="/#contact" class="nav-cta rounded-full border px-5 py-2.5 text-sm font-semibold transition inline-flex" data-i18n="common.nav.cta">Start a project</a>
+        </div>
+
+        <div class="flex items-center gap-2 lg:hidden">
+          <div class="lang-toggle lang-toggle-sm" data-lang-toggle data-active="ar" role="group" aria-label="Language selection" data-i18n-aria-label="common.nav.language_selection_aria">
+            <button class="lang-opt" data-lang="ar" aria-pressed="true" aria-label="Arabic" data-i18n-aria-label="common.nav.arabic_aria">
+              <span class="lang-flag" aria-hidden="true">🇸🇦</span>
+              <span class="lang-label" data-i18n="common.language.ar_label">AR</span>
+            </button>
+            <button class="lang-opt" data-lang="en" aria-pressed="false" aria-label="English" data-i18n-aria-label="common.nav.english_aria">
+              <span class="lang-flag" aria-hidden="true">🇺🇸</span>
+              <span class="lang-label" data-i18n="common.language.en_label">EN</span>
+            </button>
+            <span class="lang-thumb" aria-hidden="true"></span>
+          </div>
+          <button class="grid h-10 w-10 place-items-center rounded-full bg-transparent" type="button" aria-label="Open menu" data-i18n-aria-label="common.nav.open_menu_aria" aria-expanded="false" data-menu-button>
+            <span class="menu-icon"></span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="hidden border-t border-paper/10 bg-ink/96 py-6 text-paper backdrop-blur-xl lg:hidden" data-mobile-menu>
+        <div class="content-container grid gap-5 text-xl font-medium">
+          <a href="/" data-i18n="common.nav.home">Home</a>
+          <a href="/portfolio" data-i18n="common.nav.portfolio">Our Work</a>
+          <a href="/#about" data-i18n="common.nav.about">About</a>
+          <a href="/#services" data-i18n="common.nav.services">Services</a>
+          <a href="/#process" data-i18n="common.nav.process">Process</a>
+          <a href="/#contact" data-i18n="common.nav.contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
     <main class="project-detail-shell">
       <a class="project-back-link" href="/portfolio" data-i18n="project.detail.back_to_portfolio">Back to Our Work</a>
       <section class="project-detail-panel">
