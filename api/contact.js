@@ -2,8 +2,7 @@ const { Resend } = require("resend");
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const OWNER_EMAIL = "kumarrohan7110@gmail.com";
-const COFOUNDER_EMAIL = "ramlline10@gmail.com";
+const OWNER_EMAIL = "ramlline10@gmail.com";
 const FROM_ADDRESS = "Rahma Media <hello@rahma.media>";
 
 module.exports = async function handler(req, res) {
@@ -28,7 +27,6 @@ module.exports = async function handler(req, res) {
       resend.emails.send({
         from: FROM_ADDRESS,
         to: OWNER_EMAIL,
-        cc: COFOUNDER_EMAIL,
         subject: "New Website Inquiry",
         html: ownerEmail({ name, email, phone, project, message, preference }),
       }),
