@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "lucide-react": "^1.8.0",
+    "resend": "^4.0.0"
+  }
+}

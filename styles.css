@@ -34,7 +34,10 @@ html[lang="ar"] [class*="tracking-"],
 html[lang="ar"] .project-kicker,
 html[lang="ar"] .contact-form span,
 html[lang="ar"] .service-row a,
-html[lang="ar"] .contact-form button {
+html[lang="ar"] .contact-form button,
+html[lang="ar"] .cf-field > span,
+html[lang="ar"] .cf-preference-legend span,
+html[lang="ar"] .cf-submit-btn {
   letter-spacing: 0 !important;
   text-transform: none !important;
 }
@@ -342,33 +345,6 @@ html[dir="rtl"] .nav-link:focus-visible::after {
   color: #452829;
 }
 
-#contact .contact-form span {
-  color: rgba(69, 40, 41, 0.55);
-}
-
-#contact .contact-form input,
-#contact .contact-form select,
-#contact .contact-form textarea {
-  color: #452829;
-}
-
-#contact .contact-form input:focus,
-#contact .contact-form select:focus,
-#contact .contact-form textarea:focus {
-  border-color: #452829;
-}
-
-#contact .contact-form button {
-  background: #452829;
-  color: #f8f0e5;
-}
-
-#contact .contact-form button:hover,
-#contact .contact-form button:focus-visible {
-  background: #dac0a3;
-  color: #452829;
-}
-
 /* ---- Services page ---- */
 .services-page {
   position: relative;
@@ -404,6 +380,7 @@ html[dir="rtl"] .nav-link:focus-visible::after {
   max-width: 56rem;
   padding: clamp(1rem, 2vw, 1.5rem) clamp(1.1rem, 3vw, 2rem);
   border-top: 1px solid rgba(107, 58, 42, 0.24);
+  border-radius: 1.25rem;
   background: rgba(248, 240, 229, 0.44);
   box-shadow: 0 24px 80px rgba(107, 58, 42, 0.1);
   backdrop-filter: blur(7px);
@@ -447,6 +424,7 @@ html[dir="rtl"] .nav-link:focus-visible::after {
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(107, 58, 42, 0.5);
+  border-radius: 0.5rem;
   color: #6b3a2a;
   font-family: Inter, system-ui, sans-serif;
   font-size: 0.78rem;
@@ -461,6 +439,26 @@ html[dir="rtl"] .nav-link:focus-visible::after {
   background: #6b3a2a;
   color: #f8f0e5;
   transform: translateY(-1px);
+}
+
+.service-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.service-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.6rem 0 0.6rem;
+}
+
+.service-body p {
+  color: rgba(107, 58, 42, 0.75);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
 }
 
 .process-link:hover .process-link-text {
@@ -939,71 +937,385 @@ html[lang="ar"] .project-case-study-section h4 {
   line-height: 1.55;
 }
 
+/* ---- Contact card ---- */
+.contact-card {
+  margin-inline: auto;
+  max-width: 58rem;
+  padding: clamp(1.75rem, 5vw, 3.5rem);
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(107, 58, 42, 0.13);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 60px rgba(107, 58, 42, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.contact-card--side {
+  max-width: none;
+  margin-inline: 0;
+}
+
+.contact-card-header {
+  margin-bottom: 2.25rem;
+}
+
+.contact-card-title {
+  font-family: "Gelasio", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
+  font-weight: 400;
+  color: #452829;
+  line-height: 1.1;
+}
+
+.contact-card-subtitle {
+  margin-top: 0.65rem;
+  color: rgba(69, 40, 41, 0.62);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  max-width: 44rem;
+}
+
 /* ---- Contact form ---- */
 .contact-form {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.4rem;
 }
 
-.contact-form label {
+.cf-row {
   display: grid;
-  gap: 0.6rem;
+  gap: 1.1rem;
 }
 
-.contact-form span {
-  font-size: 0.76rem;
+@media (min-width: 560px) {
+  .cf-row { grid-template-columns: 1fr 1fr; }
+}
+
+.cf-field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.cf-field > span,
+.cf-preference-legend span {
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(16, 44, 87, 0.55);
+  color: rgba(69, 40, 41, 0.52);
 }
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
+/* Input wrapper */
+.cf-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(107, 58, 42, 0.18);
+  border-radius: 0.75rem;
+  background: rgba(248, 240, 229, 0.38);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+  overflow: hidden;
+}
+
+.cf-input-wrap:focus-within {
+  border-color: rgba(107, 58, 42, 0.5);
+  box-shadow: 0 0 0 3px rgba(107, 58, 42, 0.07);
+}
+
+.cf-icon {
+  position: absolute;
+  inset-inline-start: 0.9rem;
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+  opacity: 0.4;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.cf-icon--top {
+  top: 0.9rem;
+  bottom: auto;
+  align-self: flex-start;
+}
+
+.cf-input-wrap input,
+.cf-input-wrap textarea {
   width: 100%;
-  border: none;
-  border-bottom: 1.5px solid rgba(16, 44, 87, 0.18);
+  padding: 0 1rem 0 2.8rem;
+  height: 3rem;
   background: transparent;
-  padding: 0.75rem 0;
-  color: #102c57;
-  font: inherit;
-  font-size: 1rem;
+  border: none;
   outline: none;
-  transition: border-color 180ms ease;
+  font: inherit;
+  font-size: 0.925rem;
+  color: #452829;
+  line-height: 1;
 }
 
-.contact-form textarea {
+.cf-input-wrap textarea {
+  height: auto;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+  line-height: 1.6;
+}
+
+[dir="rtl"] .cf-input-wrap input,
+[dir="rtl"] .cf-input-wrap textarea {
+  padding-left: 1rem;
+  padding-right: 2.8rem;
+}
+
+.cf-input-wrap input::placeholder,
+.cf-input-wrap textarea::placeholder {
+  color: rgba(69, 40, 41, 0.32);
+}
+
+/* Phone field */
+.cf-country-code {
+  padding-inline-start: 2.75rem;
+  padding-inline-end: 0.55rem;
+  font-size: 0.875rem;
+  color: rgba(69, 40, 41, 0.68);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cf-phone-sep {
+  width: 1px;
+  height: 1.1rem;
+  background: rgba(107, 58, 42, 0.18);
+  flex-shrink: 0;
+}
+
+.cf-phone-wrap input {
+  padding-left: 0.65rem !important;
+  padding-right: 1rem !important;
+}
+
+/* Select field */
+.cf-select-wrap select {
+  width: 100%;
+  padding: 0 2.5rem 0 2.8rem;
+  height: 3rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  font: inherit;
+  font-size: 0.925rem;
+  color: #452829;
+  appearance: none;
+  cursor: pointer;
+}
+
+[dir="rtl"] .cf-select-wrap select {
+  padding-left: 2.5rem;
+  padding-right: 2.8rem;
+}
+
+.cf-select-arrow {
+  position: absolute;
+  inset-inline-end: 0.9rem;
+  color: rgba(69, 40, 41, 0.45);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* Textarea */
+.cf-textarea-wrap {
+  align-items: flex-start;
+}
+
+.cf-textarea-wrap textarea {
   resize: vertical;
-  border: 1.5px solid rgba(16, 44, 87, 0.18);
-  padding: 0.85rem 1rem;
+  min-height: 8rem;
+  padding-top: 0.85rem;
 }
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  border-color: #102c57;
+/* Contact preference */
+.cf-preference {
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
-.contact-form button {
-  align-self: start;
-  border-radius: 999px;
-  background: #102c57;
-  padding: 1rem 2.2rem;
+.cf-preference-legend {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.7rem;
+}
+
+.cf-preference-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cf-pref-option {
+  position: relative;
+  cursor: pointer;
+}
+
+.cf-pref-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cf-pref-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(107, 58, 42, 0.16);
+  border-radius: 0.65rem;
+  background: rgba(248, 240, 229, 0.22);
+  transition: border-color 160ms ease, background 160ms ease;
+  cursor: pointer;
+  min-height: 3rem;
+}
+
+.cf-pref-option input:checked ~ .cf-pref-inner {
+  border-color: #452829;
+  background: rgba(69, 40, 41, 0.05);
+}
+
+.cf-pref-option:hover .cf-pref-inner {
+  border-color: rgba(107, 58, 42, 0.36);
+}
+
+.cf-pref-radio {
+  width: 1rem;
+  height: 1rem;
+  border: 1.5px solid rgba(107, 58, 42, 0.3);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 160ms ease;
+}
+
+.cf-pref-radio::after {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: #452829;
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.cf-pref-option input:checked ~ .cf-pref-inner .cf-pref-radio {
+  border-color: #452829;
+}
+
+.cf-pref-option input:checked ~ .cf-pref-inner .cf-pref-radio::after {
+  opacity: 1;
+}
+
+.cf-pref-icon {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+  opacity: 0.45;
+  flex-shrink: 0;
+}
+
+.cf-pref-text {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.cf-pref-text strong {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #452829;
+  white-space: nowrap;
+}
+
+.cf-pref-text small {
+  font-size: 0.775rem;
+  color: rgba(69, 40, 41, 0.48);
+  white-space: nowrap;
+}
+
+/* Divider */
+.cf-divider {
+  border: none;
+  border-top: 1px solid rgba(107, 58, 42, 0.1);
+  margin: 0.5rem 0;
+}
+
+/* Privacy */
+.cf-privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: rgba(69, 40, 41, 0.5);
+  line-height: 1.6;
+}
+
+.cf-shield-icon {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  color: rgba(107, 58, 42, 0.38);
+}
+
+.cf-privacy a {
+  color: #452829;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Submit row */
+.cf-submit-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: 0.4rem;
+}
+
+.cf-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.95rem 2rem;
+  background: #452829;
   color: #f8f0e5;
+  border-radius: 0.65rem;
   font-family: Inter, system-ui, sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.79rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  cursor: pointer;
+  transition: background 200ms ease, transform 200ms ease;
 }
 
-.contact-form button:hover,
-.contact-form button:focus-visible {
-  background: #dac0a3;
-  color: #102c57;
-  transform: translateY(-2px);
+.cf-submit-btn:hover,
+.cf-submit-btn:focus-visible {
+  background: #6b3a2a;
+  transform: translateY(-1px);
+}
+
+.cf-secure {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  font-size: 0.79rem;
+  color: rgba(69, 40, 41, 0.48);
+}
+
+.cf-status {
+  width: 100%;
+  font-size: 0.875rem;
+  color: rgba(69, 40, 41, 0.65);
+  margin-top: -0.25rem;
 }
 
 /* ---- Reveal animation ---- */

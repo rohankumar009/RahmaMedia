@@ -374,39 +374,134 @@
           </div>
       
           <form class="contact-form mt-12 lg:mt-0" data-contact-form>
-            <div class="grid gap-6 sm:grid-cols-2">
-              <label>
-                <span data-i18n="index.contact.form.name_label">Name</span>
-                <input name="name" type="text" autocomplete="name" required />
-              </label>
-      
-              <label>
-                <span data-i18n="index.contact.form.email_label">Email</span>
-                <input name="email" type="email" autocomplete="email" required />
-              </label>
+
+            <!-- Row 1: Name + Email -->
+            <div class="cf-row">
+              <div class="cf-field">
+                <span data-i18n="index.contact.form.name_label">Full Name</span>
+                <div class="cf-input-wrap">
+                  <img class="cf-icon" src="./assets/icons/user.png" alt="" aria-hidden="true" />
+                  <input name="name" type="text" autocomplete="name"
+                         data-i18n-placeholder="index.contact.form.name_placeholder"
+                         placeholder="Your full name" required />
+                </div>
+              </div>
+              <div class="cf-field">
+                <span data-i18n="index.contact.form.email_label">Email Address</span>
+                <div class="cf-input-wrap">
+                  <img class="cf-icon" src="./assets/icons/mail.png" alt="" aria-hidden="true" />
+                  <input name="email" type="email" autocomplete="email"
+                         data-i18n-placeholder="index.contact.form.email_placeholder"
+                         placeholder="you@email.com" required />
+                </div>
+              </div>
             </div>
-      
-            <label>
-              <span data-i18n="index.contact.form.project_type_label">Project type</span>
-              <select name="project">
-                <option data-i18n="index.contact.form.project_placeholder">Please Choose Your Project</option>
-                <option data-i18n="index.contact.form.project_marketing_campaign">Marketing Campaign</option>
-                <option data-i18n="index.contact.form.project_brand_film">Brand film</option>
-                <option data-i18n="index.contact.form.project_social_campaign">Social campaign</option>
-                <option data-i18n="index.contact.form.project_website">Website</option>
-                <option data-i18n="index.contact.form.project_full_launch">Full launch</option>
-              </select>
-            </label>
-      
-            <label>
-              <span data-i18n="index.contact.form.message_label">What should this project accomplish?</span>
-              <textarea name="message" rows="5" required></textarea>
-            </label>
-      
-            <div class="flex flex-wrap items-center gap-5">
-              <button type="submit" data-i18n="index.contact.form.submit">Send inquiry</button>
-              <p class="text-sm text-[#452829]/50" data-form-status aria-live="polite"></p>
+
+            <!-- Row 2: Phone + Project Type -->
+            <div class="cf-row">
+              <div class="cf-field">
+                <span data-i18n="index.contact.form.phone_label">Phone Number</span>
+                <div class="cf-input-wrap cf-phone-wrap">
+                  <img class="cf-icon" src="./assets/icons/phone.png" alt="" aria-hidden="true" />
+                  <span class="cf-country-code">+966</span>
+                  <span class="cf-phone-sep" aria-hidden="true"></span>
+                  <input name="phone" type="tel" autocomplete="tel"
+                         data-i18n-placeholder="index.contact.form.phone_placeholder"
+                         placeholder="5X XXX XXXX" />
+                </div>
+              </div>
+              <div class="cf-field">
+                <span data-i18n="index.contact.form.project_type_label">Project Type</span>
+                <div class="cf-input-wrap cf-select-wrap">
+                  <img class="cf-icon" src="./assets/icons/work.png" alt="" aria-hidden="true" />
+                  <select name="project">
+                    <option value="" data-i18n="index.contact.form.project_placeholder">Please choose your project</option>
+                    <option data-i18n="index.contact.form.project_marketing_campaign">Marketing Campaign</option>
+                    <option data-i18n="index.contact.form.project_brand_film">Brand film</option>
+                    <option data-i18n="index.contact.form.project_social_campaign">Social campaign</option>
+                    <option data-i18n="index.contact.form.project_website">Website</option>
+                    <option data-i18n="index.contact.form.project_full_launch">Full launch</option>
+                  </select>
+                  <svg class="cf-select-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
             </div>
+
+            <!-- Project Goals -->
+            <div class="cf-field">
+              <span data-i18n="index.contact.form.message_label">What Should This Project Accomplish?</span>
+              <div class="cf-input-wrap cf-textarea-wrap">
+                <img class="cf-icon cf-icon--top" src="./assets/icons/pen.png" alt="" aria-hidden="true" />
+                <textarea name="message" rows="5"
+                          data-i18n-placeholder="index.contact.form.message_placeholder"
+                          placeholder="Tell us about your goals, challenges, and what success looks like."
+                          required></textarea>
+              </div>
+            </div>
+
+            <!-- Preferred Contact Method -->
+            <fieldset class="cf-preference">
+              <legend class="cf-preference-legend">
+                <span data-i18n="index.contact.form.preference_label">Preferred Contact Method (Optional)</span>
+              </legend>
+              <div class="cf-preference-options">
+                <label class="cf-pref-option">
+                  <input type="radio" name="preference" value="email" />
+                  <span class="cf-pref-inner">
+                    <span class="cf-pref-radio"></span>
+                    <img class="cf-pref-icon" src="./assets/icons/mail.png" alt="" aria-hidden="true" />
+                    <span class="cf-pref-text">
+                      <strong data-i18n="index.contact.form.pref_email">Email</strong>
+                      <small data-i18n="index.contact.form.pref_email_sub">Best for detailed updates</small>
+                    </span>
+                  </span>
+                </label>
+                <label class="cf-pref-option">
+                  <input type="radio" name="preference" value="phone" />
+                  <span class="cf-pref-inner">
+                    <span class="cf-pref-radio"></span>
+                    <img class="cf-pref-icon" src="./assets/icons/phone.png" alt="" aria-hidden="true" />
+                    <span class="cf-pref-text">
+                      <strong data-i18n="index.contact.form.pref_phone">Phone Call</strong>
+                      <small data-i18n="index.contact.form.pref_phone_sub">Let's connect by phone</small>
+                    </span>
+                  </span>
+                </label>
+                <label class="cf-pref-option">
+                  <input type="radio" name="preference" value="text" />
+                  <span class="cf-pref-inner">
+                    <span class="cf-pref-radio"></span>
+                    <img class="cf-pref-icon" src="./assets/icons/message.png" alt="" aria-hidden="true" />
+                    <span class="cf-pref-text">
+                      <strong data-i18n="index.contact.form.pref_text">Text Message</strong>
+                      <small data-i18n="index.contact.form.pref_text_sub">Quick and convenient</small>
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <hr class="cf-divider" />
+
+            <!-- Privacy note -->
+            <div class="cf-privacy">
+              <svg class="cf-shield-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M9 12l2 2 4-4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p data-i18n="index.contact.form.secure_text">Your information is secure and never shared.</p>
+            </div>
+
+            <!-- Submit row -->
+            <div class="cf-submit-row">
+              <button type="submit" class="cf-submit-btn" data-submit-btn>
+                <span data-i18n="index.contact.form.submit">Send Inquiry</span>
+              </button>
+              <p class="cf-status" data-form-status aria-live="polite"></p>
+            </div>
+
           </form>
         </div>
       </section>

@@ -5,6 +5,7 @@ const revealItems = [...document.querySelectorAll("[data-reveal]")];
 const counters = [...document.querySelectorAll("[data-count]")];
 const contactForm = document.querySelector("[data-contact-form]");
 const formStatus = document.querySelector("[data-form-status]");
+const formSubmitBtn = document.querySelector("[data-submit-btn]");
 const year = document.querySelector("[data-year]");
 const navThemeSections = [...document.querySelectorAll("[data-nav-theme]")];
 
@@ -183,7 +184,7 @@ const translateByKey = (key, fallback, replacements = {}) => {
 };
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     if (!contactForm.checkValidity()) {
@@ -198,15 +199,46 @@ if (contactForm) {
     }
 
     const data = Object.fromEntries(new FormData(contactForm).entries());
-    const firstName = String(data.name).trim().split(" ")[0] || "there";
+    const firstName = String(data.name).trim().split(/\s+/)[0] || "there";
+    const btnLabel = formSubmitBtn?.querySelector("span") ?? formSubmitBtn;
 
-    if (formStatus) {
-      formStatus.textContent = translateByKey(
-        "index.contact.form.success_status",
-        "Thanks, {firstName}. Your inquiry is ready to wire into a backend.",
-        { firstName }
-      );
+    if (formSubmitBtn) formSubmitBtn.disabled = true;
+    if (btnLabel) btnLabel.textContent = "Sending\u2026";
+    if (formStatus) formStatus.textContent = "";
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(json.error || "Request failed");
+
+      if (formStatus) {
+        formStatus.textContent = translateByKey(
+          "index.contact.form.success_status",
+          "Thanks, {firstName}! We\u2019ll be in touch shortly.",
+          { firstName }
+        );
+      }
+      contactForm.reset();
+    } catch {
+      if (formStatus) {
+        formStatus.textContent = translateByKey(
+          "index.contact.form.error_status",
+          "Something went wrong. Please try again or email us directly."
+        );
+      }
+    } finally {
+      if (formSubmitBtn) formSubmitBtn.disabled = false;
+      if (btnLabel) {
+        btnLabel.textContent = translateByKey(
+          "index.contact.form.submit",
+          "Send Inquiry"
+        );
+      }
     }
-    contactForm.reset();
   });
 }
