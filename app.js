@@ -17,6 +17,8 @@ const originalPathname = window.location.pathname;
 const isHomePage = homePaths.has(originalPathname);
 
 const setCleanHomeUrl = () => {
+  if (!isHomePage) return;
+
   window.history.replaceState(null, "", "/");
 };
 
@@ -245,5 +247,5 @@ if (contactForm) {
   });
 }
 
-// Always show clean root URL regardless of actual page
+// Keep the home page URL clean without rewriting portfolio/process pages.
 setCleanHomeUrl();
