@@ -476,8 +476,9 @@ html[dir="rtl"] .nav-link:focus-visible::after {
 .idea-cta-copy {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-self: stretch;
+  gap: 5rem;
 }
 
 .idea-cta-media {
@@ -504,7 +505,6 @@ html[dir="rtl"] .nav-link:focus-visible::after {
 .idea-cta-body {
   width: 100%;
   max-width: 31rem;
-  margin-top: 2.5rem;
   text-align: start;
 }
 
