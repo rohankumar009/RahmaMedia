@@ -759,7 +759,7 @@ html[dir="rtl"] .nav-link:focus-visible::after {
 .project-detail-shell {
   width: min(100% - 2.5rem, 72rem);
   margin: 0 auto;
-  padding: clamp(2rem, 5vw, 4rem) 0;
+  padding: calc(5rem + 30px) 0 clamp(2rem, 5vw, 4rem);
 }
 
 .project-back-link {
