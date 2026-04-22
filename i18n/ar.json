@@ -60,8 +60,10 @@
   "index.process.move.number": "03",
   "index.process.move.title": "نطلق",
   "index.process.move.body": "إطلاق، قياس، وتحسين.",
-  "index.cta.title_1": "هات الفكرة.",
-  "index.cta.title_2": "سنبني الاهتمام.",
+
+
+  "index.cta.title_1": "نحوّل أفكارك",
+  "index.cta.title_2":" ملموسة نتائج إلى.",
   "index.cta.body": "مصمم للفرق التي تريد ذائقة وسرعة وشريك إطلاق ينتقل من الاستراتيجية إلى الإبداع النهائي من دون أن يفقد الخيط.",
   "index.contact.kicker": "تواصل",
   "index.contact.title": "أخبرنا بما تبنيه.",
