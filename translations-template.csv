@@ -1,9 +1,7 @@
 page,key,english,arabic
-common,common.brand,Rahma Media,
-common,common.skip_to_content,Skip to content,
 Column1,Column2,Column3,Column4
 common,common.nav.home,Home,______ ________
-common,common.nav.portfolio,Portfolio,
+,,,
 common,common.nav.about,About,___
 common,common.nav.services,Services,_______
 common,common.nav.process,Process,_____
@@ -13,8 +11,8 @@ common,common.aria.main_navigation,builds brands people can feel.,____ ______ __
 common,common.aria.portfolio_navigation,"We build brands that speak with clarity, intention, and impact — from identity systems to integrated campaigns that drive real results.",___ ____ ______ ______ _____ _____ ______ ______ � _____ __ _____ ______ ______ ___ _______ _________ ____ ____ _____ ______.
 common,common.aria.language_selection,About us,____ ___
 common,common.aria.arabic,Book a call,____ ______
-common,common.aria.english,,
-common,common.aria.open_menu,,
+,,,
+,,,
 common,common.footer.tagline,Crafted for launch momentum.,
 common,common.footer.tagline_no_period,Crafted for launch momentum,
 index,index.meta.description,"Rahma Media crafts cinematic brand stories, launch campaigns, social content, and digital experiences for ambitious teams.",
@@ -23,18 +21,18 @@ index,index.hero.image_alt,Rahma Media creative studio,
 index,index.hero.headline_brand,Rahma Media,
 index,index.hero.headline_line,builds brands people can feel.,
 index,index.hero.body,"We build brands that speak with clarity, intention, and impact — from identity systems to integrated campaigns that drive real results.",
-index,index.hero.about_cta,,
-index,index.hero.book_cta,,
-index,index.ticker.social_media,Social Media,
-index,index.ticker.visual_identity,Visual Identity,
-index,index.ticker.brand_strategy,Brand Strategy,
-index,index.ticker.digital_marketing,Digital Marketing,
-index,index.ticker.content_creation,Content Creation,
-index,index.about.kicker,About*,
-index,index.about.title,A marketing agency with good taste.,
-index,index.about.body_1,Rahma Media is a creative studio built for brands that mean something. We believe every business has a story worth telling beautifully- and we're committed to telling yours.,
-index,index.about.body_2,"We design campaigns, content, websites, launch ideas, little brand moments, big brand moments, and the moments that don't just look expensive- they feel intentional. Because your business deserves more than generic.",
-index,index.about.body_3,Sharp visuals. Clean messaging. Better taste. Fast edits. All of it made with teh care your business deserves,
+,,,
+,,,
+index,index.ticker.social_media,Social Media,_____ _______ _________
+index,index.ticker.visual_identity,Visual Identity,______ _______
+index,index.ticker.brand_strategy,Brand Strategy,__________ _______ ________
+index,index.ticker.digital_marketing,Digital Marketing,_______ ______
+index,index.ticker.content_creation,Content Creation,_____ _______
+,,,
+index,index.about.title,A marketing agency with good taste.,_____ _____ _____ ____ ____.
+index,index.about.body_1,Rahma Media is a creative studio built for brands that mean something. We believe every business has a story worth telling beautifully- and we're committed to telling yours.,"�____ _____� __ _______ ______ ____ ________ ________ ____ ____ ____ ______. ___ ____ ___ ___ ____ ___ _____ __ _____ ______ _____ ____ _______ ______ _____."
+index,index.about.body_2,"We design campaigns, content, websites, launch ideas, little brand moments, big brand moments, and the moments that don't just look expensive- they feel intentional. Because your business deserves more than generic.","___ ____ _______ ________ ________ ____________ _____ ________ ______ _______ _______ ________ _______ _________ _____ _______ ____ __ ____ _____ _______ _____ __ ____ ______ ______. ___ _____ _____ ____ __ ____ _______ ____."
+index,index.about.body_3,Sharp visuals. Clean messaging. Better taste. Fast edits. All of it made with teh care your business deserves,___ _____. _____ _____. ___ ____. _______ _____. __ ___ __ ______ ________ ____ _______ ____
 index,index.services.title,Our Services,
 index,index.services.free_consultation.title,Free Consultation,
 index,index.services.brand_direction.title,Brand Direction,
@@ -78,13 +76,13 @@ portfolio,portfolio.meta.description,"Rahma Media portfolio — selected brand f
 portfolio,portfolio.meta.title,Portfolio | Rahma Media,
 portfolio,portfolio.title,Portfolio,
 portfolio,portfolio.card.cafe.aria,Open Café portfolio project,
-portfolio,portfolio.card.cafe.alt,Specialty Café,
+portfolio,portfolio.card.cafe.alt,Hayati Café,
 portfolio,portfolio.card.cafe.label,Café,
 portfolio,portfolio.card.clinic.aria,Open Clinic portfolio project,
-portfolio,portfolio.card.clinic.alt,Wellness Clinic,
+portfolio,portfolio.card.clinic.alt,Hayati Clinic,
 portfolio,portfolio.card.clinic.label,Clinic,
 portfolio,portfolio.card.salon.aria,Open Salon portfolio project,
-portfolio,portfolio.card.salon.alt,Beauty Salon,
+portfolio,portfolio.card.salon.alt,Hayati Salon,
 portfolio,portfolio.card.salon.label,Salon,
 process,process.meta.description,How Rahma Media works — a tight three-phase process from strategy to launch.,
 process,process.meta.title,Our Process | Rahma Media,
@@ -118,15 +116,15 @@ process,process.closing.see_work_cta,See our work,
 portfolio-detail,project.meta.description,Rahma Media portfolio project.,
 portfolio-detail,project.meta.title,Portfolio | Rahma Media,
 portfolio-detail,project.back_link,Back to portfolio,
-portfolio-detail,project.cafe.alt,Specialty Café,
+portfolio-detail,project.cafe.alt,Hayati Café,
 portfolio-detail,project.cafe.kicker,Café,
 portfolio-detail,project.cafe.title,A welcoming café brand brought to life.,
-portfolio-detail,project.cafe.desc,"Visual identity, content direction, and digital presence crafted for the café.",
-portfolio-detail,project.clinic.alt,Wellness Clinic,
+portfolio-detail,project.cafe.desc,"Visual identity, content direction, and digital presence crafted for Hayati Café.",
+portfolio-detail,project.clinic.alt,Hayati Clinic,
 portfolio-detail,project.clinic.kicker,Clinic,
 portfolio-detail,project.clinic.title,A trusted clinic brand built for modern patients.,
 portfolio-detail,project.clinic.desc,Brand storytelling and digital content designed to build credibility and attract the right audience.,
-portfolio-detail,project.salon.alt,Beauty Salon,
+portfolio-detail,project.salon.alt,Hayati Salon,
 portfolio-detail,project.salon.kicker,Salon,
 portfolio-detail,project.salon.title,"A premium salon experience, captured and shared.",
 portfolio-detail,project.salon.desc,Content strategy and visual production that communicates quality and drives bookings.,
