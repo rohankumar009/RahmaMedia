@@ -13,9 +13,10 @@ if (year) year.textContent = new Date().getFullYear();
 
 const homePaths = new Set(["/", "/index", "/index.html"]);
 
-const setCleanHomeUrl = () => {
-  if (!homePaths.has(window.location.pathname)) return;
+const originalPathname = window.location.pathname;
+const isHomePage = homePaths.has(originalPathname);
 
+const setCleanHomeUrl = () => {
   window.history.replaceState(null, "", "/");
 };
 
@@ -36,7 +37,7 @@ document.addEventListener("click", (event) => {
   const href = link.getAttribute("href") ?? "";
 
   // Logo / Home links on the home page: scroll to top, no reload
-  if (href === "/" && homePaths.has(window.location.pathname)) {
+  if (href === "/" && isHomePage) {
     event.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
     setCleanHomeUrl();
@@ -243,3 +244,6 @@ if (contactForm) {
     }
   });
 }
+
+// Always show clean root URL regardless of actual page
+setCleanHomeUrl();
