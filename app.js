@@ -199,6 +199,7 @@ if (contactForm) {
     }
 
     const data = Object.fromEntries(new FormData(contactForm).entries());
+    data.lang = document.documentElement.lang || "en";
     const firstName = String(data.name).trim().split(/\s+/)[0] || "there";
     const btnLabel = formSubmitBtn?.querySelector("span") ?? formSubmitBtn;
 
